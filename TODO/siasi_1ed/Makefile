@@ -13,7 +13,7 @@ all: $(OUT).pdf
 	$(COMPILER) $<
 
 see: all
-	xpdf -fullscreen $(OUT).pdf
+	okular --presentation $(OUT).pdf
 
 clean:
 	rm -rf $(LIXO)
