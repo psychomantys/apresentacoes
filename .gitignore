@@ -15,9 +15,18 @@
 a.out
 
 # Latex
-
+*.log
+*.aux
+*.nav
+*.out
+*.snm
+*.toc
 
 # Backup files
 *~
+.*.sw*
 .backups
+
+# svn
+.svn
 
