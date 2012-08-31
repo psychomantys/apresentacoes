@@ -2,9 +2,9 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[brazil]{babel}
-\usepackage{graphicx}		% utilizado para inserir gr√°fico
+\usepackage{graphicx}		% utilizado para inserir gr·fico
 
-% Usado para incluir c√≥digo
+% Usado para incluir cÛdigo
 \usepackage{listings}
 
 \usetheme{Copenhagen}
@@ -12,10 +12,10 @@
 \setbeamertemplate{background}{\includegraphics[width=\paperwidth]{./figuras/background_lccv.jpg}}
 %\setbeamercovered{transparent}
 
-\title[]{Shell Script Security: Introdu√ß√£o, Conceitos e T√©cnicas}
+\title[]{Shell Script Security: Introduc√£o, Conceitos e T√©cnicas}
 \author[]{Baltazar Tavares Vanderlei}
 \date{\today}
-\institute[2012]{Laborat√≥rio de Computa√ß√£o Cient√≠fica e Visualiza√ß√£o - LCCV/UFAL}
+\institute[2012]{Laboratorio de Computao Cient√≠fica e Visualizac√£o - LCCV/UFAL}
 
 \begin{document}
 
@@ -23,7 +23,7 @@
 
 \frame{\titlepage}
 	\begin{frame}[t]
-	\frametitle{Sum√°rio}
+	\frametitle{Sum·rio}
 	\tableofcontents[framebreaks]
 	%\tableofcontents[pausesections]
 \end{frame}
@@ -72,7 +72,7 @@
 	\subsection{Usando o find}
 		\begin{frame}%[t]
 		\frametitle{O que podemos fazer com o find?}
-			\begin{itemize}[<+->]
+			\begin{itemize}%[]
 				\item Basicamente podemos pesquisar
 				\item Todo o tipo de pesquisa pode ser feito no find
 				\item Por tipos, tamanho e outras caratecteristicas
@@ -99,39 +99,78 @@
 			\lstinputlisting[language=bash]{./codigo/find_delete.sh}
 		\end{frame}
 
-%	* tail
-%		-> -f
+	\subsection{Usando o tail}
+		\begin{frame}%[t]
+		\frametitle{O que podemos fazer com o tail?}
+			\begin{itemize}%[<>]
+				\item Normalmente usamos o tail para ver o final de um arquivo
+				\item Quase todas as opcoes do head se usam no tail
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}%[t]
+		\frametitle{Monitorando um arquivo: pondo em pratica}
+			\lstinputlisting[language=bash]{./codigo/tail_attach.sh}
+		\end{frame}
+
+	\subsection{Usando o getent}
+		\frametitle{O que podemos fazer com o getent?}
+			\begin{itemize}%[<>]
+				\item Para consultar elementos do sistema
+				\item Forma portavel
+				\item Os bancos de dados disponiveis: getent -?
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}%[t]
+		\frametitle{Verificando a existencia de um usuario}
+			\lstinputlisting[language=bash]{./codigo/getent.sh}
+		\end{frame}
+
+	\subsection{IFS}
+		\frametitle{O que √© o IFS?}
+			\begin{itemize}%[<>]
+				\item Existem separadores que definem os argumentos dos programas
+				\lstinputlisting[language=bash]{./codigo/sep_sample.sh}
+				\item Em bash script √© possivel alterar esses separadores
+			\end{itemize}
+		\end{frame}
+
+%	* IFS
+%		-> exemplo com IP
+%		-> usando como cut
+%		-> em while
 
 %	\subsection{Desafios}
 		\begin{frame}%[t]
 		\frametitle{Desafios como membro da GradeBR}
 			\begin{block}{Desafio}
-				Usar tecnologia de ponta para planejar e implementar um grid de processamento de alto desempenho, que pudesse processar problemas de escala peta(da escala de $10^{15}$) de forma cooperativa entre os v√°rios n√≥s.
+				Usar tecnologia de ponta para planejar e implementar um grid de processamento de alto desempenho, que pudesse processar problemas de escala peta(da escala de $10^{15}$) de forma cooperativa entre os v·rios nÛs.
 			\end{block}
 		\end{frame}
 
-\section{O que um n√≥ da GradeBR precisa?}
+\section{O que um nÛ da GradeBR precisa?}
 		\begin{frame}%[t]
 		\frametitle{Necessario:}
 			\begin{itemize}%[<+->]
 				% pergunta
-				\item Grande poder de processamento e mem√≥ria
-				\item Grande espa√ßo e velocidade de armazenamento
-				\item Uma rede de interconex√£o extremamente mais r√°pida que a convencional
+				\item Grande poder de processamento e memÛria
+				\item Grande espaÁo e velocidade de armazenamento
+				\item Uma rede de interconex„o extremamente mais r·pida que a convencional
 				\item Um sistema tolerante a falhas, robusto e funcional(tanto em hardware como em software)
 			\end{itemize}
 		\end{frame}
 
-\section{Poder de processamento e mem√≥ria}
+\section{Poder de processamento e memÛria}
 		\begin{frame}%[t]
 		\frametitle{O cluster do LCCV possui:}
 			\begin{itemize}%[<+->]
-				\item \textbf{8} placas de v√≠deo totalizando \textbf{30}Tflops
-				\item \textbf{218} n√≥s de processamento, com processadores \textbf{i7}
-				\item Cada maquina com \textbf{2} processadores, cada processador \textbf{4} n√∫cleos
-				\item Cada maquina com \textbf{24}GB de mem√≥ria NUMA
-				\item Totalizando mais de \textbf{5}TB de mem√≥ria NUMA e \textbf{1744} n√∫cleos
-				\item S√≥ de n√≥s de processamento, temos \textbf{20 Tflops}
+				\item \textbf{8} placas de vÌdeo totalizando \textbf{30}Tflops
+				\item \textbf{218} nÛs de processamento, com processadores \textbf{i7}
+				\item Cada maquina com \textbf{2} processadores, cada processador \textbf{4} n˙cleos
+				\item Cada maquina com \textbf{24}GB de memÛria NUMA
+				\item Totalizando mais de \textbf{5}TB de memÛria NUMA e \textbf{1744} n˙cleos
+				\item SÛ de nÛs de processamento, temos \textbf{20 Tflops}
 			\end{itemize}
 		\end{frame}
 
@@ -167,18 +206,18 @@
 			\end{figure}
 		\end{frame}
 
-\section{Rede de interconex√£o de alto desempenho}
+\section{Rede de interconex„o de alto desempenho}
 %	\subsection{InfiniBand}
 	\begin{frame} %[t]
-	\frametitle{Porque foi escolhida essa topologia e interconex√£o}
+	\frametitle{Porque foi escolhida essa topologia e interconex„o}
 		\begin{itemize}[<+->]
 			\item Para a rede de alto desempenho, foi escolhido o InfiniBand(IB)
-			\item O IB √© um meio com baixa lat√™ncia
-			\item Tem uma alta taxa de transfer√™ncia
-			\item √â usado para conex√£o entre maquinas(compat√≠vel com MPI)
-			\item √â usado por dispositivos de armazenamento(compat√≠vel com o lustre)
+			\item O IB È um meio com baixa latÍncia
+			\item Tem uma alta taxa de transferÍncia
+			\item … usado para conex„o entre maquinas(compatÌvel com MPI)
+			\item … usado por dispositivos de armazenamento(compatÌvel com o lustre)
 			\item Pode ser usada uma camada de compatibilidade com o IP(chamada de ``IPoIB")
-			\item Com IB, foi conseguido uma taxa de transfer√™ncia m√°xima de 40Gbit/s
+			\item Com IB, foi conseguido uma taxa de transferÍncia m·xima de 40Gbit/s
 		\end{itemize}
 	\end{frame}
 
@@ -194,12 +233,12 @@
 
 \section{Armazenamento de alto desempenho}
 	\begin{frame} %[t]
-	\frametitle{Para armazenamento de alto desempenho, era nescess√°rio:}
+	\frametitle{Para armazenamento de alto desempenho, era nescess·rio:}
 		\begin{itemize}[<+->]
 			\item Um sistema de arquivo que funcionasse via rede
 			\item Um sistema de arquivo paralelo
-			\item Escal√°vel para um grande numero de clientes
-			\item Compat√≠vel com o hardware usado
+			\item Escal·vel para um grande numero de clientes
+			\item CompatÌvel com o hardware usado
 		\end{itemize}
 	\end{frame}
 
@@ -207,51 +246,51 @@
 	\frametitle{Porque foi escolhido o lustrefs:}
 		\begin{itemize}[<+->]
 			\item Sistema de arquivos via rede e paralelo
-			\item Poss√≠vel usar raid e garantir seguran√ßa e acesso r√°pido a dados
-			\item Escal√°vel ate dezenas de milhares de clientes
+			\item PossÌvel usar raid e garantir seguranÁa e acesso r·pido a dados
+			\item Escal·vel ate dezenas de milhares de clientes
 			\item Suporte a IB, usando rdma para se comunicar diretamente
-			\item Toler√¢ncia a falhas e Alta disponibilidade(sem balan√ßo de carga)
+			\item Toler‚ncia a falhas e Alta disponibilidade(sem balanÁo de carga)
 		\end{itemize}
 	\end{frame}
 
-\section{Caracter√≠sticas do Sistema}
+\section{CaracterÌsticas do Sistema}
 	\begin{frame}
 	\frametitle{O que aumenta a dificuldade com o sistema:}
 		\begin{itemize}[<+->]
 			\item Um sistema com muitos clientes
-			\item Alta disponibilidade e balan√ßo de carga em servi√ßos
+			\item Alta disponibilidade e balanÁo de carga em serviÁos
 			\item Lidar com o sistema de varias maquinas ao mesmo tempo
 			\item Lidar com programas escalonadores
-			\item V√°rios problemas por lidar com tecnologia de ponta
+			\item V·rios problemas por lidar com tecnologia de ponta
 			\item Sistema muito grande e complexo
 		\end{itemize}
 	\end{frame}
 
-\section{Conclus√£o}
+\section{Conclus„o}
 	\subsection{Benchmarks}
 %	\subsection{HPL}
 		\begin{frame}
 		\frametitle{HPL:}
-			\begin{block}{O que √© o HPL?}
-				HPL √© um teste amplamente usado que mede a efici√™ncia de um cluster em flops.
+			\begin{block}{O que È o HPL?}
+				HPL È um teste amplamente usado que mede a eficiÍncia de um cluster em flops.
 			\end{block}
 			\begin{itemize}%[<+->]
 				\item O Cluster teve um resultado de 17TFlops.
-				\item Resultados parciais com efici√™ncia superior a 85\%($R_{max}/R_{peak}$).
+				\item Resultados parciais com eficiÍncia superior a 85\%($R_{max}/R_{peak}$).
 			\end{itemize}
 		\end{frame}
 
 %	\subsection{IOR}
 		\begin{frame}
 		\frametitle{IOR:}
-			\begin{block}{O que √© o IOR?}
-				IOR √© um teste usado que mede a escrita e leitura de um cluster em um sistema de arquivos usando posix e mpi-io.
+			\begin{block}{O que È o IOR?}
+				IOR È um teste usado que mede a escrita e leitura de um cluster em um sistema de arquivos usando posix e mpi-io.
 			\end{block}
 			\begin{table}[htb] % [htb]-> here, top, bottom
 				\centering   % tabela centralizada
 				\large       % tamanho da fonte 
 				\setlength{\arrayrulewidth}{2\arrayrulewidth}  % espessura da  linha
-				\setlength{\belowcaptionskip}{10pt}  % espa√ßo entre caption e tabela
+				\setlength{\belowcaptionskip}{10pt}  % espaÁo entre caption e tabela
 				\caption{\it Resultados do IOR}
 				\begin{tabular}{|c|c|c|c|} % c=center, l=left, r=right 
 					\hline
@@ -270,7 +309,7 @@
 	\begin{frame}
 	\frametitle{Estado atual}
 		\begin{itemize}[<+->]
-			\item Um dos maiores supercomputadores em atividade na Am√©rica Latina
+			\item Um dos maiores supercomputadores em atividade na AmÈrica Latina
 			\item Foram executadas mais de 500 mil horas de processamento em projetos do LCCV/Petrobras
 			\item Implementamos com sucesso um cluster de alto desempenho
 			\item Preparando a infraestrutura para o grid continental de alto desempenho GradeBR
@@ -280,7 +319,7 @@
 	\begin{frame}
 	\frametitle{Agradecimentos}
 		\begin{block}{}%{Agradecimento}
-			Agradecemos a ANP, a Petrobras e ao Laborat√≥rio de Computa√ß√£o Cient√≠fica e Visualiza√ß√£o da Universidade Federal de Alagoas por garantir acesso aos recursos computacionais do cluster GradeBR/UFAL da Rede Galileu.
+			Agradecemos a ANP, a Petrobras e ao LaboratÛrio de ComputaÁ„o CientÌfica e VisualizaÁ„o da Universidade Federal de Alagoas por garantir acesso aos recursos computacionais do cluster GradeBR/UFAL da Rede Galileu.
 		\end{block}
 	\end{frame}
 \end{document}
