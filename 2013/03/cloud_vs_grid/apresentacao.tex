@@ -1,11 +1,14 @@
 \documentclass[10pt]{beamer}
 
+
 \usepackage[utf8]{inputenc}
 \usepackage[brazil]{babel}
 \usepackage{graphicx}		% utilizado para inserir gráfico
 
 % Usado para incluir código
 \usepackage{listings}
+% Needed to use citations.
+\usepackage{cite}
 
 \usetheme{Copenhagen}
 \usecolortheme{lccv}
@@ -54,13 +57,17 @@
 			\end{itemize}
 			\item \textbf{PaaS}: Plataform as a Service
 			\begin{itemize}
-				\item \textbf{Wordpress, Windows Azure, skype, GMail, facebook} ...
+				\item \textbf{Wordpress, Freezope, Openshift} ...
 			\end{itemize}
 			\item \textbf{IaaS}: Infrastructure as a Service
 			\begin{itemize}
-				\item \textbf{skype, GMail, facebook} ...
+				\item \textbf{Amazom, Nimbus, OpenStack} ...
 			\end{itemize}
 		\end{itemize}
+		\pause
+		\begin{block}{OBS:}
+			O IaaS popularizou mais com o surgimento de tecnologias de virtualização
+		\end{block}
 	\end{frame}
 
 	\begin{frame}%[t]
@@ -73,32 +80,40 @@
 	\end{frame}
 
 \section{Grid}
+	\subsection{Características}
+
 	\begin{frame}
-	\frametitle{Que usa a Computação de Alto Desempenho?}
-		\begin{itemize}
-			\item Programas que usam recurso de forma irresponsavel
-			\pause
-			\item Programas que usam recursos ao maximo disponivel
-			\pause
+	\frametitle{Que caracteriza um grid?}
+		\begin{block}{Segundo \textbf{Ian Foster}:}
+		% http://dlib.cs.odu.edu/WhatIsTheGrid.pdf
 			\begin{itemize}
-				\item Processamento
-				\item Memoria
-				\item Disco
-				\item Rede
-				\item \textbf{Etc...}
+				\item ...coordinates resources that are not subject to centralized control...
+				\item ...using standard, open, general-purpose protocols and interfaces...
+				\item ...to deliver nontrivial qualities of service.
 			\end{itemize}
-			\pause
-			\item Programadores \textbf{HARDCORE}!
-		\end{itemize}
+		\end{block}
+		\begin{block}{Segundo \textbf{Buyya/Venugopal}:}
+		a type of parallel and distributed system that enables the sharing, selection, and aggregation of geographically distributed autonomous resources dynamically at runtime depending on their availability, capability, performance, cost, and users quality-of-service requirements
+		\end{block}
 	\end{frame}
 
 	\begin{frame}%[t]
-	\frametitle{O que vamos falar nesse curso?}
-		\begin{itemize}[<-+>]
-			\item Vamos falar de processamento em paralelo
-			\item Aprender a paralelizar usando dois paradigmas(\textbf{OpenMP} e \textbf{MPI})
-			\item Vamos aprender sobre programas em paralelo para C.A.D.
-			\item Não vamos aprender alguns conceitos que vocês vão aprender em S.O. ;)
+	\frametitle{Podemos ressaltar:}
+		\begin{itemize}%[<-+>]
+			\item Colaboração
+			\item Padrões
+			\item Organização de recursos
+			\item Surgiu antes de virtualização se consolidar
+		\end{itemize}
+	\end{frame}
+
+	\subsection{Projetos}
+
+	\begin{frame}%[t]
+		\begin{itemize}%[<-+>]
+			\item OurGrid
+			\item SETI@home
+			\item Globus Toolkit
 		\end{itemize}
 	\end{frame}
 
@@ -150,7 +165,7 @@
 			\begin{figure}
 			\centering
 				\includegraphics[scale=0.2]{./figuras/grafo_programa_paralelo.png}
-				\caption{Grafo de ações paralelo}
+				\caption{Grafo de ações paralelo }
 			\end{figure}
 		\end{frame}
 
@@ -165,6 +180,12 @@
 \section{Comparando}
 
 
+\section{Refs}
+	\begin{frame}%[t]
+	\frametitle{Vamos comparar os grafos...}
+		\bibliography{Refs}{}
+%		\bibliographystyle{plain}
+	\end{frame}
 
 
 
