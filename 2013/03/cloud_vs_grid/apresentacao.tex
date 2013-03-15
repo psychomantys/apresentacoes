@@ -51,22 +51,22 @@
 	\frametitle{Classificando pelo tipo de serviço}
 		\text{Para o serviço disponibilizado, podemos classifica-lo como:}
 		\begin{itemize}%[<+->]
-			\item \textbf{SaaS}: Software as a Service
+			\item \textbf{\textbf{SaaS}}: Software as a Service
 			\begin{itemize}
 				\item \textbf{skype, GMail, facebook} ...
 			\end{itemize}
-			\item \textbf{PaaS}: Plataform as a Service
+			\item \textbf{\textbf{PaaS}}: Plataform as a Service
 			\begin{itemize}
 				\item \textbf{Wordpress, Freezope, Openshift} ...
 			\end{itemize}
-			\item \textbf{IaaS}: Infrastructure as a Service
+			\item \textbf{\textbf{IaaS}}: Infrastructure as a Service
 			\begin{itemize}
-				\item \textbf{Amazom, Nimbus, OpenStack} ...
+				\item \textbf{Amazom, \textbf{Nimbus}, \textbf{OpenStack}} ...
 			\end{itemize}
 		\end{itemize}
 		\pause
 		\begin{block}{OBS:}
-			O IaaS popularizou mais com o surgimento de tecnologias de virtualização
+			O \textbf{IaaS} popularizou mais com o surgimento de tecnologias de virtualização
 		\end{block}
 	\end{frame}
 
@@ -75,117 +75,130 @@
 		\begin{figure}
 		\centering
 			\includegraphics[scale=0.4]{./figuras/iaas-paas-saas.jpg}
-%			\caption{Resumão: IaaS, PaaS, SaaS, EaaS, MaaS...}
+%			\caption{Resumão: \textbf{IaaS}, \textbf{PaaS}, \textbf{SaaS}, EaaS, MaaS...}
 		\end{figure}
 	\end{frame}
 
 \section{Grid}
 	\subsection{Características}
 
-	\begin{frame}
-	\frametitle{Que caracteriza um grid?}
-		\begin{block}{Segundo \textbf{Ian Foster}:}
-		% http://dlib.cs.odu.edu/WhatIsTheGrid.pdf
+		\begin{frame}
+		\frametitle{Que caracteriza um grid?}
+			\begin{block}{Segundo \textbf{Ian Foster}:}
+			% http://dlib.cs.odu.edu/WhatIsTheGrid.pdf
 			\begin{itemize}
 				\item ...coordinates resources that are not subject to centralized control...
 				\item ...using standard, open, general-purpose protocols and interfaces...
 				\item ...to deliver nontrivial qualities of service.
 			\end{itemize}
-		\end{block}
-		\begin{block}{Segundo \textbf{Buyya/Venugopal}:}
-		a type of parallel and distributed system that enables the sharing, selection, and aggregation of geographically distributed autonomous resources dynamically at runtime depending on their availability, capability, performance, cost, and users quality-of-service requirements
-		\end{block}
-	\end{frame}
+			\end{block}
+			\begin{block}{Segundo \textbf{Buyya/Venugopal}:}
+				a type of parallel and distributed system that enables the sharing, selection, and aggregation of geographically distributed autonomous resources dynamically at runtime depending on their availability, capability, performance, cost, and users quality-of-service requirements
+			\end{block}
+		\end{frame}
 
-	\begin{frame}%[t]
-	\frametitle{Podemos ressaltar:}
-		\begin{itemize}%[<-+>]
-			\item Colaboração
-			\item Padrões
-			\item Organização de recursos
-			\item Surgiu antes de virtualização se consolidar
-		\end{itemize}
-	\end{frame}
+		\begin{frame}%[t]
+		\frametitle{Podemos ressaltar:}
+			\begin{itemize}%[<-+>]
+				\item Colaboração
+				\item Padrões
+				\begin{itemize}%[<-+>]
+					\item \textbf{JSDL}
+					\item \textbf{Web Services}
+				\end{itemize}
+				\item Organização de recursos
+				\item Acadêmico, bem mais definido
+				\item Surgiu antes de virtualização se consolidar
+			\end{itemize}
+		\end{frame}
 
 	\subsection{Projetos}
 
-	\begin{frame}%[t]
-		\begin{itemize}%[<-+>]
-			\item OurGrid
-			\item SETI@home
-			\item Globus Toolkit
-		\end{itemize}
-	\end{frame}
+		\begin{frame}%[t]
+			\begin{itemize}%[<-+>]
+				\item OurGrid
+				\item SETI@home
+				\item Globus Toolkit
+				\item Muitos outros projetos academicos
+			\end{itemize}
+		\end{frame}
 
 \section{Cloud}
-	\subsection{Serial}
+	\subsection{Características}
+
+		\begin{frame}
+		\frametitle{Que caracteriza uma Cloud?}
+			% http://venturebeat.com/2011/11/14/cloud-iaas-paas-saas/
+			\begin{block}{Segundo \textbf{Sean Ludwig}:}
+				Let’s start at the beginning. “Cloud” is a metaphor for the Internet, and “cloud computing” is using the Internet to access applications, data or services that are stored or running on remote servers.
+\newline
+\newline
+				When you break it down, any company offering an Internet-based approach to computing, storage and development can technically be called a cloud company. However, not all cloud companies are the same. Typically, these companies focus on offering one of three categories of cloud computing services. These different segments are called the “layers” of the cloud.
+			\end{block}
+		\end{frame}
+
 		\begin{frame}%[t]
-		\frametitle{Como fazemos no mundo atual?}
-			\begin{itemize}
-				\item Somos acustumados a pensar de forma serial
-				\item Fazemos programas ``seriais''
+		\frametitle{Podemos ressaltar:}
+			\begin{itemize}%[<-+>]
+				\item Voltado a serviços: \textbf{IaaS}, \textbf{PaaS}, \textbf{SaaS} ...
+				\item Mais usado da industria, bem menos definido
+				\item Pay-as-you-go (on demand) ?
+				\item Recursos infinitos e elasticos ?
+				\item Sem padrões bem definidos
+				\item Virtualização bem mais usada
 			\end{itemize}
-			\begin{figure}
-			\centering
-				\includegraphics[scale=0.2]{./figuras/exemplo_programa_serial.png}
-				\caption{Exemplo de programa serial}
-			\end{figure}
 		\end{frame}
 
-		\begin{frame}%[t]
-		\frametitle{Vamos fazer um grafo...}
-			\begin{figure}
-			\centering
-				\includegraphics[scale=0.2]{./figuras/grafo_programa_serial.png}
-				\caption{Grafo de ações seriais}
-			\end{figure}
-		\end{frame}
+	\subsection{Projetos}
 
-	\subsection{Paralelo}
 		\begin{frame}%[t]
-		\frametitle{Como fazemos no mundo real?}
-			\begin{itemize}[<-+>]
-				\item Apesar de ser facil de imaginar em serial, o mundo é paralelo
-				\item O numero de processadores cresce mais que a capacidade de processamento
-				\item O custo de paralelizar é menor do que adiquirir um recurso não paralelizado
-				\item Hardware cada vez mais feito com arquitetura paralela
-				\item Se você faz programas seriais, você esta deixando recurso ocioso
+			\begin{itemize}%[<-+>]
+				\item \textbf{Nimbus}
+				\item \textbf{OpenStack}
+				\item \textbf{OpenNebula}
+				\item \textbf{Amazon}
 			\end{itemize}
-% Seria interessante colocar um exemplo?
-% Qual exemplo seria "ditatico" para aqui?
-%			\begin{figure}
-%			\centering
-%				\includegraphics[scale=0.2]{./figuras/exemplo_programa_paralelo.png}
-%				\caption{Exemplo de programa paralelo}
-%			\end{figure}
-		\end{frame}
-
-		\begin{frame}%[t]
-		\frametitle{Vamos fazer um grafo...}
-			\begin{figure}
-			\centering
-				\includegraphics[scale=0.2]{./figuras/grafo_programa_paralelo.png}
-				\caption{Grafo de ações paralelo }
-			\end{figure}
-		\end{frame}
-
-		\begin{frame}%[t]
-		\frametitle{Vamos comparar os grafos...}
-			\begin{figure}
-			\centering
-				\includegraphics[scale=0.2]{./figuras/grafo_programa_paralelo_vs_serial.png}
-			\end{figure}
 		\end{frame}
 
 \section{Comparando}
-
-
-\section{Refs}
 	\begin{frame}%[t]
-	\frametitle{Vamos comparar os grafos...}
-		\bibliography{Refs}{}
-%		\bibliographystyle{plain}
+%	\frametitle{Cloud vs Grid}
+	\begin{block}{Cloud}
+		\begin{itemize}%[<-+>]
+			\item Usa muito como padrão o \textbf{Amazon}
+			\item Mais integrada a virtualização
+			\item Voltado a industria, a venda de serviço
+			\item Começou pensando em \textbf{IaaS}, pode suportar \textbf{PaaS} e \textbf{SaaS}
+			\item Emgloba grid, por ser muito generico
+		\end{itemize}
+	\end{block}
+
+%	\begin{frame}%[t]
+	\begin{block}{Grid}
+		\begin{itemize}%[<-+>]
+			\item Padrões bem mais definidos, por isso subconjunto de cloud
+			\item Menos integrado a virtualização, mas presente
+			\item Mais de origem academica, a gerenciar recursos compartilhados
+			\item Começou pensando em \textbf{PaaS} e \textbf{SaaS}, pode suportar \textbf{IaaS}
+		\end{itemize}
+	\end{block}
 	\end{frame}
+
+	\begin{frame}%[t]
+	\frametitle{Cloud vs Grid: Questão de ponto de vista}
+		\begin{figure}
+		\centering
+			\includegraphics[scale=0.29]{./figuras/grid-nodes.pdf}
+			\includegraphics[scale=0.29]{./figuras/cloud-nodes.pdf}
+		\end{figure}
+	\end{frame}
+
+%%\section{Refs}
+%%	\begin{frame}%[t]
+%%	\frametitle{Vamos comparar os grafos...}
+%%		\bibliography{Refs}{}
+%%		\bibliographystyle{plain}
+%%	\end{frame}
 
 
 
@@ -198,4 +211,6 @@
 	\end{figure}
 \end{frame}
 \end{document}
+
+% http://www.slideshare.net/rsmontero/cloud-and-grids
 
