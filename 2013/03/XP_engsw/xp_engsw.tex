@@ -54,6 +54,115 @@ Vinícius dos Santos Oliveira}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{XP (eXtreme Programming)}
+
+\subsection{Visão Geral}
+
+\begin{frame}
+  \frametitle{Visão Geral quanto ao tempo}
+  \begin{figure}
+    \centering
+    \makebox[\textwidth]{\includegraphics[width=\paperwidth]{./figuras/visao_geral_tempo.png}}
+  \end{figure}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Visão geral}
+  \begin{itemize}%[<+->]
+  \item Releases
+    \begin{block}{}
+      Levam meses, são compostas de iterações
+    \end{block}
+  \item Iterações
+    \begin{block}{}
+      São periodos de poucas semanas(tipicamente, de 1 a 4 semanas), são compostas de tarefas
+    \end{block}
+  \item Tarefas
+    \begin{block}{}
+      São atividades basicas, devem durar idealmente 1 dia de trabalho, mas de vez em quando duram um pouco mais.
+    \end{block}
+  \end{itemize}
+\end{frame}
+
+
+\subsection{Releases}
+
+\begin{frame}
+%  \frametitle{Releases}
+  \begin{figure}
+    \centering
+%    \makebox[\textwidth]{\includegraphics[width=\textwidth]{./figuras/ciclo_release.png}}
+%    \makebox[\textwidth]{\includegraphics[scale=0.2]{./figuras/ciclo_release.png}}
+    \makebox{\includegraphics[scale=0.2]{./figuras/ciclo_release.png}}
+  \end{figure}
+  \begin{itemize}%[<+->]
+    \item Refletir sobre o problemas, identificar e/ou propor soluções
+    \item Cliente e equipe se reúnem para definir os temas
+    \item Cliente controla o escopo, decidindo o que fazer ou adiar
+    \item Normalmente, \textbf{3 meses}
+  \end{itemize}
+\end{frame}
+
+\subsection{Iterações}
+
+\begin{frame}
+%  \frametitle{Iterações}
+  \begin{itemize}%[<+->]
+    \item Incremento projetado, programado, testado e entregue
+    \item Ponto de avaliação, re-avaliação, feedback, interação com a satisfação do cliente e mudanças.
+    \item Esse codigo vai ser aprimorado nas proximas iterações, mas é codigo funcional
+    \item No inicio, Jogo do planejamento
+    \item No final, o cliente tem a oportunidade de utilizar e avaliar o que foi produzido
+    \item Normalmente, \textbf{1 semana}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+%  \frametitle{Iterações}
+  \begin{figure}
+    \centering
+    \makebox[\textwidth]{\includegraphics[width=\paperwidth]{./figuras/ciclo_iteracoes.png}}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Jogo do planejamento}
+    \begin{block}{O cliente}
+      \begin{itemize}%[<+->]
+        \item Define as histórias;
+        \item Decide qual o valor de negócio de cada história
+        \item Decide que histórias serão construídas no release
+      \end{itemize}
+    \end{block}
+    \pause
+    \begin{block}{Os programadores}
+      \begin{itemize}%[<+->]
+        \item Estimam quanto tempo será necessário para construir cada história
+        \item Advertem o cliente sobre riscos técnicos significativos
+        \item Medem o progresso da equipe para fornecer um orçamento geral para o cliente
+      \end{itemize}
+    \end{block}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Final da Iteração}
+  \begin{itemize}%[<+->]
+    \item Testes de aceitação
+    \item Integra de de software para o cliente
+    \item Cliente tem oportunidade de testar e avaliar
+  \end{itemize}
+  \begin{block}{}
+Com base nos resultados, reúne-se novamente com a equipe e estabelece novas prioridades de acordo com o que acabou de aprender com o software e com aquilo que já imaginava ser necessário produzir ao longo do restante do projeto.
+  \end{block}
+\end{frame}
+
+
+
+\subsection{Atividades}
+
+
+
 \begin{frame}
   \frametitle{Visão de alto nível}
   \begin{itemize}%[<+->]
@@ -77,7 +186,6 @@ Vinícius dos Santos Oliveira}
   \end{itemize}
 \end{frame}
 
-\subsection{Atividades}
 \begin{frame}
   \frametitle{Programação}
   \begin{itemize}
@@ -226,20 +334,14 @@ um incremento de software útil que é projetado, programado, testado, integrado
 1) Jogo do  planejamento
 
 O cliente:
-
-¿ Define as histórias;
-
-¿ Decide qual o valor de negócio de cada história
-
-¿ Decide que histórias serão construídas no release.
+* Define as histórias;
+* Decide qual o valor de negócio de cada história
+* Decide que histórias serão construídas no release.
 
 Os programadores:
-
-¿ Estimam quanto tempo será necessário para construir cada história;
-
-¿ Advertem o cliente sobre riscos técnicos significativos
-
-¿ Medem o progresso da equipe para fornecer um orçamento geral para o cliente (BECK & FOWLER, 2001, p.40, tradução nossa).
+* Estimam quanto tempo será necessário para construir cada história;
+* Advertem o cliente sobre riscos técnicos significativos
+* Medem o progresso da equipe para fornecer um orçamento geral para o cliente (BECK & FOWLER, 2001, p.40, tradução nossa).
 
 O produto são User story
 
