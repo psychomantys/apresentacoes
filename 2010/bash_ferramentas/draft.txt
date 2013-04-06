@@ -1,0 +1,28 @@
+
+find
+
+tr
+
+cut
+
+sort
+
+uniq
+
+basename
+
+dirname
+
+xargs
+
+sed ?
+
+greps ?
+
+set ?
+
+exec ?
+
+getopt ?
+
+

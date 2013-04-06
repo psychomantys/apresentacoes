@@ -1,0 +1,46 @@
+
+Implementação e problemas em cluster de computação de alto desempenho e o caso do site do LCCV/UFAL/Gradebr
+
+
+Introdução
+
+
+	Para um cluster de alto desempenho, é necessário que cada aspecto da maquina seja implementado visando obter a maior desempenho possível de todo o hardware.
+
+	Com parte do projeto Gradebr, o Laboratório de Computação Cientifica e Visualização(LCCV) entrou com o desafio de ter um cluster que tivesse todos os recursos para ser considerado um cluster de alto desempenho de grande porte, planejando, adquirindo e usando tecnologias e resolvendo problemas que esse tipo de sistema de grande porte apresenta.
+
+
+
+Metodologia
+
+
+
+	O cluster do Gradebr teve muitos problemas devido a sua complexidade, seu tamanho e as tecnologias novas usadas para obter o maior desempenho possível.
+
+	Na parte de rede, alem da topologia hipercubo 4D, também foi usado Infinição(IB), tecnologia de interconexão que é feita para sistemas de alto desempenho.
+
+	Na parte de armazenamento, foi usado o lustrefs, um sistema de arquivo em rede e paralelo que maximiza o acesso a arquivo.
+
+	Alem de equipamentos de alta performance e designs para obter grande desempenho, todos esses componentes acabaram gerando problemas que em sistemas normais não existem. Então, soluções no LCCV foram desenvolvidas para que esses desafios fossem contornados, e que o sistema ficasse gerenciável de forma fácil.
+
+
+
+Conclusão
+
+
+
+	Foi implementado um sistema de alto desempenho com sucesso e que mantem boa relação de seu desempenho.
+
+	Todos os problemas e dificuldades devido a complexidade do sistema foram contornadas, e o sistema rodou os benchmarks linpack e IOR, que são teste de performance de cluster de alto desempenho, e obteve uma eficiência nos teste que satisfazem com os equipamentos e o que a gente esperava.
+
+
+
+Discussão
+
+
+	Apesar de ter um desempenho ótimo, existem algumas melhorias que podem ser testadas para aumentar a performance do sistema, seja mudando a topologia, as configurações dos discos de armazenamento ou alguns processos auxiliares.
+
+	Claro, algumas mudanças implicam em algumas perdas em alguns sentidos, mas isso pode otimizar e personalizar o sistema para as necessidades que do site LCCV precisa.
+
+
+
