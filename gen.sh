@@ -43,7 +43,7 @@ mkindex(){
 }
 
 ndx=ls_index.html
-find "$1" -type d | while read dir ; do
+find "$1" -type d | grep -v '/reveal.js/' | while read dir ; do
 (
 	mkindex "${dir}" > "${dir}/${ndx}"
 	## where mkindex is a script to create index file
