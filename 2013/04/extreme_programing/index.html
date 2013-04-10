@@ -20,8 +20,13 @@
 	<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
 
 	<!-- If the query includes 'print-pdf', use the PDF print sheet -->
-	<script>
+	<script type='text/javascript'>
 		document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		function set_revealjs_by_element( element, reveal_id_name ) {
+			var p={};
+			p[reveal_id_name]=element.value;
+			Reveal.configure( p );
+		}
 	</script>
 
 	<!--[if lt IE 9]>
@@ -58,6 +63,65 @@ Referencias ... Como fazer ....
 		<p>
 		<small>Vinícius dos Santos Oliveira</small>
 		</p>
+		<p>
+		<select onChange='set_revealjs_by_element(this, "theme")'>
+			<option value='sky'>Sky</option>
+			<option value='beige'>Beige</option>
+			<option value='simple'>Simple</option>
+			<option value='serif'>Serif</option>
+			<option value='night'>Night</option>
+			<option value='default'>Default</option>
+		</select>
+		<select onChange='set_revealjs_by_element(this, "transition")'>
+			<option value='cube'>Cube</option>
+			<option value='page'>Page</option>
+			<option value='concave'>Concave</option>
+			<option value='zoom'>Zoom</option>
+			<option value='linear'>Linear</option>
+			<option value='fade'>Fade</option>
+			<option value='none'>None</option>
+			<option value='default'>Default</option>
+		</select>
+		</p>
+	</section>
+
+	<section>
+	<section>
+		<p><img alt="Logo XP" width=400 src="figuras/logo_legal.jpg"></p>
+		<p><ul>
+			<li>
+			1997, surgiu o <b>Extreme Programing</b>
+			</li>
+			<li>
+			2001/02, em Utah foi criado o <b>Manifesto Ágil</b>
+			</li>
+		</ul></p>
+	</section>
+
+	<section>
+		<h2>Manifesto Ágil</h2>
+		<p>O manifesto estabelece um conjunto de valores que são adotados nos projetos ágeis:</p>
+		<p><ul>
+			<li>
+			<b>Indivíduos e interações</b> ao invés de processos e ferramentas
+			</li>
+			<li>
+			<b>Software funcionando</b> ao invés de documentação abrangente
+			</li>
+			<li>
+			<b>Colaboração com o cliente</b> ao invés de negociação de contratos
+			</li>
+			<li>
+			<b>Responder a mudanças</b> ao invés de seguir um plano
+			</li>
+		</ul></p>
+	</section>
+
+	<section>
+		<h2>Iterativo e Incremental</h2>
+		<p><img alt="Logo XP" width=400 src="figuras/Incremental_Iterative_Monalisa.jpg"></p>
+	</section>
+
 	</section>
 
 	<section>
@@ -141,41 +205,6 @@ Referencias ... Como fazer ....
 	</section>
 
 	<section>
-		<h2>Jogo do Planejamento</h2>
-		<p>
-		O Cliente
-		<ul>
-			<li>
-			Define as histórias(<b>User Story</b>)
-			</li>
-			<li>
-			Decide qual o <b>valor de negócio</b> de cada história
-			</li>
-			<li>
-			Decide que histórias serão construídas no release
-			</li>
-		</ul>
-		</p>
-		<hr>
-		<div class="fragment">
-		<p>
-		Os Programadores
-		<ul>
-			<li>
-			Estimam <b>quanto tempo</b> será necessário para construir cada história, com base em <b>experiencias passadas</b>
-			</li>
-			<li>
-			Advertem o cliente sobre <b>riscos técnicos significativos</b>
-			</li>
-			<li>
-			Medem o <b>progresso da equipe</b> para fornecer um orçamento geral para o cliente
-			</li>
-		</ul>
-		</p>
-		</div>
-	</section>
-
-	<section>
 		<h2>Final da Iteração</h2>
 		<ul>
 		<li>
@@ -248,6 +277,34 @@ Referencias ... Como fazer ....
 	</section>
 	<section>
 		<h2>Simplicidade</h2>
+		<img alt="Frequencia de funcionalidades usadas" src="figuras/utilizacao_funcionalidades.jpg">
+		<ul>
+			<li>
+			Tanto os <b>clientes</b> e <b>desenvolvedores</b> não sabem sobre as funcionalidades futuras
+			</li>
+			<li>
+			Concentrar-se em fazer bem feito as funcionalidades prioritarias da iteração atual
+			</li>
+			<li>
+			Desenvolvimento é uma tarefa complexa, melhor seguir um metodo menos complexo que a tarefa
+			</li>
+		</ul>
+<!--		<p>Segundo o <a href="http://www.standishgroup.com/">Standish Group</a> em 2000, 72% projetos falharam devido:</p>
+		<ul>
+			<li>
+			Consomem mais recursos que o orçado
+			</li>
+			<li>
+			Consomem mais tempo que o estimado
+			</li>
+			<li>
+			Não entregam o que foi combinado
+			</li>
+			<li>
+			Todas as alternativas acima em conjunto
+			</li>
+		</ul>
+		-->
 	</section>
 	<section>
 		<h2>Feedback</h2>
@@ -336,6 +393,41 @@ Referencias ... Como fazer ....
 		Software funcionando em primeiro lugar
 		</li>
 		</ul>
+	</section>
+
+	<section>
+		<h2>Jogo do Planejamento</h2>
+		<p>
+		O Cliente
+		<ul>
+			<li>
+			Define as histórias(<b>User Story</b>)
+			</li>
+			<li>
+			Decide qual o <b>valor de negócio</b> de cada história
+			</li>
+			<li>
+			Decide que histórias serão construídas no release
+			</li>
+		</ul>
+		</p>
+		<hr>
+		<div class="fragment">
+		<p>
+		Os Programadores
+		<ul>
+			<li>
+			Estimam <b>quanto tempo</b> será necessário para construir cada história, com base em <b>experiencias passadas</b>
+			</li>
+			<li>
+			Advertem o cliente sobre <b>riscos técnicos significativos</b>
+			</li>
+			<li>
+			Medem o <b>progresso da equipe</b> para fornecer um orçamento geral para o cliente
+			</li>
+		</ul>
+		</p>
+		</div>
 	</section>
 
 	<section>
@@ -587,44 +679,8 @@ Referencias ... Como fazer ....
 	</section>
 
 <!--
-Kent Beck em 1997, surgiu o XP.
-
-2001, fevereiro, utah:
-
-       Surgiu o manifesto agil
-
-manifesto agil:
-
-O manifesto estabelece um conjunto de valores que são adotados nos projetos ágeis:
-
-¿ Indivíduos e interações ao invés de processos e ferramentas;
-
-¿ Software funcionando ao invés de documentação abrangente;
-
-¿ Colaboração com o cliente ao invés de negociação de contratos;
-
-¿ Responder a mudanças ao invés de seguir um plano.
-
-
 
 XP:
-
-
-
-O que são os valores?
-
-%http://improveit.com.br/xp/valores
-
-    Comunicação
-
-    Coragem
-
-    Feedback
-
-    Respeito
-
-    Simplicidade
-
 
 O que são praticas?
 
@@ -637,46 +693,12 @@ O produto são User story
 %http://www.slideshare.net/MCPTECNOLOGIA/user-stories-5564287
 %http://www.slideshare.net/dwildt/conhecendo-o-extreme-programming
 
-
-
-
-	<section id="transitions">
-		<h2>Transition Styles</h2>
-		<p>
-		You can select from different transitions, like: <br>
-		<a href="?transition=cube#/transitions">Cube</a> -
-		<a href="?transition=page#/transitions">Page</a> -
-		<a href="?transition=concave#/transitions">Concave</a> -
-		<a href="?transition=zoom#/transitions">Zoom</a> -
-		<a href="?transition=linear#/transitions">Linear</a> -
-		<a href="?transition=fade#/transitions">Fade</a> -
-		<a href="?transition=none#/transitions">None</a> -
-		<a href="?#/transitions">Default</a>
-		</p>
-	</section>
-
-	<section id="themes">
-		<h2>Themes</h2>
-		<p>
-		Reveal.js comes with a few themes built in: <br>
-		<a href="?theme=sky#/themes">Sky</a> -
-		<a href="?theme=beige#/themes">Beige</a> -
-		<a href="?theme=simple#/themes">Simple</a> -
-		<a href="?theme=serif#/themes">Serif</a> -
-		<a href="?theme=night#/themes">Night</a> -
-		<a href="?#/themes">Default</a>
-		</p>
-		<p>
-		<small>
-		* Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
-		</small>
-		</p>
-	</section>
 -->
 
 	<section id="presentation_end">
 		<h1>THE END</h1>
 		<p>By <a href="https://about.me/psycho_mantys">Psycho Mantys</a> / <a href="http://twitter.com/psycho_mantys">@psycho_mantys</a></p>
+		<p><a href="#/presentation_begin">Begin</a></p>
 	</section>
 
 	</div>
@@ -694,7 +716,7 @@ O produto são User story
 			history: true,
 			center: true,
 
-			theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+			theme: Reveal.getQueryHash().theme || 'night', // available themes are in /css/theme
 			transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
 			// Optional libraries used to extend on reveal.js
