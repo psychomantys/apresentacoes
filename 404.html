@@ -6,6 +6,21 @@
 		<title>404!!</title>
 		<link rel="stylesheet" href="front_page/stylesheets/styles.css">
 		<link rel="stylesheet" href="front_page/stylesheets/pygment_trac.css">
+
+	<script type="text/javascript" charset="utf-8">
+//<![CDATA[
+		var random_404_image_urls = [
+			 "front_page/images/404_mario.gif"
+			,"front_page/images/404_vortexcultural.jpg"
+		];
+		function get_random_404_image(){
+			return random_404_image_urls[Math.floor(Math.random()*random_404_image_urls.length)];
+		}
+		function set_random_404_image( elem ){
+			elem.setAttribute('src',random_404_image_urls[Math.floor(Math.random()*random_404_image_urls.length)]);
+		}
+//]]>
+	</script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 		<script src="front_page/javascripts/respond.js"></script>
 		<!--[if lt IE 9]>
@@ -15,33 +30,33 @@
 		<link rel="stylesheet" href="front_page/stylesheets/ie.css">
 		<![endif]-->
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
+		<script src="front_page/javascripts/respond.js"></script>
 	</head>
 	<body>
+		<!--
 		<div id="header">
-			<nav>
-			<li class="fork"><a href="https://github.com/psychomantys/apresentacoes">View On GitHub</a></li>
-			<li class="downloads"><a href="https://github.com/psychomantys/apresentacoes/zipball/master">ZIP</a></li>
-			<li class="downloads"><a href="https://github.com/psychomantys/apresentacoes/tarball/master">TAR</a></li>
-			<li class="title">DOWNLOADS</li>
-			</nav>
-		</div><!-- end header -->
+		</div>
+		end header -->
 
 		<div class="wrapper">
 
-			<section>
-			<a href="." style="display:block;text-align:center;"><img src="front_page/images/404_mario.gif" ></a>
+			<h1 style="display:block;text-align:center;">404</h1>
+			<a href="http://psychomantys.github.com" style="display:block;text-align:center;"><img id="404_image"/></a>
 			<section>
 			<div id="title">
-				<h1>404</h1>
 				<hr>
 				<span class="credits left">Project maintained by <a href="https://github.com/psychomantys">psychomantys</a></span>
 				<span class="credits right"><a href="https://about.me/psycho_mantys">About Me</a></span>
 			</div>
-			
-
+			</section>
 		</div>
 		<!--[if !IE]><script>fixScale(document);</script><![endif]-->
+
+	<script type="text/javascript" charset="utf-8">
+//<![CDATA[
+		set_random_404_image( document.getElementById('404_image') );
+//]]>
+	</script>
 
 	</body>
 </html>
