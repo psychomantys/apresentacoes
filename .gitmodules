@@ -1,3 +1,7 @@
 [submodule "reveal.js"]
 	path = 2013/04/extreme_programing/reveal.js
 	url = https://github.com/psychomantys/reveal.js.git
+
+[submodule "2013/05/checksum/reveal.js"]
+	path = 2013/05/checksum/reveal.js
+	url = https://github.com/psychomantys/reveal.js.git
