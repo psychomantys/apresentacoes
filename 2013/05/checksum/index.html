@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>eXtreme Programming</title>
+	<title>Checksum</title>
 
 	<meta name="description" content="Uma apresentação sobre a metodologia de desenvolvimento eXtreme Programing">
 	<meta name="author" content="Psycho Mantys">
@@ -49,19 +49,21 @@ Referencias ... Como fazer ....
 	<div class="slides">
 
 	<section id="presentation_begin">
-		<h1>XP</h1>
-		<h3>eXtreme Programming</h3>
+		<h1>Checksum</h1>
+		<h3>Detecção e Correção de Erros</h3>
 		<p>
-		<small>Created by <a href="https://about.me/psycho_mantys">Psycho Mantys</a> / <a href="http://twitter.com/psycho_mantys">@psycho_mantys</a></small>
+		<small>Created by </small>
 		</p>
 		<p>
-		<small>Dielson Sales de Carvalho</small>
+		<small><a href="https://about.me/psycho_mantys">Psycho Mantys</a> / <a href="http://twitter.com/psycho_mantys">@psycho_mantys</a></small>
 		</p>
 		<p>
-		<small>Priscylla Silva</small>
+		<small>Poliana Belo</small>
 		</p>
 		<p>
-		<small>Vinícius dos Santos Oliveira</small>
+		<small><a href="http://about.me/priscylla.silva">Priscylla Silva</a> / <a href="http://twitter.com/killpiu">@killpiu</a></small>
+		</p>
+		<p>
 		</p>
 		<p>
 		<select onChange='set_revealjs_by_element(this, "theme")'>
@@ -86,557 +88,46 @@ Referencias ... Como fazer ....
 	</section>
 
 	<section>
-	<section>
-		<p><img alt="Logo XP" width=400 src="figuras/logo_legal.jpg"></p>
-		<p><ul>
-			<li>
-			1997, surgiu o <b>Extreme Programing</b>
-			</li>
-			<li>
-			2001/02, em Utah foi criado o <b>Manifesto Ágil</b>
-			</li>
-		</ul></p>
-	</section>
 
-	<section>
-		<h2>Manifesto Ágil</h2>
-		<p>O manifesto estabelece um conjunto de valores que são adotados nos projetos ágeis:</p>
-		<p><ul>
-			<li>
-			<b>Indivíduos e interações</b> ao invés de processos e ferramentas
-			</li>
-			<li>
-			<b>Software funcionando</b> ao invés de documentação abrangente
-			</li>
-			<li>
-			<b>Colaboração com o cliente</b> ao invés de negociação de contratos
-			</li>
-			<li>
-			<b>Responder a mudanças</b> ao invés de seguir um plano
-			</li>
-		</ul></p>
-	</section>
-
-	<section>
-		<h2>Iterativo e Incremental</h2>
-		<p><img alt="Logo XP" width=400 src="figuras/Incremental_Iterative_Monalisa.jpg"></p>
-	</section>
-
-	</section>
-
-	<section>
-		<h2>Visão geral quanto ao tempo</h2>
-		<ul>
-			<li><b>
-			Releases
-			</b></li>
-			<p><i>
-			<b>Levam meses</b>, são compostas de <b>iterações</b>
-			</i></p>
-			<li><b>
-			Iterações
-			</b></li>
-			<p><i>
-			São periodos de poucas semanas(tipicamente, de <b>1 a 4 semanas</b>), são compostas de <b>tarefas</b>
-			</i></p>
-			<li><b>
-			Tarefas
-			</b></li>
-			<p><i>
-			São <b>atividades basicas</b>, devem durar idealmente <b>1 dia de trabalho</b>, mas normalmente duram mais
-			</i></p>
-		</ul>
-	</section>
-
-	<section>
-		<h3>Visão geral quanto ao tempo</h3>
-		<img alt="Visão geral quanto ao tempo" src="figuras/visao_geral_tempo.png">
-	</section>
-
-	<section>
-		<h1>Releases</h1>
-	</section>
-
-	<section>
-		<h3>Releases</h3>
-		<img alt="Ciclo Releases" src="figuras/ciclo_release.png"> 
-		<ul>
-			<li>
-			<b>Refletir</b> sobre o problemas, <b>identificar</b> e/ou <b>propor soluções</b>
-			</li>
-			<li>
-			<b>Cliente</b> e <b>equipe</b> se reúnem para definir os temas
-			</li>
-			<li>
-			Cliente controla o <b>escopo</b>, decidindo o que <b>fazer</b> ou <b>adiar</b>
-			</li>
-			<li>
-			Normalmente, <b>3 meses</b>
-			</li>
-		</ul>
-	</section>
-
-	<section>
-		<h1>Iterações</h1>
-	</section>
-
-	<section>
-		<img alt="Ciclo Iterações" src="figuras/ciclo_iteracoes.png"> 
-		<ul>
-			<li>
-			Incremento <b>projetado</b>, <b>programado</b>, <b>testado</b> e <b>entregue</b>
-			</li>
-			<li>
-			Ponto de <b>avaliação</b>, <b>re-avaliação</b>, <b>feedback</b>, interação com a <b>satisfação do cliente</b> e <b>mudanças</b>
-			</li>
-			<li>
-			Esse codigo vai ser <b>aprimorado</b> nas proximas iterações, mas é <b>codigo funcional</b>
-			</li>
-			<li>
-			No inicio, <b>Jogo do planejamento</b>
-			</li>
-			<li>
-			No final, o cliente tem a oportunidade de <b>utilizar</b> e <b>avaliar</b> o que foi produzido
-			</li>
-			<li>
-			Normalmente, <b>1 semana</b>
-			</li>
-		</ul>
-	</section>
-
-	<section>
-		<h2>Final da Iteração</h2>
-		<ul>
-		<li>
-		Testes de aceitação
-		</li>
-		<li>
-		Entrega de <b>software para o cliente</b>
-		</li>
-		<li>
-		<b>Cliente</b> tem oportunidade de <b>testar</b> e <b>avaliar</b>
-		</li>
-		</ul>
-		<hr>
-		<p>Com base nos resultados, reúne-se novamente com a equipe e estabelece novas prioridades de acordo com o que acabou de aprender com o software e com aquilo que já imaginava ser necessário produzir ao longo do restante do projeto</p>
-	</section>
-
-	<section id="Tarefas">
-		<h1>Tarefas</h1>
-	</section>
-
-	<section>
-		<ul>
-		<li>
-		Compomente basico
-		</li>
-		<li>
-		É a implementação de uma <b>User story</b> pelo <b>par de programadores</b>
-		</li>
-		<li>
-		Testes!
-		</li>
-		<li>
-		Executada de acordo com os <b>valores</b> e <b>Práticas do XP</b>
-		</li>
-		</ul>
-		<p><img alt="Ciclo geral de tarefas, exemplo" src="figuras/ciclo_geral_tarefas.png"></p>
-		<small>Exemplo de ciclo</small>
-	</section>
-
-	<section id="Valores">
-		<h1>Valores</h1>
-	</section>
-
-	<section>
-	<section>
-		<p>
-		São o conjunto de valores que a equipe deve seguir, praticar e se comportar em grupo para usar o XP
-		</p>
-		<ul>
-		<li>
-		Comunicação
-		</li>
-		<li>
-		Simplicidade
-		</li>
-		<li>
-		Feedback
-		</li>
-		<li>
-		Coragem
-		</li>
-		<li>
-		Respeito
-		</li>
-		</ul>
-	</section>
-
-	<section>
-		<h2>Comunicação</h2>
-	</section>
-	<section>
-		<h2>Simplicidade</h2>
-		<img alt="Frequencia de funcionalidades usadas" src="figuras/utilizacao_funcionalidades.jpg">
-		<ul>
-			<li>
-			Tanto os <b>clientes</b> e <b>desenvolvedores</b> não sabem sobre as funcionalidades futuras
-			</li>
-			<li>
-			Concentrar-se em fazer bem feito as funcionalidades prioritarias da iteração atual
-			</li>
-			<li>
-			Desenvolvimento é uma tarefa complexa, melhor seguir um metodo menos complexo que a tarefa
-			</li>
-		</ul>
-<!--		<p>Segundo o <a href="http://www.standishgroup.com/">Standish Group</a> em 2000, 72% projetos falharam devido:</p>
-		<ul>
-			<li>
-			Consomem mais recursos que o orçado
-			</li>
-			<li>
-			Consomem mais tempo que o estimado
-			</li>
-			<li>
-			Não entregam o que foi combinado
-			</li>
-			<li>
-			Todas as alternativas acima em conjunto
-			</li>
-		</ul>
--->
-	</section>
-	<section>
-		<h2>Feedback</h2>
-	</section>
-	<section>
-		<h2>Coragem</h2>
-		<p><img alt="Não fazer..." width=400 src="figuras/coragem.gif"></p>
-	</section>
-	<section>
-		<h2>Respeito</h2>
-	</section>
-	</section>
-
-	<section id="Praticas">
-		<h1>Práticas do XP</h1>
-	</section>
-
-	<section>
-	<section>
-		<ul>
-		<li>
-		Cliente Presente
-		</li>
-		<li>
-		Jogo do Planejamento
-		</li>
-		<li>
-		Stand Up Meeting
-		</li>
-		<li>
-		Programação em Pares
-		</li>
-		<li>
-		Código Coletivo
-		</li>
-		<li>
-		Código Padronizado
-		</li>
-		<li>
-		Design Simples
-		</li>
-		<li>
-		Desenvolvimento Orientado a Testes
-		</li>
-		<li>
-		Refatoração
-		</li>
-		<li>
-		Releases Curtos
-		</li>
-		<li>
-		Metáfora
-		</li>
-		<li>
-		Ritmo Sustentável
-		</li>
-		</ul>
-	</section>
-
-	<section>
-		<h2>Cliente Presente</h2>
-		<ul>
-		<li>
-		Parte da equipe
-		</li>
-		<li>
-		Controla as tarefas de cada release baseadas no valor de negócio
-		</li>
-		<li>
-		Feedback imediato
-		</li>
-		</ul>
-	</section>
-
-	<section>
-		<h2>
-		Jogo do Planejamento
-		</h2>
-		<ul>
-		<li>
-		Mais importante primeiro
-		</li>
-		<li>
-		Necessidades concretas
-		</li>
-		<li>
-		Software funcionando em primeiro lugar
-		</li>
-		</ul>
-	</section>
-
-	<section>
-		<h2>Jogo do Planejamento</h2>
-		<p>
-		O Cliente
-		<ul>
-			<li>
-			Define as histórias(<b>User Story</b>)
-			</li>
-			<li>
-			Decide qual o <b>valor de negócio</b> de cada história
-			</li>
-			<li>
-			Decide que histórias serão construídas no release
-			</li>
-		</ul>
-		</p>
-		<hr>
-		<div class="fragment">
-		<p>
-		Os Programadores
-		<ul>
-			<li>
-			Estimam <b>quanto tempo</b> será necessário para construir cada história, com base em <b>experiencias passadas</b>
-			</li>
-			<li>
-			Advertem o cliente sobre <b>riscos técnicos significativos</b>
-			</li>
-			<li>
-			Medem o <b>progresso da equipe</b> para fornecer um orçamento geral para o cliente
-			</li>
-		</ul>
-		</p>
-		</div>
-	</section>
-
-	<section>
-		<h2>Standup Meeting</h2>
-		<ul>
-		<li>
-		Resumir o que todos fizeram
-		</li>
-		<li>
-		Definir a atividade do dia
-		</li>
-		</ul>
-	</section>
-
-
-	<section>
-		<h2>
-		Programação em Par
-		</h2>
-		<ul>
-		<li>
-		Menos erros
-		</li>
-		<li>
-		Força o uso dos padrões
-		</li>
-		<li>
-		Melhores soluções
-		</li>
-		<li>
-		Evita "ilhas de conhecimento"
-		</li>
-		</ul>
-	</section>
-
-	<section>
-		<h2>
-		Código Coletivo
-		</h2>
-		<ul>
-		<li>
-		Todos têm acesso a tudo
-		</li>
-		<li>
-		Ninguém é "dono do código"
-		</li>
-		<li>
-		Revezamento de pares
-		</li>
-		</ul>
-	</section>
-
-	<section>
-		<h2>
-		Código Padronizado
-		</h2>
-		<ul>
-		<li>
-		Fácil de entender
-		</li>
-		<li>
-		Fácil de modificar
-		</li>
-		<li>
-		Pressão do par
-		</li>
-		</ul>
-	</section>
-
-	<section>
-		<h2>
-		Design Simples
-		</h2>
-		<ul>
-		<li>
-		Desejos do usuário:
+		<section>
+			<h2>Algoritmo do Checksum</h2>
+			<p>Objetivo:</p>
+			<p>Detectar “erros” (ex.: bits trocados) num segmento transmitido (nota: usado apenas na camada de transporte)</p>
+		</section>
+		<section>
+			<h2>Algoritmo do Checksum</h2>
+			<p><b>Transmissor:</b></p>
 			<ul>
-			<li>
-			Fazer a coisa certa
-			</li>
-			<li>
-			Funcionar
-			</li>
-			<li>
-			Fácil de usar
-			</li>
-			<li>
-			Possa ser modificado
-			</li>
+				<li>Trata o conteúdo da mensagem como seqüências de números inteiros de 16 bits (bits de dados)</li>
+				<li>Os bits de dados são divididos em k blocos de n bits, cada um</li>
+				<li>Checksum: soma dos blocos e realiza o complemento de um</li>
+				<li>Transmissor coloca o valor do checksum no campo checksum do datagrama (UDP)</li>
 			</ul>
-		</li>
-		<li>
-		Revisão durante as iterações
-		</li>
-		<li>
-		Não tenta prever o futuro
-		</li>
-		<li>
-		Menos complexidade
-		</li>
-		</ul>
-	</section>
-
-	<section>
-		<h2>
-		Desenvolvimento Orientado a Testes
-		</h2>
-		<ul>
-		<li>
-		Defeitos custam caro
-		</li>
-		<li>
-		Testes são feitos antes da imprelentação
-		</li>
-		<li>
-		Testes são rodados sempre que o código é modificado
-		</li>
-		<li>
-		Quanto mais cedo um erro é identificado, melhor
-		</li>
-		<li>
-		Precisa sempre passar no teste de aceitação
-		</li>
-		<li>
-		Resolver, depois limpar
-		</li>
-		</ul>
-	</section>
-
-	<section>
-		<h2>
-		Refatoração
-		</h2>
-		<ul>
-		<li>
-		Mudanças deterioram o projeto
-		</li>
-		<li>
-		Evitar código duplicado
-		</li>
-		<li>
-		Objetivo:
+		</section>
+		<section>
+			<h2>Algoritmo do Checksum</h2>
+			<p><b>Receptor:</b></p>
 			<ul>
-			<li>
-			Simplicidade
-			</li>
-			<li>
-			Clareza
-			</li>
-			<li>
-			Adequação ao objetivo
-			</li>
-			<li>
-			Ausência de repetição
-			</li>
-			<li>
-			Ausência de funcionalidades extras (ex: que foram removidas)
-			</li>
+				<li>Os bits recebidos são divididos em k blocos de n bits</li>
+				<li>Calcula o checksum da mensagem recebida, ou seja, soma os blocos e complementa o resultado (checksum)</li>
+				<li>Verifica se o checksum calculado:</li>
+				<ul>
+				<li>Se o checksum for zero, os dados são aceitos!- Erro NÃO detectado</li>
+				</ul>
 			</ul>
-		</li>
-		</ul>
+		</section>
+		<section>
+			<p><img alt="Exemplo Checksum" width=800 src="figuras/exemplo_checksum.png"></p>
+			<p><ul>
+				<li>
+				Usado pelos protocolos IP, TCP e UDP
+				</li>
+			</ul></p>
+		</section>
+
 	</section>
 
-	<section>
-		<h2>
-		Releases Curtos
-		</h2>
-		<ul>
-		<li>
-		Maior retorno do investimento no início
-		</li>
-		<li>
-		Bom para o cliente (melhores tomadas de decisões)
-		</li>
-		<li>
-		Bom para os desenvolvedores (verificam se o desejo do cliente realmente é atendido)
-		</li>
-		</ul>
-	</section>
 
-	<section>
-		<h2>
-		Metáfora
-		</h2>
-		<ul>
-		<li>
-		Uma só ideia
-		</li>
-		<li>
-		Integridade conceitual de todo o projeto
-		</li>
-		</ul>
-	</section>
-
-	<section>
-		<h2>
-		Ritmo Sustentável
-		</h2>
-		<ul>
-		<li>
-		Prazos cumpridos
-		</li>
-		<li>
-		Não sobrecarregar o programador
-		</li>
-		</ul>
-	</section>
-	</section>
 
 
 	<section>
