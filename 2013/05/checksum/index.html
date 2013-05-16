@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>eXtreme Programming</title>
+
+	<meta name="description" content="Uma apresentação sobre a metodologia de desenvolvimento eXtreme Programing">
+	<meta name="author" content="Psycho Mantys">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="reveal.js/css/reveal.min.css">
+	<link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
+
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+	<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+	<script type='text/javascript'>
+		document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		function set_revealjs_by_element( element, reveal_id_name ) {
+			var p={};
+			p[reveal_id_name]=element.value;
+			Reveal.configure( p );
+		}
+	</script>
+
+	<!--[if lt IE 9]>
+	<script src="reveal.js/lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+
+<!--
+TODO:
+Papeis, não tem referencias e não explica quais
+Trocar ordem do começo? Principios e valores primeiro e exemplo top-down depois?
+Revisar parte de principios, colocar figuras e desenvolver mais
+Desenvolver a parte de valores? Falta figuras...
+Referencias ... Como fazer ....
+-->
+<body>
+
+	<div class="reveal">
+	<!-- Any section element inside of this container is displayed as a slide -->
+	<div class="slides">
+
+	<section id="presentation_begin">
+		<h1>XP</h1>
+		<h3>eXtreme Programming</h3>
+		<p>
+		<small>Created by <a href="https://about.me/psycho_mantys">Psycho Mantys</a> / <a href="http://twitter.com/psycho_mantys">@psycho_mantys</a></small>
+		</p>
+		<p>
+		<small>Dielson Sales de Carvalho</small>
+		</p>
+		<p>
+		<small>Priscylla Silva</small>
+		</p>
+		<p>
+		<small>Vinícius dos Santos Oliveira</small>
+		</p>
+		<p>
+		<select onChange='set_revealjs_by_element(this, "theme")'>
+			<option value='sky'>Sky</option>
+			<option value='beige'>Beige</option>
+			<option value='simple'>Simple</option>
+			<option value='serif'>Serif</option>
+			<option value='night'>Night</option>
+			<option value='default'>Default</option>
+		</select>
+		<select onChange='set_revealjs_by_element(this, "transition")'>
+			<option value='cube'>Cube</option>
+			<option value='page'>Page</option>
+			<option value='concave'>Concave</option>
+			<option value='zoom'>Zoom</option>
+			<option value='linear'>Linear</option>
+			<option value='fade'>Fade</option>
+			<option value='none'>None</option>
+			<option value='default'>Default</option>
+		</select>
+		</p>
+	</section>
+
+	<section>
+	<section>
+		<p><img alt="Logo XP" width=400 src="figuras/logo_legal.jpg"></p>
+		<p><ul>
+			<li>
+			1997, surgiu o <b>Extreme Programing</b>
+			</li>
+			<li>
+			2001/02, em Utah foi criado o <b>Manifesto Ágil</b>
+			</li>
+		</ul></p>
+	</section>
+
+	<section>
+		<h2>Manifesto Ágil</h2>
+		<p>O manifesto estabelece um conjunto de valores que são adotados nos projetos ágeis:</p>
+		<p><ul>
+			<li>
+			<b>Indivíduos e interações</b> ao invés de processos e ferramentas
+			</li>
+			<li>
+			<b>Software funcionando</b> ao invés de documentação abrangente
+			</li>
+			<li>
+			<b>Colaboração com o cliente</b> ao invés de negociação de contratos
+			</li>
+			<li>
+			<b>Responder a mudanças</b> ao invés de seguir um plano
+			</li>
+		</ul></p>
+	</section>
+
+	<section>
+		<h2>Iterativo e Incremental</h2>
+		<p><img alt="Logo XP" width=400 src="figuras/Incremental_Iterative_Monalisa.jpg"></p>
+	</section>
+
+	</section>
+
+	<section>
+		<h2>Visão geral quanto ao tempo</h2>
+		<ul>
+			<li><b>
+			Releases
+			</b></li>
+			<p><i>
+			<b>Levam meses</b>, são compostas de <b>iterações</b>
+			</i></p>
+			<li><b>
+			Iterações
+			</b></li>
+			<p><i>
+			São periodos de poucas semanas(tipicamente, de <b>1 a 4 semanas</b>), são compostas de <b>tarefas</b>
+			</i></p>
+			<li><b>
+			Tarefas
+			</b></li>
+			<p><i>
+			São <b>atividades basicas</b>, devem durar idealmente <b>1 dia de trabalho</b>, mas normalmente duram mais
+			</i></p>
+		</ul>
+	</section>
+
+	<section>
+		<h3>Visão geral quanto ao tempo</h3>
+		<img alt="Visão geral quanto ao tempo" src="figuras/visao_geral_tempo.png">
+	</section>
+
+	<section>
+		<h1>Releases</h1>
+	</section>
+
+	<section>
+		<h3>Releases</h3>
+		<img alt="Ciclo Releases" src="figuras/ciclo_release.png"> 
+		<ul>
+			<li>
+			<b>Refletir</b> sobre o problemas, <b>identificar</b> e/ou <b>propor soluções</b>
+			</li>
+			<li>
+			<b>Cliente</b> e <b>equipe</b> se reúnem para definir os temas
+			</li>
+			<li>
+			Cliente controla o <b>escopo</b>, decidindo o que <b>fazer</b> ou <b>adiar</b>
+			</li>
+			<li>
+			Normalmente, <b>3 meses</b>
+			</li>
+		</ul>
+	</section>
+
+	<section>
+		<h1>Iterações</h1>
+	</section>
+
+	<section>
+		<img alt="Ciclo Iterações" src="figuras/ciclo_iteracoes.png"> 
+		<ul>
+			<li>
+			Incremento <b>projetado</b>, <b>programado</b>, <b>testado</b> e <b>entregue</b>
+			</li>
+			<li>
+			Ponto de <b>avaliação</b>, <b>re-avaliação</b>, <b>feedback</b>, interação com a <b>satisfação do cliente</b> e <b>mudanças</b>
+			</li>
+			<li>
+			Esse codigo vai ser <b>aprimorado</b> nas proximas iterações, mas é <b>codigo funcional</b>
+			</li>
+			<li>
+			No inicio, <b>Jogo do planejamento</b>
+			</li>
+			<li>
+			No final, o cliente tem a oportunidade de <b>utilizar</b> e <b>avaliar</b> o que foi produzido
+			</li>
+			<li>
+			Normalmente, <b>1 semana</b>
+			</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>Final da Iteração</h2>
+		<ul>
+		<li>
+		Testes de aceitação
+		</li>
+		<li>
+		Entrega de <b>software para o cliente</b>
+		</li>
+		<li>
+		<b>Cliente</b> tem oportunidade de <b>testar</b> e <b>avaliar</b>
+		</li>
+		</ul>
+		<hr>
+		<p>Com base nos resultados, reúne-se novamente com a equipe e estabelece novas prioridades de acordo com o que acabou de aprender com o software e com aquilo que já imaginava ser necessário produzir ao longo do restante do projeto</p>
+	</section>
+
+	<section id="Tarefas">
+		<h1>Tarefas</h1>
+	</section>
+
+	<section>
+		<ul>
+		<li>
+		Compomente basico
+		</li>
+		<li>
+		É a implementação de uma <b>User story</b> pelo <b>par de programadores</b>
+		</li>
+		<li>
+		Testes!
+		</li>
+		<li>
+		Executada de acordo com os <b>valores</b> e <b>Práticas do XP</b>
+		</li>
+		</ul>
+		<p><img alt="Ciclo geral de tarefas, exemplo" src="figuras/ciclo_geral_tarefas.png"></p>
+		<small>Exemplo de ciclo</small>
+	</section>
+
+	<section id="Valores">
+		<h1>Valores</h1>
+	</section>
+
+	<section>
+	<section>
+		<p>
+		São o conjunto de valores que a equipe deve seguir, praticar e se comportar em grupo para usar o XP
+		</p>
+		<ul>
+		<li>
+		Comunicação
+		</li>
+		<li>
+		Simplicidade
+		</li>
+		<li>
+		Feedback
+		</li>
+		<li>
+		Coragem
+		</li>
+		<li>
+		Respeito
+		</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>Comunicação</h2>
+	</section>
+	<section>
+		<h2>Simplicidade</h2>
+		<img alt="Frequencia de funcionalidades usadas" src="figuras/utilizacao_funcionalidades.jpg">
+		<ul>
+			<li>
+			Tanto os <b>clientes</b> e <b>desenvolvedores</b> não sabem sobre as funcionalidades futuras
+			</li>
+			<li>
+			Concentrar-se em fazer bem feito as funcionalidades prioritarias da iteração atual
+			</li>
+			<li>
+			Desenvolvimento é uma tarefa complexa, melhor seguir um metodo menos complexo que a tarefa
+			</li>
+		</ul>
+<!--		<p>Segundo o <a href="http://www.standishgroup.com/">Standish Group</a> em 2000, 72% projetos falharam devido:</p>
+		<ul>
+			<li>
+			Consomem mais recursos que o orçado
+			</li>
+			<li>
+			Consomem mais tempo que o estimado
+			</li>
+			<li>
+			Não entregam o que foi combinado
+			</li>
+			<li>
+			Todas as alternativas acima em conjunto
+			</li>
+		</ul>
+-->
+	</section>
+	<section>
+		<h2>Feedback</h2>
+	</section>
+	<section>
+		<h2>Coragem</h2>
+		<p><img alt="Não fazer..." width=400 src="figuras/coragem.gif"></p>
+	</section>
+	<section>
+		<h2>Respeito</h2>
+	</section>
+	</section>
+
+	<section id="Praticas">
+		<h1>Práticas do XP</h1>
+	</section>
+
+	<section>
+	<section>
+		<ul>
+		<li>
+		Cliente Presente
+		</li>
+		<li>
+		Jogo do Planejamento
+		</li>
+		<li>
+		Stand Up Meeting
+		</li>
+		<li>
+		Programação em Pares
+		</li>
+		<li>
+		Código Coletivo
+		</li>
+		<li>
+		Código Padronizado
+		</li>
+		<li>
+		Design Simples
+		</li>
+		<li>
+		Desenvolvimento Orientado a Testes
+		</li>
+		<li>
+		Refatoração
+		</li>
+		<li>
+		Releases Curtos
+		</li>
+		<li>
+		Metáfora
+		</li>
+		<li>
+		Ritmo Sustentável
+		</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>Cliente Presente</h2>
+		<ul>
+		<li>
+		Parte da equipe
+		</li>
+		<li>
+		Controla as tarefas de cada release baseadas no valor de negócio
+		</li>
+		<li>
+		Feedback imediato
+		</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>
+		Jogo do Planejamento
+		</h2>
+		<ul>
+		<li>
+		Mais importante primeiro
+		</li>
+		<li>
+		Necessidades concretas
+		</li>
+		<li>
+		Software funcionando em primeiro lugar
+		</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>Jogo do Planejamento</h2>
+		<p>
+		O Cliente
+		<ul>
+			<li>
+			Define as histórias(<b>User Story</b>)
+			</li>
+			<li>
+			Decide qual o <b>valor de negócio</b> de cada história
+			</li>
+			<li>
+			Decide que histórias serão construídas no release
+			</li>
+		</ul>
+		</p>
+		<hr>
+		<div class="fragment">
+		<p>
+		Os Programadores
+		<ul>
+			<li>
+			Estimam <b>quanto tempo</b> será necessário para construir cada história, com base em <b>experiencias passadas</b>
+			</li>
+			<li>
+			Advertem o cliente sobre <b>riscos técnicos significativos</b>
+			</li>
+			<li>
+			Medem o <b>progresso da equipe</b> para fornecer um orçamento geral para o cliente
+			</li>
+		</ul>
+		</p>
+		</div>
+	</section>
+
+	<section>
+		<h2>Standup Meeting</h2>
+		<ul>
+		<li>
+		Resumir o que todos fizeram
+		</li>
+		<li>
+		Definir a atividade do dia
+		</li>
+		</ul>
+	</section>
+
+
+	<section>
+		<h2>
+		Programação em Par
+		</h2>
+		<ul>
+		<li>
+		Menos erros
+		</li>
+		<li>
+		Força o uso dos padrões
+		</li>
+		<li>
+		Melhores soluções
+		</li>
+		<li>
+		Evita "ilhas de conhecimento"
+		</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>
+		Código Coletivo
+		</h2>
+		<ul>
+		<li>
+		Todos têm acesso a tudo
+		</li>
+		<li>
+		Ninguém é "dono do código"
+		</li>
+		<li>
+		Revezamento de pares
+		</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>
+		Código Padronizado
+		</h2>
+		<ul>
+		<li>
+		Fácil de entender
+		</li>
+		<li>
+		Fácil de modificar
+		</li>
+		<li>
+		Pressão do par
+		</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>
+		Design Simples
+		</h2>
+		<ul>
+		<li>
+		Desejos do usuário:
+			<ul>
+			<li>
+			Fazer a coisa certa
+			</li>
+			<li>
+			Funcionar
+			</li>
+			<li>
+			Fácil de usar
+			</li>
+			<li>
+			Possa ser modificado
+			</li>
+			</ul>
+		</li>
+		<li>
+		Revisão durante as iterações
+		</li>
+		<li>
+		Não tenta prever o futuro
+		</li>
+		<li>
+		Menos complexidade
+		</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>
+		Desenvolvimento Orientado a Testes
+		</h2>
+		<ul>
+		<li>
+		Defeitos custam caro
+		</li>
+		<li>
+		Testes são feitos antes da imprelentação
+		</li>
+		<li>
+		Testes são rodados sempre que o código é modificado
+		</li>
+		<li>
+		Quanto mais cedo um erro é identificado, melhor
+		</li>
+		<li>
+		Precisa sempre passar no teste de aceitação
+		</li>
+		<li>
+		Resolver, depois limpar
+		</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>
+		Refatoração
+		</h2>
+		<ul>
+		<li>
+		Mudanças deterioram o projeto
+		</li>
+		<li>
+		Evitar código duplicado
+		</li>
+		<li>
+		Objetivo:
+			<ul>
+			<li>
+			Simplicidade
+			</li>
+			<li>
+			Clareza
+			</li>
+			<li>
+			Adequação ao objetivo
+			</li>
+			<li>
+			Ausência de repetição
+			</li>
+			<li>
+			Ausência de funcionalidades extras (ex: que foram removidas)
+			</li>
+			</ul>
+		</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>
+		Releases Curtos
+		</h2>
+		<ul>
+		<li>
+		Maior retorno do investimento no início
+		</li>
+		<li>
+		Bom para o cliente (melhores tomadas de decisões)
+		</li>
+		<li>
+		Bom para os desenvolvedores (verificam se o desejo do cliente realmente é atendido)
+		</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>
+		Metáfora
+		</h2>
+		<ul>
+		<li>
+		Uma só ideia
+		</li>
+		<li>
+		Integridade conceitual de todo o projeto
+		</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>
+		Ritmo Sustentável
+		</h2>
+		<ul>
+		<li>
+		Prazos cumpridos
+		</li>
+		<li>
+		Não sobrecarregar o programador
+		</li>
+		</ul>
+	</section>
+	</section>
+
+
+	<section>
+		<h1>Casos de uso</h1>
+	</section>
+
+	<section>
+		<h3>Companhias que Utilizam o XP</h3>
+		<p>Brasileiras:</p>
+		<ul>
+			<li>
+			Improve It (RJ)
+			</li>
+			<li>
+			Globo (RJ)
+			</li>
+			<li>
+			BrasilTelecom (DF)
+			</li>
+			<li>
+			Embrapa Informática (SP)
+			</li>
+		</ul>
+
+		<hr>
+		<p>Internacionais:</p>
+		<ul>
+			<li>
+			Blizzard
+			</li>
+			<li>
+			Sabre Airline Solutions
+			</li>
+			<li>
+			Arshin
+			</li>
+			<li>
+			Motorola, inc.
+			</li>
+		</ul>
+	</section>
+
+<!--
+
+XP:
+
+O que são praticas?
+
+%http://improveit.com.br/xp/praticas
+
+
+
+O produto são User story
+
+%http://www.slideshare.net/MCPTECNOLOGIA/user-stories-5564287
+%http://www.slideshare.net/dwildt/conhecendo-o-extreme-programming
+
+-->
+
+	<section id="presentation_end">
+		<h1>THE END</h1>
+		<p>By <a href="https://about.me/psycho_mantys">Psycho Mantys</a> / <a href="http://twitter.com/psycho_mantys">@psycho_mantys</a></p>
+		<p><a href="#/presentation_begin">Begin</a></p>
+	</section>
+
+	</div>
+	</div>
+
+	<script src="reveal.js/lib/js/head.min.js"></script>
+	<script src="reveal.js/js/reveal.min.js"></script>
+
+	<script>
+		// Full list of configuration options available here:
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+
+			theme: Reveal.getQueryHash().theme || 'night', // available themes are in /css/theme
+			transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+			// Optional libraries used to extend on reveal.js
+			dependencies: [
+			{ src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+			{ src: 'reveal.js/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+			{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+			{ src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+			// { src: 'reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+			// { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+			]
+		});
+	</script>
+</body>
+</html>
+

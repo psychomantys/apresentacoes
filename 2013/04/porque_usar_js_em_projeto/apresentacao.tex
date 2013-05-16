@@ -1,0 +1,145 @@
+\documentclass[10pt]{beamer}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{graphicx}		% utilizado para inserir gráfico
+
+\usepackage{verbatim}      % Para comentario em bloco
+
+% Usado para incluir código
+\usepackage{listings}
+% Needed to use citations.
+\usepackage{cite}
+
+\usetheme{Copenhagen}
+\usecolortheme{lccv}
+\setbeamertemplate{background}{\includegraphics[width=\paperwidth]{./figuras/background_lccv.jpg}}
+%\setbeamercovered{transparent}
+
+\title[]{Porque usar javascript para desenvolver solução de economia de energia em dispositivos moveis}
+\author[]{Baltazar Tavares Vanderlei}
+%\date{\today}
+\institute[2013]{Instituto de Computação - IC/UFAL}
+
+\begin{document}
+
+\newcommand{\til}{\~{}}
+
+\frame{\titlepage}
+	\begin{frame}[t]
+	\frametitle{Sumário}
+	\tableofcontents[framebreaks]
+		% \tableofcontents[pausesections]
+\end{frame}
+
+% Perfumaria sobre o sumário ser mostrado a cada passagem de sessão e sub-sessão.
+\AtBeginSection[]{
+	\begin{frame}[t]
+		\frametitle{Sumário}
+		\tableofcontents[currentsection]
+	\end{frame}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Porque usar?}
+
+\begin{frame}
+	\begin{itemize}%[<+->]
+		\item Linguagem moderna
+		\item O mais portavel das alternativas
+		\item Suporta Annotations
+		\item Serialização
+		\item Reflexão
+		\item Sobrescrever funções
+	\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Suporte a Annotations}
+\begin{frame}
+	\begin{alertblock}{Na verdade... Não tem}
+		Mas existe como contornar
+	\end{alertblock}
+	\begin{itemize}%[<+->]
+		\item Fazer na mão(a seguir...)
+%		\begin{itemize}%[<+->]
+%			\item http://www.k33g.org/?q=book/export/html/69
+%		\end{itemize}
+		\item Declarar em um espaço de nomes conhecido
+		\item Object.defineProperty(obj, propname, desc)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\lstinputlisting{./codigos/annotations.js}
+\end{frame}
+
+\begin{frame}
+	\lstinputlisting{./codigos/annotations_2.js}
+\end{frame}
+
+
+\section{Serialização}
+\begin{frame}
+	\begin{itemize}
+		\item Disponivel com JSON
+		\item Se não disponovel, pode usar implementação propria
+		\begin{itemize}
+			\item http://www.sitepoint.com/javascript-json-serialization/
+			\item https://github.com/douglascrockford/JSON-js
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\lstinputlisting{./codigos/serialization_1.js}
+\end{frame}
+\begin{frame}
+	\lstinputlisting{./codigos/serialization_2.js}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Reflexão}
+% http://www.2ality.com/2011/01/reflection-and-meta-programming-in.html
+\begin{frame}
+	\begin{itemize}
+		\item Object.getOwnPropertyNames(obj)
+		\item Object.getOwnPropertyDescriptor(obj, "prop")
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\lstinputlisting{./codigos/getOwnPropertyNames.js}
+\end{frame}
+
+\begin{frame}
+	\lstinputlisting{./codigos/getOwnPropertyDescriptor_1.js}
+\end{frame}
+
+\begin{frame}
+	\lstinputlisting{./codigos/getOwnPropertyDescriptor_2.js}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Extraind argumento de funcões}
+	\lstinputlisting{./codigos/extract_params_from_func.js}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Objeto proxy}
+	\lstinputlisting{./codigos/proxy_object.js}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Getters e Setters}
+	\lstinputlisting{./codigos/get_set_1.js}
+\end{frame}
+
+\begin{frame}
+	\lstinputlisting{./codigos/get_set_2.js}
+\end{frame}
+
+\end{document}
+
