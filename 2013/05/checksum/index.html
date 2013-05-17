@@ -86,7 +86,12 @@ Referencias ... Como fazer ....
 		</select>
 		</p>
 	</section>
-
+	
+	<section>
+		<h2>Checksum</h2>
+		<p>Embora muitos métodos de detecção tenham sido inventados, apenas alguns poucos são usados</p>
+		<p>Um dos métodos mais utilizados é o <i>checksum</i></p>
+	</section>	
 	<section>
 
 		<section>
@@ -127,65 +132,21 @@ Referencias ... Como fazer ....
 
 	</section>
 
-
-
-
 	<section>
-		<h1>Casos de uso</h1>
+		<h1>Vantagens e Desvantagens</h1>
 	</section>
 
 	<section>
-		<h3>Companhias que Utilizam o XP</h3>
-		<p>Brasileiras:</p>
-		<ul>
-			<li>
-			Improve It (RJ)
-			</li>
-			<li>
-			Globo (RJ)
-			</li>
-			<li>
-			BrasilTelecom (DF)
-			</li>
-			<li>
-			Embrapa Informática (SP)
-			</li>
-		</ul>
-
-		<hr>
-		<p>Internacionais:</p>
-		<ul>
-			<li>
-			Blizzard
-			</li>
-			<li>
-			Sabre Airline Solutions
-			</li>
-			<li>
-			Arshin
-			</li>
-			<li>
-			Motorola, inc.
-			</li>
-		</ul>
+		<h2>Vantagens</h2>
+		<p>As vantagens principais referem-se ao tamanho e à facilidade de computação. A maioria das redes que empregam essa técnica usa um checksum de 16 ou 32 bits e gera um checksum único para um pacote inteiro. O tamanho pequeno do checksum significa que o seu custo de transmissão é muito menor do que o de transmitir os daddos. Além disso, como o checksum só exige adição, o processamento necessário para criá-lo o verificá-lo é pequeno.</p>
+	</section>
+	<section>
+		<h2>Desvantagens</h2>
+		<p>O checksum tem a desvantagem de não detectar todos os erros comuns. Por exemplo, a tabela na Figura abaixo mostra que um checksum não é suficiente para detectar um erro de transmissão que inverte um bit em cada um de quatro itens de dados (para estender o exemplo para um pacote inteiro, imagine que os quatro itens modificados acontecem no meio de vários outros). Apesar das mudanças, um receptor declarará que o pacote tem um checksum válido.</p>
+		<p><img alt="Exemplo Checksum" width=400 src="figuras/erro_checksum.png"></p>
 	</section>
 
-<!--
 
-XP:
-
-O que são praticas?
-
-%http://improveit.com.br/xp/praticas
-
-
-
-O produto são User story
-
-%http://www.slideshare.net/MCPTECNOLOGIA/user-stories-5564287
-%http://www.slideshare.net/dwildt/conhecendo-o-extreme-programming
-
--->
 
 	<section id="presentation_end">
 		<h1>THE END</h1>
