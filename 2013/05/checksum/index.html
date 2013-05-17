@@ -112,7 +112,7 @@
 		</section>
 
 		<section>
-			<h2>The sender follows these steps:</h2>
+			<h3>The sender follows these steps:</h3>
 			<ul>
 				<li>The unit is divided into k sections, each of n bits.</li>
 				<li>All sections are added.</li>
@@ -121,7 +121,7 @@
 			</ul>
 		</section>
 		<section>
-			<h2>The receiver follows these steps:</h2>
+			<h3>The receiver follows these steps:</h3>
 			<ul>
 				<li>The unit is divided into k sections, each of n bits.</li>
 				<li>All sections are added  to get the sum.</li>
@@ -130,13 +130,32 @@
 			</ul>
 		</section>
 		<section>
-			<h2>Example</h2>
-			<p><img alt="Exemplo Checksum" width=800 src="figuras/exemplo_checksum.png"></p>
-			<p><ul>
-				<li>
-				Usado pelos protocolos IP, TCP e UDP
-				</li>
-			</ul></p>
+			<h2>Example 1/2</h2>
+			<p>Suppose the following block of 16 bits is to be sent  using a checksum of 8 bits.</p>
+			<p><pre>10101001   00111001</pre></p>
+			<p><pre>The numbers are added 
+                           10101001    
+                           00111001
+                       -------------
+Sum	                   <b>11100010</b>
+Checksum                   00011101        ; complemented
+<br>
+The pattern sent is       10101001   00111001   <b>00011101</b></pre></p>
+		</section>
+
+		<section>
+			<h2>Example 2/2</h2>
+			<p>Now suppose the receiver receives the pattern sent in is:</p>
+			<p><pre>10101001   00111001   00011101</pre></p>
+			<p><pre>When the receiver adds the three sections, it will get all 1s, 
+which, after complementing, is all 0s and shows that there 
+is no error. 
+			10101001
+			00111001    
+			00011101 
+Sum		        11111111  
+Complement              <b>00000000</b>  </pre></p>
+			<p>Means that the pattern is OK.</p>
 		</section>
 
 	</section>
