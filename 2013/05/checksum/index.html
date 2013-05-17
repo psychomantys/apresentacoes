@@ -91,7 +91,7 @@
 		</section>
 		<section>
 			<h2>Redundancy Check Definition</h2>
-			<p>A <i>redundancy check</i> is a number that is calculated from a file or a segment thereof and then appended to that file or segment for the purpose of comparing with a recalculation by another computer or at a later date in order to detect and correct errors that might occur during any phase of the storage or transmission of the file or segment.</p>
+			<p>A <i>redundancy check</i> is a number that is calculated from a file or a segment thereof and then appended to that file or segment for the purpose of comparing with a recalculation by another computer or at a later date in order to detect and correct errors that might occur during any phase of the storage or transmission of the file or segment.</p><br>
 			<p>The most simple types of redundancy checks are <i>checksums</i>.</p>
 		</section>
 	</section>
@@ -112,7 +112,7 @@
 	</section>
 	
 	<section>
-		<h2>Example of use<h2>
+		<h2>Example of use</h2>
 		<p>IP, TCP and UDP protocols<p>
 		<p><img alt="Message" width=800 src="figuras/message.png"></p>
 	</section>
@@ -172,35 +172,33 @@ Complement              <b>00000000</b>  </pre></p>
 	</section>
 
 	<section>
-		<h1>Advantages and Disadvantages</h1>
+		<h2>Advantages and Disadvantages</h2>
 	</section>
 
 	<section>
 		<h3>Advantages</h3>
 		<ul>
 			<li>The main advantages relate to the size and ease of computation (in the form of processor time and bandwidth).</li>
+			<li>Most networks that employ this technique uses a checksum of 16 or 32 bits and generates a single checksum for an entire package.</li>
 		</ul>
-		<p>Most networks that employ this technique uses a checksum of 16 or 32 bits and generates a single checksum for an entire package.</p>
 	</section>
 
 	<section>
 		<h2>Disadvantages</h2>
 		<ul>
 			<li>The checksum has the disadvantage of not detecting all common mistakes.</li>
-		</ul>
-		<p>Among the types of errors that cannot be detected by simple checksum algorithms are:</p>
-		<ul>
-			<li>Reordering of the bytes.</li>
-			<li>Inserting or deleting zero-valued bytes.</li>
-			<li>Multiple errors that cancel each other out.</li>
+			<li>Among the types of errors that cannot be detected by simple checksum algorithms are:</li>
+			<ul>
+				<li>Reordering of the bytes.</li>
+				<li>Inserting or deleting zero-valued bytes.</li>
+				<li>Multiple errors that cancel each other out.</li>
+			</ul>
 		</ul>
 	</section>
 
 	<section>
 		<h3>Example of error that cannot be detected</h3>
-		<p>Exemplo de como uma soma de verificação pode deixar de detectar erros de transmissão: Inverter o valor do segundo bit de cada item de dados produz a mesma soma de verificação.</p>
-		<p><pre>10101001   00111001   00011101</pre></p>
-		<p>When the receiver adds the three sections, it will get all 1s, which, after complementing, is all 0s and shows that there is no error.</p>
+		<p>Example of a checksum can fail to detect transmission errors: Invert the value of the second bit of each data item produces the same checksum.</p>
 		<p><img alt="Example of Error" width=800 src="figuras/erro_checksum.png"></p>
 	</section>
 
