@@ -34,14 +34,6 @@
 	<![endif]-->
 </head>
 
-<!--
-TODO:
-Papeis, não tem referencias e não explica quais
-Trocar ordem do começo? Principios e valores primeiro e exemplo top-down depois?
-Revisar parte de principios, colocar figuras e desenvolver mais
-Desenvolver a parte de valores? Falta figuras...
-Referencias ... Como fazer ....
--->
 <body>
 
 	<div class="reveal">
@@ -50,7 +42,7 @@ Referencias ... Como fazer ....
 
 	<section id="presentation_begin">
 		<h1>Checksum</h1>
-		<h3>Detecção e Correção de Erros</h3>
+		<h3>is a simple method of detecting errors in data</h3>
 		<p>
 		<small>Created by </small>
 		</p>
@@ -88,40 +80,57 @@ Referencias ... Como fazer ....
 	</section>
 	
 	<section>
-		<h2>Checksum</h2>
-		<p>Embora muitos métodos de detecção tenham sido inventados, apenas alguns poucos são usados</p>
-		<p>Um dos métodos mais utilizados é o <i>checksum</i></p>
-	</section>	
+		<h1>Checksum Definition</h1>
+	</section>
+
+	<section>
+		<p>
+		A <i>checksum</i> is a simple type of redundancy check that is used to detect errors in data.
+		</p>
+	</section>
+
+	<section>
+		<h2>Overview</h2>
+		<p>Errors frequently occur in data when:</p>
+		<ul>
+			<li>it is written to a disk</li>
+			<li>it is transmitted across a network</li>
+			<li>or otherwise manipulated</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>Why use methods for error detection?</h2>
+		<p>The errors are typically very small, for example, a single incorrect bit, but even such small errors can greatly affect the quality of data, and even make it useless.</p>
+	</section>
+
+	
 	<section>
 
 		<section>
-			<h2>Algoritmo do Checksum</h2>
-			<p>Objetivo:</p>
-			<p>Detectar “erros” (ex.: bits trocados) num segmento transmitido (nota: usado apenas na camada de transporte)</p>
+			<h2>Checksum Algorithm</h2>
 		</section>
+
 		<section>
-			<h2>Algoritmo do Checksum</h2>
-			<p><b>Transmissor:</b></p>
+			<h2>The sender follows these steps:</h2>
 			<ul>
-				<li>Trata o conteúdo da mensagem como seqüências de números inteiros de 16 bits (bits de dados)</li>
-				<li>Os bits de dados são divididos em k blocos de n bits, cada um</li>
-				<li>Checksum: soma dos blocos e realiza o complemento de um</li>
-				<li>Transmissor coloca o valor do checksum no campo checksum do datagrama (UDP)</li>
+				<li>The unit is divided into k sections, each of n bits.</li>
+				<li>All sections are added.</li>
+				<li>The sum is complemented and becomes the checksum.</li>
+				<li>The checksum is sent with the data.</li>
 			</ul>
 		</section>
 		<section>
-			<h2>Algoritmo do Checksum</h2>
-			<p><b>Receptor:</b></p>
+			<h2>The receiver follows these steps:</h2>
 			<ul>
-				<li>Os bits recebidos são divididos em k blocos de n bits</li>
-				<li>Calcula o checksum da mensagem recebida, ou seja, soma os blocos e complementa o resultado (checksum)</li>
-				<li>Verifica se o checksum calculado:</li>
-				<ul>
-				<li>Se o checksum for zero, os dados são aceitos!- Erro NÃO detectado</li>
-				</ul>
+				<li>The unit is divided into k sections, each of n bits.</li>
+				<li>All sections are added  to get the sum.</li>
+				<li>The sum is complemented.</li>
+				<li>If the result is zero, the data are accepted.</li>
 			</ul>
 		</section>
 		<section>
+			<h2>Example</h2>
 			<p><img alt="Exemplo Checksum" width=800 src="figuras/exemplo_checksum.png"></p>
 			<p><ul>
 				<li>
@@ -150,7 +159,7 @@ Referencias ... Como fazer ....
 
 	<section id="presentation_end">
 		<h1>THE END</h1>
-		<p>By <a href="https://about.me/psycho_mantys">Psycho Mantys</a> / <a href="http://twitter.com/psycho_mantys">@psycho_mantys</a></p>
+		<p>By <br><a href="https://about.me/psycho_mantys">Psycho Mantys</a> / <a href="http://twitter.com/psycho_mantys">@psycho_mantys</a><br><a href="https://about.me/priscylla.silva">Priscylla Silva</a> / <a href="http://twitter.com/killpiu">@killpiu</a><br><a href="#">Poliana Bela</a> / <a href="#">@</a></p>
 		<p><a href="#/presentation_begin">Begin</a></p>
 	</section>
 
