@@ -5,3 +5,6 @@
 [submodule "2013/05/checksum/reveal.js"]
 	path = 2013/05/checksum/reveal.js
 	url = https://github.com/psychomantys/reveal.js.git
+[submodule "2013/06/clp_html5/reveal.js"]
+	path = 2013/06/clp_html5/reveal.js
+	url = https://github.com/psychomantys/reveal.js.git
