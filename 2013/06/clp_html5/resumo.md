@@ -25,7 +25,7 @@ A lista de palavras reservadas de JS:
 |default|if|throw|delete|
 |in|try|
 
-Como parte interessante, JS tem uma lista de palavras reservadas que não tem funcionalidade atual(a não ser por algumas implementações não-padrão, como const), mas que são reservadas, para uso futuro.
+Como parte interessante, **JS** tem uma lista de palavras reservadas que não tem funcionalidade atual(a não ser por algumas implementações não padrão, como *const*), mas que são reservadas, para uso futuro.
 
 Essa lista é:
 
@@ -63,12 +63,13 @@ No modo restrito, as seguintes palavras também são reservadas:
 |implements|let| private|public|interface|
 |package|protected|static|yield|
 
+Existem mais algumas palavras, mas essas são as principais do padrão mais novo, o **ECMAScript 5**.
 
 ## Variáveis
 
 ### Nomes das variáveis
 
-Os nomes das variáveis de JavaScript, obedecem as seguintes regras:
+Os nomes das variáveis de **JavaScript**, obedecem as seguintes regras:
 
 * Devem começar com letras
 * Podem começar também com $ ou _
@@ -78,7 +79,7 @@ Os nomes das variáveis de JavaScript, obedecem as seguintes regras:
 
 ### Endereço
 
-JS suporta duas variáveis com nomes iguais em um conceito chamado "Anonymous Closures":
+**JS** suporta duas variáveis com nomes iguais em um conceito chamado "Anonymous Closures":
 
 ```JavaScript
 (function () {
@@ -93,7 +94,7 @@ var a=myapp2.init();
 
 #### Apelidos
 
-JS suporta apelidos, sendo através deles que para objetos são passados por padrão para funções, e tipo primitivos não, por exemplo:
+**JS** suporta apelidos, sendo através deles que para objetos são passados por padrão para funções, e tipo primitivos não, por exemplo:
 
 ```JavaScript
 function change_a(a){
@@ -110,7 +111,8 @@ Existem também outras formas para explicitamente dizer que parâmetros são tam
 
 ### Tipos
 
-Em JS, existem apenas os seguintes tipos:
+Em **JS**, existem apenas os seguintes tipos:
+
 * String
 * Number
 * Boolean
@@ -121,13 +123,13 @@ Em JS, existem apenas os seguintes tipos:
 
 ## O conceito de vinculação
 
-Em JS, a vinculação das variáveis foi feito em tempo de projeto da linguagem, porque ela tem muitos poucos tipos e não tem sobrecarga de operadores.
+Em **JS**, a vinculação das variáveis foi feito em tempo de projeto da linguagem, porque ela tem muitos poucos tipos e não tem sobrecarga de operadores.
 
-Como não existe sobrecarga de operadores, mas JS pode aceitar diferentes tipos em operadores, essa a decisão de que operação realizar é normalmente feita em tempo de execução, se resumindo a se converte tudo para string e concatena, ou se soma dois números.
+Como não existe sobrecarga de operadores, mas **JS** pode aceitar diferentes tipos em operadores, essa a decisão de que operação realizar é normalmente feita em tempo de execução, se resumindo a se converte tudo para *string* e concatena, ou se soma dois números.
 
 ### Vinculação quanto a atributos a variáveis
 
-JS tem uma vinculação dinâmica de atributos a variáveis. Durante a execução, essa atribuição pode mudar, como por exemplo:
+**JS** tem uma vinculação dinâmica de atributos a variáveis. Durante a execução, essa atribuição pode mudar, como por exemplo:
 
 ```JavaScript
 var a=1;
@@ -136,18 +138,104 @@ var a="42!!!"
 
 ### Vinculação quanto a tipos
 
-JS usa a vinculação dinâmica de tipos. Como todas as variáveis são declaradas com a palavra reservada **var**, essas variáveis são por padrão do tipo **Undefined**, mas quando você associa um valor, a variavel se torna do tipo daquele valor.
+**JS** usa a vinculação dinâmica de tipos. Como todas as variáveis são declaradas com a palavra reservada **var**, essas variáveis são por padrão do tipo **Undefined**, mas quando você associa um valor, a variável se torna do tipo daquele valor.
+
+Também se pode criar variáveis sem a palavra chave **var**, apenas atribuindo um valor para uma variável não declarada antes.
+
+## Vinculação de Armazenamento e Tempo de vida
+
+### Variáveis estáticas
+
+JS não tem faz uso de variáveis estáticas, apesar de existirem formas que simulem bem.
+
+### Variáveis dinâmicas na pilha
+
+JS existe as variáveis dinâmicas em pilha, mas em alguns casos elas podem se comportar de forma diferente
 
 
 
-* Verificações de tipos 189
-* Tipificação forte 189
-* Compatibilidade de tipos 191
-* Escopo 193
-* Escopo e tempo de vida 200
-* Ambientes de referenciamento 201
-* Constantes Nomeadas 203
-* Inicialização de Variáveis 204
+### Variáveis dinâmicas no monte Explicitas
+
+Existe até uma palavra reservada para "alocar" uma variavel, mas não existe nada similar para liberar a memoria daquela variável.
+
+Então, não existe variáveis dinâmicas no monte explicitas em JS.
+
+### Variáveis dinâmicas no monte Implícitas
+
+JS faz uso intensivo de Variáveis dinâmicas no monte Implícitas.
+
+Como quando você usa "Anonymous Closures", que permite que endereços e nomes de variáveis existam apenas naquele contexto, com por exemplo:
+
+```JavaScript
+var uniqueID = (function() {
+  var id = 0;
+  return function() { return id++; };
+})();
+```
+
+O nome de "id" não vai existir fora desse contexto, mas o tempo de vida ainda continua valendo porque não chegou a *desalocação* de "id".
+
+
+
+## Verificação de Tipos
+
+Como existem poucos tipos básicos e devido a sua vinculação dinâmica de tipos, **JavaScript** tem poucas possibilidades para verificação de tipo, e costuma ser bem generosa nas variedades de conversões entre tipos, além de avaliar os tipos em tempo de execução.
+
+Em operações numéricas, por exemplo, string são avaliadas como operadores se seu conteúdo for uma cadeia de caracteres que represente números, como por exemplo:
+
+```JavaScript
+var a=1*"5";
+```
+
+Mas devido a essa quantidade de conversões e possibilidades, pode ficar menos segura a linguagem, pode gerar ambiguidades e quebra de ortogonalidade, como no caso:
+
+```JavaScript
+var a="4"+2;
+```
+
+## Tipificação forte
+
+Devido a sua tolerante política de conversões entre tipo, e ao tipo Object ser bem genérico, JavaScript é considerado uma linguagem fracamente tipificada.
+
+## Compatibilidade de tipos
+
+JS usa compatibilidade de tipos por nome.
+
+## Escopo
+
+JavaScript tem variáveis globais, que podem ser criadas a qualquer momento a não ser que você esteja dentro de um "Anonymous Closures".
+
+Não se pode também aninhar sub-programas dentro de outras definições de subprogramas, mas sempre se pode criar variáveis globais ou redefinir variáveis globais.
+
+Com "Anonymous Closures", também temos a possibilidade de criar o conceito de módulos que tem nomes e endereços de memoria auto-contidos.
+
+Por essas e outras caracteristicas, **JS** pode declarar variáveis com escopo dinâmico.
+
+## Constantes Numeradas
+
+**JS** não tem suporte a constantes nomeadas.
+
+Apesar do padrão **ECMAScript 5** reservar para o futuro a palavra **const**, o comportamento dessa palavra ainda não esta definido.
+
+No máximo, existem muitas implementações que tem seu próprio **const** implementado, que faz normalmente a mesma coisa.
+
+## Inicialização de Variáveis
+
+Como em **JS** temos que a vinculação ao armazenamento de forma dinâmica, a inicialização de variáveis também são dinamicas, com exceção a algumas variáveis que são inicializadas no inicio do programa, que fazem parte do padrão como biblioteca para fornecer funcionalidades, como por exemplo o objeto **Math**.
+
+Como podemos declarar uma variável sem inicializar ela, por padrão essa variavel não será vazia(Ou seja, do tipo **Null** com o unico valor que uma variavel desse tipo pode ter, que é "**null**"), mas sim será do tipo **Undefined** e conterá o unico valor que uma variável desse tipo pode ter, que é "**undefined**"
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!---Cap 06-->
 
@@ -216,4 +304,5 @@ Suporte a programação orientada a objetos 523
 http://www.w3schools.com/html/html5_intro.asp
 http://www.w3schools.com/js/
 -->
+
 
