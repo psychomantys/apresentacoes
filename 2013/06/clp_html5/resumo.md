@@ -59,7 +59,7 @@ O Objetivo do modo restrito é fazer um ambiente mais restrito da linguagem, con
 No modo restrito, as seguintes palavras também são reservadas:
 
 ||||||
-|:---------------:|:----------------:|:---------------:|:---------------:|
+|:----------:|:-----------:|:----------:|:----------:|:----------:|
 |implements|let| private|public|interface|
 |package|protected|static|yield|
 
@@ -164,7 +164,8 @@ Então, não existe variáveis dinâmicas no monte explicitas em JS.
 
 JS faz uso intensivo de Variáveis dinâmicas no monte Implícitas.
 
-Como quando você usa "Anonymous Closures", que permite que endereços e nomes de variáveis existam apenas naquele contexto, com por exemplo:
+Como quando você usa "Anonymous Closures", que permite que endereços e
+ nomes de variáveis existam apenas naquele contexto, com por exemplo:
 
 ```JavaScript
 var uniqueID = (function() {
@@ -173,7 +174,9 @@ var uniqueID = (function() {
 })();
 ```
 
-O nome de "id" não vai existir fora desse contexto, mas o tempo de vida ainda continua valendo porque não chegou a *desalocação* de "id".
+O
+ nome de "id" não vai existir fora desse contexto, mas o tempo de vida
+ainda continua valendo porque não chegou a *desalocação* de "id".
 
 
 
@@ -304,5 +307,4 @@ Suporte a programação orientada a objetos 523
 http://www.w3schools.com/html/html5_intro.asp
 http://www.w3schools.com/js/
 -->
-
 
