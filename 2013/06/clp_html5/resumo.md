@@ -174,9 +174,7 @@ var uniqueID = (function() {
 })();
 ```
 
-O
- nome de "id" não vai existir fora desse contexto, mas o tempo de vida
-ainda continua valendo porque não chegou a *desalocação* de "id".
+O nome de "id" não vai existir fora desse contexto, mas o tempo de vida ainda continua valendo porque não chegou a *desalocação* de "id".
 
 
 
@@ -224,14 +222,9 @@ No máximo, existem muitas implementações que tem seu próprio **const** imple
 
 ## Inicialização de Variáveis
 
-Como em **JS** temos que a vinculação ao armazenamento de forma dinâmica, a inicialização de variáveis também são dinamicas, com exceção a algumas variáveis que são inicializadas no inicio do programa, que fazem parte do padrão como biblioteca para fornecer funcionalidades, como por exemplo o objeto **Math**.
+Como em **JS** temos que a vinculação ao armazenamento de forma dinâmica, a inicialização de variáveis também são dinâmicas, com exceção a algumas variáveis que são inicializadas no inicio do programa, que fazem parte do padrão como biblioteca para fornecer funcionalidades, como por exemplo o objeto **Math**.
 
-Como podemos declarar uma variável sem inicializar ela, por padrão essa variavel não será vazia(Ou seja, do tipo **Null** com o unico valor que uma variavel desse tipo pode ter, que é "**null**"), mas sim será do tipo **Undefined** e conterá o unico valor que uma variável desse tipo pode ter, que é "**undefined**"
-
-
-
-
-
+Como podemos declarar uma variável sem inicializar ela, por padrão essa variável não será vazia(Ou seja, do tipo **Null** com o único valor que uma variável desse tipo pode ter, que é "**null**"), mas sim será do tipo **Undefined** e conterá o único valor que uma variável desse tipo pode ter, que é "**undefined**"
 
 
 
@@ -242,10 +235,45 @@ Como podemos declarar uma variável sem inicializar ela, por padrão essa variav
 
 <!---Cap 06-->
 
-Tipos de dados
-=====================================================================
+# Tipos de dados
 
-* Tipos de dados primitivos 213
+## Number
+
+O tipo Number suporta tanto os numeros inteiros quanto os numeros de ponto flutuante.
+
+Ele é a implementação do padrão IEEE 754 de números de precisão de ponto flutuante de 64 bit. Todos os limites desse padrão valem para Number.
+
+## Boolean
+
+O tipo booleano tradicional, que pode apenas assumir 2 valores.
+
+## String
+
+Temos que as cadeias de caracteres são um tipo diferente de todos os outros e elas podem ser de tamanho dinamico, e o seu tamanho maximo em **JS** não é especificado, dependendo exclusivamente da implementação da linguagem.
+
+## Array
+
+* Qualquer tipo é permitido ser subscrito
+* Não se verificam os indexes do Array, se retorna undefined caso não tenha aquele elemento
+
+
+
+
+
+
+
+
+
+
+* Object
+* Null
+* Undefined
+
+
+## Tipos de dados primitivos 213
+
+
+
 * Tipos Cadeia de Caracteres 216
 * Tipos Ordinais definidos pelo usuário 221
 * Tipos de Matriz 225
@@ -307,4 +335,5 @@ Suporte a programação orientada a objetos 523
 http://www.w3schools.com/html/html5_intro.asp
 http://www.w3schools.com/js/
 -->
+
 
