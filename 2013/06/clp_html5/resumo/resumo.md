@@ -156,7 +156,7 @@ JS existe as variáveis dinâmicas em pilha, mas em alguns casos elas podem se c
 
 ### Variáveis dinâmicas no monte Explicitas
 
-Existe até uma palavra reservada para "alocar" uma variavel, mas não existe nada similar para liberar a memoria daquela variável.
+Existe até uma palavra reservada para "alocar" uma variável, mas não existe nada similar para liberar a memoria daquela variável.
 
 Então, não existe variáveis dinâmicas no monte explicitas em JS.
 
@@ -210,7 +210,7 @@ Não se pode também aninhar sub-programas dentro de outras definições de subp
 
 Com "Anonymous Closures", também temos a possibilidade de criar o conceito de módulos que tem nomes e endereços de memoria auto-contidos.
 
-Por essas e outras caracteristicas, **JS** pode declarar variáveis com escopo dinâmico.
+Por essas e outras características, **JS** pode declarar variáveis com escopo dinâmico.
 
 ## Constantes Numeradas
 
@@ -239,7 +239,7 @@ Como podemos declarar uma variável sem inicializar ela, por padrão essa variá
 
 ## Number
 
-O tipo Number suporta tanto os numeros inteiros quanto os numeros de ponto flutuante.
+O tipo Number suporta tanto os números inteiros quanto os números de ponto flutuante.
 
 Ele é a implementação do padrão IEEE 754 de números de precisão de ponto flutuante de 64 bit. Todos os limites desse padrão valem para Number.
 
@@ -249,7 +249,7 @@ O tipo booleano tradicional, que pode apenas assumir 2 valores.
 
 ## String
 
-Temos que as cadeias de caracteres são um tipo diferente de todos os outros e elas podem ser de tamanho dinamico, e o seu tamanho maximo em **JS** não é especificado, dependendo exclusivamente da implementação da linguagem.
+Temos que as cadeias de caracteres são um tipo diferente de todos os outros e elas podem ser de tamanho dinâmico, e o seu tamanho máximo em **JS** não é especificado, dependendo exclusivamente da implementação da linguagem.
 
 ## Array
 
@@ -303,47 +303,63 @@ Grande parte da sintaxe de operações de JS vem diretamente de "**C/C++**", que
 
 ## Atribuições de modo misto
 
-É permitido as atribuições de modo misto, como existem poucos tipos, normalmente elas são fáceis de implementar e existem conversões de tipos implicitas para a todos os tipo, então a escritabilidade é muito beneficiada.
+É permitido as atribuições de modo misto, como existem poucos tipos, normalmente elas são fáceis de implementar e existem conversões de tipos implícitas para a todos os tipo, então a escritabilidade é muito beneficiada.
 
 <!---Cap 08-->
 
-Estruturas de controle no nível de instrução
-=====================================================================
+# Estruturas de controle no nível de instrução
 
-* Instruções compostas 295
-* Instruções de seleção 296
-* instruções iterativas 306
-* Desvio Incondicional 318
-* Comandos Protegidos 320
+
+Em JavaScript, a sintaxe das instruções de controle são herdadas do "C/C++".
+
+O mais notável da sintaxe, é o break que não funciona como normalmente o break funciona. O break ele tem a função da estrutura de outras linguagens chamada "goto". Apesar de facilitar a escrita dos programas, dificulta a legibilidade um pouco por 2 fatores, porque o comportamento é diferente do esperado, e porque estruturas "goto" normalmente tende a deixar o código mais difícil de ler e manter.
+
+
+Como JS é uma linguagem multi-paradigma, ela também suporta um certo nível de programação funcional para iterar entre os elementos de suas estruturas também, o que torna muito mais fácil de escrever os programas, e no caso de JS, torna também muito fácil de se ler o programa. Um exemplo pode ser:
+
+```JavaScript
+
+function logArrayElements(element, index, array) {
+console.log("a[" + index + "] = " + element);
+}
+
+[2, 5, 9].forEach(logArrayElements);
+// Ou...
+var arr=[2, 5, 9];
+for (var i = 0; i < arr.length; i++){
+console.log("arr["+i+"] = "+arr[i]);
+}
+```
 
 <!---Cap 09-->
 
-Subprogramas
-=====================================================================
+# Subprogramas
 
-* Fundamentals of Subprograms 388
-* Design Issues for Subprograms 396
-* Local Referencing Environments 397
-* Parameter-Passing Methods 399
-* Parameters That Are Subprograms 417
-* Calling Subprograms Indirectly 419
-* Overloaded Subprograms 421
-* Generic Subprograms 422
-* Design Issues for Functions 428
-* User-Defined Overloaded Operators 430
-* Closures 430
-* Coroutines 432
+## Fundamentos de subprogramas em JavaScript
 
-<!---Cap 12-->
+Como o paradigma funcional é suportado, a criação e manipulação de funções é uma tarefa feita de forma fácil, manipular funções é simples.
 
-Suporte a programação orientada a objetos 523
-=====================================================================
+Existe muitos mecanismos para manipular e sobrescrever as funções, manipular e usar argumentos e outras características de chamadas de função.
+
+Como JS usa também JSON para declarar objetos, manipular métodos também se torna uma tarefa mais fácil. Usar JSON é melhor também na hora de manipular os parâmetros que são passados, porque ao invés de manipular os métodos de forma nativa com as funções, você pode tratar os parâmetros como uma estrutura como qualquer outro, se tornando mais fácil de escrever e mais seguro também.
 
 
-<!---
-http://www.w3schools.com/html/html5_intro.asp
-http://www.w3schools.com/js/
--->
+Como funções podem ser atribuídas a variáveis de forma quase transparente, chamar indiretamente uma função pode se tornar fácil tanto quanto ao invés de atribuir a variavel, você usa a sintaxe para chamar funções.
+
+
+Não existem sobrecarga de operadores, mas a diferenciação de tipos dos parâmetros, pode ser usada para gerar comportamentos diferentes para tipos diferentes de argumentos. JS também utiliza "Duck Language" para fazer as funções genéricas, ou seja, contanto que a função tenha os mesmo métodos que essa função precise, ou seja existam aqueles métodos no objetos, a função ainda vai funcionar.
+
+
+<!--- Cap 12-->
+
+# Suporte a programação orientada a objetos
+
+Existe o suporte a orientação a objetos baseado em protótipos em **JS**, que é implementado pelo tipo "Object".
+
+Uma das vantagens que facilita a escrita, segurança e legibilidade também é o fato do **JS** suportar JSON para criar objetos.
+
+
+<!--- http://www.w3schools.com/html/html5_intro.asphttp://www.w3schools.com/js/ -->
 
 
 
