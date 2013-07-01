@@ -4,6 +4,7 @@
 		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 		<meta content="utf-8" http-equiv="encoding">
 		<script src="thirdparty/EpicEditor/epiceditor/js/epiceditor.min.js"></script>
+		<script src="thirdparty/jquery.js"></script>
 	</head>
 	<body>
 		<title>EpicEditor - An embeddable JavaScript Markdown editor</title>
@@ -11,17 +12,21 @@
 
 
 		<script type="text/javascript">
+			$(document).ready(function () {
+			$.get("resumo.md",function( data ){
 			var opts = {
 				container: 'epiceditor',
 				textarea: null,
 				basePath: 'thirdparty/EpicEditor/epiceditor/',
 				clientSideStorage: false,
+				/*
 				localStorageName: 'epiceditor',
+				*/
 				useNativeFullscreen: true,
 				parser: marked,
 				file: {
 					name: 'resumo.md',
-					defaultContent: '',
+					defaultContent: data,
 					autoSave: 100
 				},
 				theme: {
@@ -46,7 +51,9 @@
 				}
 			}
 			var editor = new EpicEditor(opts).load();
-//			editor.open('resumo.md');
+			//editor.open('resumo.md');
+			});
+			});
 		</script>
 </body>
 </html>
