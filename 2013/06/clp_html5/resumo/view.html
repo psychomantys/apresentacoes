@@ -8,12 +8,15 @@
 	</head>
 	<body>
 		<title>EpicEditor - An embeddable JavaScript Markdown editor</title>
-		<div id="epiceditor"></div>
+
+
+		<div style='display: block;height:100%; width:100%;' id="epiceditor"></div>
 
 
 		<script type="text/javascript">
 			$(document).ready(function () {
 			$.get("resumo.md",function( data ){
+
 			var opts = {
 				container: 'epiceditor',
 				textarea: null,
@@ -29,11 +32,13 @@
 					defaultContent: data,
 					autoSave: 100
 				},
-/*				theme: {
+				theme: {
 					base: '/themes/base/epiceditor.css',
 					preview: '/themes/preview/preview-dark.css',
 					editor: '/themes/editor/epic-dark.css'
-				},*/
+				},
+/*
+*/
 				button: {
 					preview: true,
 					fullscreen: true
@@ -49,9 +54,11 @@
 					toggleEdit: 'Toggle Edit Mode',
 					toggleFullscreen: 'Enter Fullscreen'
 				}
-			}
+			};
 			var editor = new EpicEditor(opts).load();
 			editor.enterFullscreen();
+
+
 			});
 			});
 		</script>
