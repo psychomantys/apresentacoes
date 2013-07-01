@@ -22,18 +22,18 @@
 				/*
 				localStorageName: 'epiceditor',
 				*/
-				useNativeFullscreen: true,
+				useNativeFullscreen: false,
 				parser: marked,
 				file: {
 					name: 'resumo.md',
 					defaultContent: data,
 					autoSave: 100
 				},
-				theme: {
+/*				theme: {
 					base: '/themes/base/epiceditor.css',
 					preview: '/themes/preview/preview-dark.css',
 					editor: '/themes/editor/epic-dark.css'
-				},
+				},*/
 				button: {
 					preview: true,
 					fullscreen: true
@@ -51,7 +51,7 @@
 				}
 			}
 			var editor = new EpicEditor(opts).load();
-			//editor.open('resumo.md');
+			editor.enterFullscreen();
 			});
 			});
 		</script>
