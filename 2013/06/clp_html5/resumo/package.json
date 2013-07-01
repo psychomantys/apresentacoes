@@ -1,0 +1,38 @@
+{
+  "name": "resumo",
+  "description": "resumo",
+  "version": "0.0.1",
+  "scripts": {
+    "test": "grunt test",
+    "prepublish": "grunt get_deps"
+  },
+  "author": [
+    {
+      "name": "Psycho Mantys"
+    }
+  ],
+  "volo": {
+    "baseDir": "thirdparty",
+    "dependencies": {
+      "jquery": "github:jquery/jquery/2.0.2",
+      "EpicEditor": "github:OscarGodson/EpicEditor/0.2.1"
+    }
+  },
+  "devDependencies": {
+    "cordova": "*",
+    "temporary": "*",
+    "grunt": "*",
+    "grunt-cli": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-linter": "*",
+    "volo": "*",
+    "grunt-volo": "*"
+  },
+  "contributors": [
+    {
+      "name": "Psycho Mantys",
+      "email": "psycho.mantys@gmail.com"
+    }
+  ]
+}
