@@ -275,14 +275,35 @@ Se usa referencias amplamente qualificadas para acessar os membros dos Objeto.
 
 # Expressões e instruções de atribuição
 
+Não existe sobrecarga de operadores que seja definido pelo usuário.
 
-* Expressões aritméticas 269
-* Operadores Sobrecarregados 276
-* Conversões de tipo 278
-* Expressões, relacionais e booleanas 281
-* Avaliação curto-circuito 283
-* instruções de atribuição 284
-* Atribuições de modo misto
+## Conversões de tipo
+
+Como o tipo de "**Number**" representa tanto os números decimais quanto os de ponto flutuante, não existe problemas de precisão com operações com números, e normalmente todos os outros tipos são convertidos para string para resolver os outros operadores.
+
+Isso causa uma perda segurança, mas aumenta a escritabilidade da linguagem, porque torna mais fácil de usar os tipos.
+
+
+## Expressões, relacionais e booleanas
+
+JavaScript usa os mesmo operadores da família "C/C++", com a adição de alguns operadores a mais, em especial **===** e **!==**, que são operadores que fazem também a checagem de tipo.
+
+## Instruções de atribuição
+
+É usado o operador "**=**" para fazer atribuições, como na família "C/C++".
+
+Também é permitido a atribuição para alvos múltiplos e condicionais, na forma:
+
+```JavaScript
+x=y=42;
+x=true?10:0;
+```
+
+Grande parte da sintaxe de operações de JS vem diretamente de "**C/C++**", que por sua vez herdou de outras linguagens.
+
+## Atribuições de modo misto
+
+É permitido as atribuições de modo misto, como existem poucos tipos, normalmente elas são fáceis de implementar e existem conversões de tipos implicitas para a todos os tipo, então a escritabilidade é muito beneficiada.
 
 <!---Cap 08-->
 
@@ -323,5 +344,8 @@ Suporte a programação orientada a objetos 523
 http://www.w3schools.com/html/html5_intro.asp
 http://www.w3schools.com/js/
 -->
+
+
+
 
 
