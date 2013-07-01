@@ -45,10 +45,10 @@ ou:
 
 ```JavaScript
 function strict(){
-  // Function-level strict mode syntax
-  'use strict';
-  function nested() { return "And so am I!"; }
-  return "Hi!  I'm a strict mode function!  " + nested();
+    // Function-level strict mode syntax
+    'use strict';
+    function nested() { return "And so am I!"; }
+    return "Hi!  I'm a strict mode function!  " + nested();
 }
 function notStrict() { return "I'm not strict."; }
 
@@ -83,12 +83,12 @@ Os nomes das variáveis de **JavaScript**, obedecem as seguintes regras:
 
 ```JavaScript
 (function () {
-var a=myapp.load();
+    var a=myapp.load();
 }());
 
 
 (function () {
-var a=myapp2.init();
+    var a=myapp2.init();
 }());
 ```
 
@@ -98,7 +98,7 @@ var a=myapp2.init();
 
 ```JavaScript
 function change_a(a){
-a.a=1;
+    a.a=1;
 };
 
 var x={a:4};
@@ -253,40 +253,28 @@ Temos que as cadeias de caracteres são um tipo diferente de todos os outros e e
 
 ## Array
 
+
+* Se usam colchetes para referenciar os itens
 * Qualquer tipo é permitido ser subscrito
 * Não se verificam os indexes do Array, se retorna undefined caso não tenha aquele elemento
+* A alocação de memoria ocorre de forma dinâmica a partir do momento que você passa a referenciar uma célula que não existe
+* A quantidade de itens permitido depende da implementação, ou seja, teoricamente ilimitada
+* Os indexes podem ser de qualquer tipo
+* São usados tanto matrizes dinâmicas no monte quanto dinâmicas na pilhas
+* São oferecidas algumas operações dentro do espaço de nomes Array, como por exemplo concatenação
 
 
+## Object
 
+Um tipo primitivo da linguagem que representa todos os objetos em geral. O que diferencia entre um objeto e outro é exclusivamente o seu conteúdo, ou seja, em **JS** você não pode criar outros tipos por nome de tipo, mas apenas que se diferencie pelo conteúdo.
 
+Se usa referencias amplamente qualificadas para acessar os membros dos Objeto.
 
-
-
-
-
-
-* Object
-* Null
-* Undefined
-
-
-## Tipos de dados primitivos 213
-
-
-
-* Tipos Cadeia de Caracteres 216
-* Tipos Ordinais definidos pelo usuário 221
-* Tipos de Matriz 225
-* Matrizes Associativas 237
-* Tipos Registro 238
-* Tipos União 243
-* Tipos de conjunto 248
-* Tipos ponteiro
 
 <!---Cap 07-->
 
-Expressões e instruções de atribuição
-=====================================================================
+# Expressões e instruções de atribuição
+
 
 * Expressões aritméticas 269
 * Operadores Sobrecarregados 276
