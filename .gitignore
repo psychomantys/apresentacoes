@@ -30,3 +30,6 @@ a.out
 # svn
 .svn
 
+# JavaScript
+node_modules
+
