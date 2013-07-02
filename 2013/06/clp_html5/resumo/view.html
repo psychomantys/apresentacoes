@@ -5,12 +5,10 @@
 		<meta content="utf-8" http-equiv="encoding">
 		<script src="thirdparty/EpicEditor/epiceditor/js/epiceditor.min.js"></script>
 		<script src="thirdparty/jquery.js"></script>
+		<title>EpicEditor - An embeddable JavaScript Markdown editor</title>
 	</head>
 	<body>
-		<title>EpicEditor - An embeddable JavaScript Markdown editor</title>
-
-
-		<div style='display: block;height:100%; width:100%;' id="epiceditor"></div>
+		<div style="clear: both; position: relative;height: 100%;" id="epiceditor"></div>
 
 
 		<script type="text/javascript">
@@ -37,8 +35,6 @@
 					preview: '/themes/preview/preview-dark.css',
 					editor: '/themes/editor/epic-dark.css'
 				},
-/*
-*/
 				button: {
 					preview: true,
 					fullscreen: true
@@ -57,7 +53,6 @@
 			};
 			var editor = new EpicEditor(opts).load();
 			editor.enterFullscreen();
-			$("td").style("color: rgb(255,255,255)");
 
 			});
 			});

@@ -1,9 +1,26 @@
-html { padding:0 10px; }
+html {
+/*
+  padding:0 10px;
+  height:auto;
+*/
+  height: 800px;
+  float:left;
+  width:100%;
+}
 
 body {
+/*
+  padding:0 10px;
   margin:0;
   padding:10px 0;
+  height: 100%;
+  height:auto;
+*/
+  height: 800px;
+  float:left;
+  width:100%;
   background:#000;
+  height: 100%;
 }
 
 #epiceditor-preview h1,
@@ -17,6 +34,7 @@ body {
     margin: 0;
     padding: 0;
 }
+#epiceditor-preview td,
 #epiceditor-preview {
     background:#000;
     font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
@@ -118,4 +136,9 @@ body {
     color:#ccc;
     font-size: 11px;
     padding: 0;
+}
+#epiceditor-preview td {
+    font-size: 11px;
+    color: #ffffff;
+    border: 1px solid #d9d9d9;
 }
