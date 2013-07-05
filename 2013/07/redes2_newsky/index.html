@@ -73,22 +73,6 @@
 		</select>
 		</p>
 	</section>
-	
-	<section>
-		<h1>AMACS</h1>
-	</section>
-
-	<section data-markdown>
-		<script type="text/template">
-		### AMACS
-
-		* Status: Em uso
-		* Método de enlace: VDL Mode 4 e GSM
-		* Aplicação: Air to Air e Air to Ground
-		* Modulação: GSM/UAT, em casos especificos pode ser utilizado Gaus Minimum Shift Keying(GMSK)
-		* Erro de mensagem: 10^-7 com base em uma taixa de erro de bit fisico de 10^-3
-		</script>
-	</section>
 
 	<section>
 		<h1>B-AMC</h1>
@@ -96,15 +80,128 @@
 
 	<section data-markdown>
 		<script type="text/template">
-		### B-AMC
+		### B-AMC (Broadband Aeronautical Mobile Communication system)
 
-		* Status: ????
-		* Método de enlace: 2 métodos:
-			* a/g: topologia de estrela entre aviões e as estações
-			* a/a: Comunicação entre as naves, descentralizada, auto-organizada e formada de "bolhas" de comunicação
-		* Aplicação: Air to Air e Air to Ground
-		* Modulação: Orthogonal Frequency Division Multiplexing (OFDM)
-		* Erro de mensagem: Erro de frame de 10^-2
+		* **Frequência da banda**: B-VHF extended to L-Band
+		* **Método de enlace**: TDMA
+		* **Modulação**: OFDM(QPSK e QAM) e FDD
+		* **Erro de mensagem**: Frame Error Rate(FER) < 10^-2
+		</script>
+	</section>
+		
+	<section data-markdown>
+		<script type="text/template">
+		## Function/Service
+
+		|Air/Ground Addressed Data|Air/Air Addressed Data|Air/Ground Broadcast Data|Air/Air Broadcast Data|
+		|:----------:|:-----------:|:----------:|:----------:|
+		|***v***|***v***|***v***|***v***|
+		</script>
+	</section>
+
+
+	<section data-markdown>
+		<script type="text/template">
+		||Airport Surface|Airport Zone|TMA, Enroute|ORP|AOA|
+		|:----------:|:-----------:|:----------:|:----------:|:----------:|:----------:|
+		|Air/Ground Addressed Data|***v***|***v***|***v***|***x***|***v***|
+		|Air/Air Addressed Data|***v***|***v***|***v***|***v***|***v***|
+		|Air/Ground Broadcast Data|***v***|***v***|***v***|***x***|***v***|
+		|Air/Air Broadcast Data|***v***|***v***|***v***|***v***|***v***|
+		
+		* TMA = Terminal Maneuvering Area(Área de manobra)
+		* ORP = Oceanic Remote Polar
+		* AOA:
+			* ACARS Over AVLC (Mensagens pequenas a/g)
+			* ACARS(Aircraft Communications Addressing and Reporting System)
+			* VLC(Aviation VHF Link Control)
+		</script>
+	</section>
+
+	<section>
+		<h1>AMACS</h1>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+		### AMACS(All-purpose Multi-channel Aviation Communications System)
+
+		* **Método de enlace**: Baseado em E-TDMA e xDL4 broadcast
+		* **Frequência da banda**: L-Band
+		* **Modulação**: GMSK
+		* **Taxa de erros**: Erro de mensagem de 10^-7 com base em uma taxa de erro de Bit físico de 10^-3
+		</script>
+	</section>
+		
+	<section data-markdown>
+		<script type="text/template">
+		## Function/Service
+
+		|Air/Ground Addressed Data|Air/Air Addressed Data|Air/Ground Broadcast Data|Air/Air Broadcast Data|
+		|:----------:|:-----------:|:----------:|:----------:|
+		|***v***|***v***|***v***|***v***|
+		</script>
+	</section>
+
+
+	<section data-markdown>
+		<script type="text/template">
+		||Airport Suurface|Airport Zone|TMA, Enroute|ORP|AOA|
+		|:----------:|:-----------:|:----------:|:----------:|:----------:|:----------:|
+		|Air/Ground Addressed Data|**v**|**v**|**v**|**x**|**v**|
+		|Air/Air Addressed Data|**v**|**v**|**v**|**x**|**?**|
+		|Air/Ground Broadcast Data|**v**|**v**|**v**|**x**|**v**|
+		|Air/Air Broadcast Data|**v**|**v**|**v**|**v**|**?**|
+		
+		* TMA = Terminal Maneuvering Area(Área de manobra)
+		* ORP = Oceanic Remote Polar
+		* AOA:
+			* ACARS Over AVLC (Mensagens pequenas a/g)
+			* ACARS(Aircraft Communications Addressing and Reporting System)
+			* VLC(Aviation VHF Link Control)
+		</script>
+	</section>
+
+	<section>
+		<h1>P-34</h1>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+		### P-34 (Project 34)
+
+		* **Método de enlace**: TDMA
+		* **Frequência da banda**: L-Band
+		* **Modulação**: OFDM(QPSK e QAM)
+		* **Taxa de erros**: 10^-5
+		</script>
+	</section>
+		
+	<section data-markdown>
+		<script type="text/template">
+		## Function/Service
+
+		|Air/Ground Addressed Data|Air/Air Addressed Data|Air/Ground Broadcast Data|Air/Air Broadcast Data|
+		|:----------:|:-----------:|:----------:|:----------:|
+		|***v***|***v***|***v***|***v***|
+		</script>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+		||Airport Suurface|Airport Zone|TMA, Enroute|ORP|AOA|
+		|:----------:|:-----------:|:----------:|:----------:|:----------:|:----------:|
+		|Air/Ground Addressed Data|***x***|***v***|***v***|***x***|***?***|
+		|Air/Air Addressed Data|***x***|***v***|***v***|***x***|***?***|
+		|Air/Ground Broadcast Data|***x***|***v***|***v***|***x***|***?***|
+		|Air/Air Broadcast Data|***x***|***v***|***v***|***v***|***?***|
+		
+		* TMA = Terminal Maneuvering Area(Área de manobra)
+		* ORP = Oceanic Remote Polar
+		* AOA:
+			* ACARS Over AVLC (Mensagens pequenas a/g)
+			* ACARS(Aircraft Communications Addressing and Reporting System)
+			* VLC(Aviation VHF Link Control)
 		</script>
 	</section>
 
@@ -115,39 +212,59 @@
 
 	<section data-markdown>
 		<script type="text/template">
-		### LDL
+		### LDL (L-band Data Link)
 
-		* Status: Ainda um candidato
-		* Método de enlace: Essencialmente parecido com VDL-3 e com uma outra camada física para operações de L-Band baseadas no UAT
-		* Aplicação: a/g e a/a
-		* Modulação: Continuous-phase frequencyshift keying (CPFSK) e GMSK
-		* Erro de mensagem: ???????
+		* **Método de enlace**: TDMA
+		* **Frequência da banda**: VDL3 shifted to L-Band
+		* **Modulação**: CPFSK e GMSK
+		* **Taxa de erros**: < 10^-2
 		</script>
 	</section>
+		
+	<section data-markdown>
+		<script type="text/template">
+		## Function/Service
 
-	<section>
-		<h1>P-34</h1>
+		|Air/Ground Addressed Data|Air/Air Addressed Data|Air/Ground Broadcast Data|Air/Air Broadcast Data|
+		|:----------:|:-----------:|:----------:|:----------:|
+		|***v***|***x***|***v***|***x***|
+		</script>
 	</section>
 
 	<section data-markdown>
 		<script type="text/template">
-		### P-34
-
-		* Status: ?????????????
-		* Método de enlace: Utiliza TDMA para compartilhar o canal. Possui duas camadas físicas diferentes:
-			1. Isotropic Orthogonal Transform Algorithm(IOTA), opcional.
-			2. Scalable Adaptive Modulation (SAM), necessária.
-		* Aplicação: a/a e a/g(mobile and fixed network, mobile to repeater to mobile, and direct radio to radio)
-		* Erro de mensagem: ??????????
-		* Modulação: OFDM como esquema subjacente.
-		------------------------------------------------------------------
-		||50KHz Channel|100KHz Channel|150KHz Channel|
-		|:----------:|:-----------:|:----------:|:----------:|
-		|Modulation Type 1|QPSK(2bits/symbol)|QPSK(2bits/symbol)|QPSK(2bits/symbol)|
-		|Modulation Type 2|16QAM(4bits/symbol)|16QAM(4bits/symbol)|16QAM(4bits/symbol)|
-		|Modulation Type 3|64QAM(6bits/symbol)|64QAM(6bits/symbol)|64QAM(6bits/symbol)|
+		||Airport Suurface|Airport Zone|TMA, Enroute|ORP|AOA|
+		|:----------:|:-----------:|:----------:|:----------:|:----------:|:----------:|
+		|Air/Ground Addressed Data|***x***|***v***|***?***|***x***|***x***|
+		|Air/Air Addressed Data|***x***|***v***|***?***|***x***|***x***|
+		|Air/Ground Broadcast Data|***x***|***v***|***v***|***x***|***v***|
+		|Air/Air Broadcast Data|***x***|***v***|***v***|***x***|***v***|
+		
+		* TMA = Terminal Maneuvering Area(Área de manobra)
+		* ORP = Oceanic Remote Polar
+		* AOA:
+			* ACARS Over AVLC (Mensagens pequenas a/g)
+			* ACARS(Aircraft Communications Addressing and Reporting System)
+			* VLC(Aviation VHF Link Control)
 		</script>
 	</section>
+
+	<section>
+		<h2>Comparativo P-34 e LDL</h2>
+		<p><img src="figuras/comp_p34_ldl_1.png"></p>
+		<p><small>C/I = potencia do canal em relação a interferência</small></p>
+		<p><small>Eb/No = Eb: Energia de Bit/No: Densidade de Ruído Espectral</small></p>
+	</section>
+
+	<section>
+		<h2>Comparativo P-34 e LDL</h2>
+		<p><img src="figuras/comp_p34_ldl_1.png"></p>
+		<p><small><b>C/I</b> = potencia do canal em relação a interferência</small></p>
+		<p><small><b>Eb/No</b> = Eb: Energia de Bit/No: Densidade de Ruído Espectral</small></p>
+	</section>
+
+
+
 
 
 
