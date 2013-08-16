@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<meta content="utf-8" http-equiv="encoding">
+		<script src="resumo/thirdparty/EpicEditor/epiceditor/js/epiceditor.min.js"></script>
+		<script src="resumo/thirdparty/jquery.js"></script>
+		<title>EpicEditor - An embeddable JavaScript Markdown editor</title>
+	</head>
+	<body>
+		<div style="clear: both; position: relative;height: 100%;" id="epiceditor"></div>
+
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+			$.get("resumo_livro.md",function( data ){
+
+			var opts = {
+				container: 'epiceditor',
+				textarea: null,
+				basePath: 'resumo/thirdparty/EpicEditor/epiceditor/',
+				clientSideStorage: false,
+				/*
+				localStorageName: 'epiceditor',
+				*/
+				useNativeFullscreen: false,
+				parser: marked,
+				file: {
+					name: 'resumo.md',
+					defaultContent: data,
+					autoSave: 100
+				},
+				theme: {
+					base: '/themes/base/epiceditor.css',
+					preview: '/themes/preview/preview-dark.css',
+					editor: '/themes/editor/epic-dark.css'
+				},
+				button: {
+					preview: true,
+					fullscreen: true
+				},
+				focusOnLoad: false,
+				shortcut: {
+					modifier: 18,
+					fullscreen: 70,
+					preview: 80
+				},
+				string: {
+					togglePreview: 'Toggle Preview Mode',
+					toggleEdit: 'Toggle Edit Mode',
+					toggleFullscreen: 'Enter Fullscreen'
+				}
+			};
+			var editor = new EpicEditor(opts).load();
+			editor.enterFullscreen();
+
+			});
+			});
+		</script>
+</body>
+</html>
+
