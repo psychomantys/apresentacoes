@@ -11,3 +11,6 @@
 [submodule "2013/07/redes2_newsky/reveal.js"]
 	path = 2013/07/redes2_newsky/reveal.js
 	url = https://github.com/psychomantys/reveal.js.git
+[submodule "2013/11/cloud_vs_grid/reveal.js"]
+	path = 2013/11/cloud_vs_grid/reveal.js
+	url = https://github.com/psychomantys/reveal.js.git
