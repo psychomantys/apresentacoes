@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>New Sky Redes 2</title>
+
+	<meta name="description" content="Cloud e Grid: Quais as diferenças?">
+	<meta name="author" content="Psycho Mantys">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="reveal.js/css/reveal.min.css">
+	<link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
+
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+	<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+	<script type='text/javascript'>
+		document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		function set_revealjs_by_element( element, reveal_id_name ) {
+			var p={};
+			p[reveal_id_name]=element.value;
+			Reveal.configure( p );
+		}
+	</script>
+
+	<!--[if lt IE 9]>
+	<script src="reveal.js/lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+	<div class="reveal">
+	<!-- Any section element inside of this container is displayed as a slide -->
+	<div class="slides">
+
+	<section id="presentation_begin">
+		<h2>Cloud e Grid: Quais as diferenças?</h2>
+		<p><small>Criado por  </small></p>
+		<p>
+		<small><a href="https://about.me/psycho_mantys">Psycho Mantys</a> / <a href="http://twitter.com/psycho_mantys">@psycho_mantys</a></small>
+		</p>
+		<p>
+		<select onChange='set_revealjs_by_element(this, "theme")'>
+			<option value='sky'>Sky</option>
+			<option value='beige'>Beige</option>
+			<option value='simple'>Simple</option>
+			<option value='serif'>Serif</option>
+			<option value='night'>Night</option>
+			<option value='default'>Default</option>
+		</select>
+		<select onChange='set_revealjs_by_element(this, "transition")'>
+			<option value='cube'>Cube</option>
+			<option value='page'>Page</option>
+			<option value='concave'>Concave</option>
+			<option value='zoom'>Zoom</option>
+			<option value='linear'>Linear</option>
+			<option value='fade'>Fade</option>
+			<option value='none'>None</option>
+			<option value='default'>Default</option>
+		</select>
+		</p>
+	</section>
+
+	<section>
+		<h1>Introdução</h1>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+		### Classificando pelo tipo do serviço
+
+		Para o serviço disponibilizado, podemos classifica-lo como:
+		
+		* **SaaS**: Software as a Service
+			* **skype, GMail, facebook** ...
+		* **PaaS**: Plataform as a Service
+			* **Wordpress, Freezope, Openshift** ...
+		* **IaaS**: Infrastructure as a Service
+			* **Amazom, Nimbus, OpenStack** ...
+	
+		</script>
+		<aside class="notes">
+			&rdquo;O IaaS popularizou mais com o surgimento de tecnologias de virtualização&ldquo;
+        Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+    </aside>
+	 </section>
+
+	 <section data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
+
+# Title
+## Sub-title
+
+Here is some content...
+
+Note:
+This will only display in the notes window.
+
+	 </section>
+		
+	<section data-markdown>
+		<script type="text/template">
+		## Function/Service
+
+		|Air/Ground Addressed Data|Air/Air Addressed Data|Air/Ground Broadcast Data|Air/Air Broadcast Data|
+		|:----------:|:-----------:|:----------:|:----------:|
+		|***v***|***v***|***v***|***v***|
+		</script>
+	</section>
+
+
+	<section data-markdown>
+		<script type="text/template">
+		||Airport Surface|Airport Zone|TMA, Enroute|ORP|AOA|
+		|:----------:|:-----------:|:----------:|:----------:|:----------:|:----------:|
+		|Air/Ground Addressed Data|***v***|***v***|***v***|***x***|***v***|
+		|Air/Air Addressed Data|***v***|***v***|***v***|***v***|***v***|
+		|Air/Ground Broadcast Data|***v***|***v***|***v***|***x***|***v***|
+		|Air/Air Broadcast Data|***v***|***v***|***v***|***v***|***v***|
+		
+		* TMA = Terminal Maneuvering Area(Área de manobra)
+		* ORP = Oceanic Remote Polar
+		* AOA:
+			* ACARS Over AVLC (Mensagens pequenas a/g)
+			* ACARS(Aircraft Communications Addressing and Reporting System)
+			* VLC(Aviation VHF Link Control)
+		</script>
+	</section>
+
+	<section>
+		<h1>AMACS</h1>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+		### AMACS(All-purpose Multi-channel Aviation Communications System)
+
+		* **Método de enlace**: Baseado em E-TDMA e xDL4 broadcast
+		* **Frequência da banda**: L-Band
+		* **Modulação**: GMSK
+		* **Taxa de erros**: Erro de mensagem de 10^-7 com base em uma taxa de erro de Bit físico de 10^-3
+		</script>
+	</section>
+		
+	<section data-markdown>
+		<script type="text/template">
+		## Function/Service
+
+		|Air/Ground Addressed Data|Air/Air Addressed Data|Air/Ground Broadcast Data|Air/Air Broadcast Data|
+		|:----------:|:-----------:|:----------:|:----------:|
+		|***v***|***v***|***v***|***v***|
+		</script>
+	</section>
+
+
+	<section data-markdown>
+		<script type="text/template">
+		||Airport Suurface|Airport Zone|TMA, Enroute|ORP|AOA|
+		|:----------:|:-----------:|:----------:|:----------:|:----------:|:----------:|
+		|Air/Ground Addressed Data|**v**|**v**|**v**|**x**|**v**|
+		|Air/Air Addressed Data|**v**|**v**|**v**|**x**|**?**|
+		|Air/Ground Broadcast Data|**v**|**v**|**v**|**x**|**v**|
+		|Air/Air Broadcast Data|**v**|**v**|**v**|**v**|**?**|
+		
+		* TMA = Terminal Maneuvering Area(Área de manobra)
+		* ORP = Oceanic Remote Polar
+		* AOA:
+			* ACARS Over AVLC (Mensagens pequenas a/g)
+			* ACARS(Aircraft Communications Addressing and Reporting System)
+			* VLC(Aviation VHF Link Control)
+		</script>
+	</section>
+
+	<section>
+		<h1>P-34</h1>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+		### P-34 (Project 34)
+
+		* **Método de enlace**: TDMA
+		* **Frequência da banda**: L-Band
+		* **Modulação**: OFDM(QPSK e QAM)
+		* **Taxa de erros**: 10^-5
+		</script>
+	</section>
+		
+	<section data-markdown>
+		<script type="text/template">
+		## Function/Service
+
+		|Air/Ground Addressed Data|Air/Air Addressed Data|Air/Ground Broadcast Data|Air/Air Broadcast Data|
+		|:----------:|:-----------:|:----------:|:----------:|
+		|***v***|***v***|***v***|***v***|
+		</script>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+		||Airport Suurface|Airport Zone|TMA, Enroute|ORP|AOA|
+		|:----------:|:-----------:|:----------:|:----------:|:----------:|:----------:|
+		|Air/Ground Addressed Data|***x***|***v***|***v***|***x***|***?***|
+		|Air/Air Addressed Data|***x***|***v***|***v***|***x***|***?***|
+		|Air/Ground Broadcast Data|***x***|***v***|***v***|***x***|***?***|
+		|Air/Air Broadcast Data|***x***|***v***|***v***|***v***|***?***|
+		
+		* TMA = Terminal Maneuvering Area(Área de manobra)
+		* ORP = Oceanic Remote Polar
+		* AOA:
+			* ACARS Over AVLC (Mensagens pequenas a/g)
+			* ACARS(Aircraft Communications Addressing and Reporting System)
+			* VLC(Aviation VHF Link Control)
+		</script>
+	</section>
+
+
+	<section>
+		<h1>LDL</h1>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+		### LDL (L-band Data Link)
+
+		* **Método de enlace**: TDMA
+		* **Frequência da banda**: VDL3 shifted to L-Band
+		* **Modulação**: CPFSK e GMSK
+		* **Taxa de erros**: < 10^-2
+		</script>
+	</section>
+		
+	<section data-markdown>
+		<script type="text/template">
+		## Function/Service
+
+		|Air/Ground Addressed Data|Air/Air Addressed Data|Air/Ground Broadcast Data|Air/Air Broadcast Data|
+		|:----------:|:-----------:|:----------:|:----------:|
+		|***v***|***x***|***v***|***x***|
+		</script>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+		||Airport Suurface|Airport Zone|TMA, Enroute|ORP|AOA|
+		|:----------:|:-----------:|:----------:|:----------:|:----------:|:----------:|
+		|Air/Ground Addressed Data|***x***|***v***|***?***|***x***|***x***|
+		|Air/Air Addressed Data|***x***|***v***|***?***|***x***|***x***|
+		|Air/Ground Broadcast Data|***x***|***v***|***v***|***x***|***v***|
+		|Air/Air Broadcast Data|***x***|***v***|***v***|***x***|***v***|
+		
+		* TMA = Terminal Maneuvering Area(Área de manobra)
+		* ORP = Oceanic Remote Polar
+		* AOA:
+			* ACARS Over AVLC (Mensagens pequenas a/g)
+			* ACARS(Aircraft Communications Addressing and Reporting System)
+			* VLC(Aviation VHF Link Control)
+		</script>
+	</section>
+
+	<section>
+		<h2>Comparativo P-34 e LDL</h2>
+		<p><img src="figuras/comp_p34_ldl_1.png"></p>
+		<p><small><b>C/I</b> = potencia do canal em relação a interferência</small></p>
+		<p><small><b>Eb/No</b> = Eb: Energia de Bit/No: Densidade de Ruído Espectral</small></p>
+	</section>
+
+	<section>
+		<h2>Comparativo P-34 e LDL</h2>
+		<p><img src="figuras/comp_p34_ldl_2.png"></p>
+		<p><small><b>C/I</b> = potencia do canal em relação a interferência</small></p>
+		<p><small><b>Eb/No</b> = Eb: Energia de Bit/No: Densidade de Ruído Espectral</small></p>
+	</section>
+
+
+
+
+
+
+
+	<section id="presentation_end">
+		<h1>THE END</h1>
+		<p>Por<br>
+		<a href="https://about.me/psycho_mantys">Psycho Mantys</a> / <a href="http://twitter.com/psycho_mantys">@psycho_mantys</a><br>
+		<a>Rhudney Simoes</a></br>
+		<a>Jonathas Alberto</a>
+		</p>
+		<p><a href="#/presentation_begin">Begin</a></p>
+	</section>
+
+	</div>
+	</div>
+
+	<script src="reveal.js/lib/js/head.min.js"></script>
+	<script src="reveal.js/js/reveal.min.js"></script>
+
+	<script>
+		// Full list of configuration options available here:
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+
+			theme: Reveal.getQueryHash().theme || 'night', // available themes are in /css/theme
+			transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+			// Optional libraries used to extend on reveal.js
+			dependencies: [
+			{ src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+			{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+			{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+			{ src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+//			{ src: 'reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } },
+//			{ src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+			{ src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } }
+			]
+		});
+	</script>
+</body>
+</html>
+
