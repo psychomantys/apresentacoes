@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>New Sky Redes 2</title>
+	<title>Cloud e Grid: Quais as diferenças?</title>
 
 	<meta name="description" content="Cloud e Grid: Quais as diferenças?">
 	<meta name="author" content="Psycho Mantys">
@@ -84,212 +84,169 @@
 			* **Wordpress, Freezope, Openshift** ...
 		* **IaaS**: Infrastructure as a Service
 			* **Amazom, Nimbus, OpenStack** ...
-	
 		</script>
-		<aside class="notes">
-			&rdquo;O IaaS popularizou mais com o surgimento de tecnologias de virtualização&ldquo;
-        Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-    </aside>
-	 </section>
+	</section>
 
-	 <section data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
-
-# Title
-## Sub-title
-
-Here is some content...
-
-Note:
-This will only display in the notes window.
-
-	 </section>
-		
 	<section data-markdown>
 		<script type="text/template">
-		## Function/Service
+		### Comparando tudo
 
-		|Air/Ground Addressed Data|Air/Air Addressed Data|Air/Ground Broadcast Data|Air/Air Broadcast Data|
-		|:----------:|:-----------:|:----------:|:----------:|
-		|***v***|***v***|***v***|***v***|
+		![](figuras/iaas-paas-saas.jpg)
+
 		</script>
 	</section>
 
 
 	<section data-markdown>
 		<script type="text/template">
-		||Airport Surface|Airport Zone|TMA, Enroute|ORP|AOA|
-		|:----------:|:-----------:|:----------:|:----------:|:----------:|:----------:|
-		|Air/Ground Addressed Data|***v***|***v***|***v***|***x***|***v***|
-		|Air/Air Addressed Data|***v***|***v***|***v***|***v***|***v***|
-		|Air/Ground Broadcast Data|***v***|***v***|***v***|***x***|***v***|
-		|Air/Air Broadcast Data|***v***|***v***|***v***|***v***|***v***|
-		
-		* TMA = Terminal Maneuvering Area(Área de manobra)
-		* ORP = Oceanic Remote Polar
-		* AOA:
-			* ACARS Over AVLC (Mensagens pequenas a/g)
-			* ACARS(Aircraft Communications Addressing and Reporting System)
-			* VLC(Aviation VHF Link Control)
+			## Grids
 		</script>
-	</section>
-
-	<section>
-		<h1>AMACS</h1>
 	</section>
 
 	<section data-markdown>
 		<script type="text/template">
-		### AMACS(All-purpose Multi-channel Aviation Communications System)
+			### O que caracteriza um Grid?
 
-		* **Método de enlace**: Baseado em E-TDMA e xDL4 broadcast
-		* **Frequência da banda**: L-Band
-		* **Modulação**: GMSK
-		* **Taxa de erros**: Erro de mensagem de 10^-7 com base em uma taxa de erro de Bit físico de 10^-3
+			Segundo **Ian Foster**:
+
+<blockquote>
+	<ol>
+	<li> ...coordinates resources that are not subject to centralized control... </li>
+	<li> ...using standard, open, general-purpose protocols and interfaces...</li>
+	<li>...to deliver nontrivial qualities of service.</li>
+	</ol>
+</blockquote>
+
+			Segundo **Buyya/Venugopal**:
+
+			> a type of parallel and distributed system that enables the sharing, selection, and aggregation of geographically distributed autonomous resources dynamically at runtime depending on their availability, capability, performance, cost, and users quality-of-service requirements
+
+
+		</script>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+		### Podemos ressaltar:
+
+		* **Colaboração**
+		* Padrões
+			* JSDL
+			* Web Services
+		* Organização de recursos
+		* Acadêmico, bem mais definido
+		* Perfil de aplicação voltado para batch(não exclusivo)
+		* Surgiu antes da virtualização se consolidar
 		</script>
 	</section>
 		
 	<section data-markdown>
 		<script type="text/template">
-		## Function/Service
+		### Projetos
 
-		|Air/Ground Addressed Data|Air/Air Addressed Data|Air/Ground Broadcast Data|Air/Air Broadcast Data|
-		|:----------:|:-----------:|:----------:|:----------:|
-		|***v***|***v***|***v***|***v***|
+		* OurGrid
+		* SETI@home
+		* Globus Toolkit
+		* Muitos outros projetos academicos
 		</script>
 	</section>
 
 
 	<section data-markdown>
 		<script type="text/template">
-		||Airport Suurface|Airport Zone|TMA, Enroute|ORP|AOA|
-		|:----------:|:-----------:|:----------:|:----------:|:----------:|:----------:|
-		|Air/Ground Addressed Data|**v**|**v**|**v**|**x**|**v**|
-		|Air/Air Addressed Data|**v**|**v**|**v**|**x**|**?**|
-		|Air/Ground Broadcast Data|**v**|**v**|**v**|**x**|**v**|
-		|Air/Air Broadcast Data|**v**|**v**|**v**|**v**|**?**|
-		
-		* TMA = Terminal Maneuvering Area(Área de manobra)
-		* ORP = Oceanic Remote Polar
-		* AOA:
-			* ACARS Over AVLC (Mensagens pequenas a/g)
-			* ACARS(Aircraft Communications Addressing and Reporting System)
-			* VLC(Aviation VHF Link Control)
-		</script>
-	</section>
-
-	<section>
-		<h1>P-34</h1>
-	</section>
-
-	<section data-markdown>
-		<script type="text/template">
-		### P-34 (Project 34)
-
-		* **Método de enlace**: TDMA
-		* **Frequência da banda**: L-Band
-		* **Modulação**: OFDM(QPSK e QAM)
-		* **Taxa de erros**: 10^-5
-		</script>
-	</section>
-		
-	<section data-markdown>
-		<script type="text/template">
-		## Function/Service
-
-		|Air/Ground Addressed Data|Air/Air Addressed Data|Air/Ground Broadcast Data|Air/Air Broadcast Data|
-		|:----------:|:-----------:|:----------:|:----------:|
-		|***v***|***v***|***v***|***v***|
+			# Cloud
 		</script>
 	</section>
 
 	<section data-markdown>
 		<script type="text/template">
-		||Airport Suurface|Airport Zone|TMA, Enroute|ORP|AOA|
-		|:----------:|:-----------:|:----------:|:----------:|:----------:|:----------:|
-		|Air/Ground Addressed Data|***x***|***v***|***v***|***x***|***?***|
-		|Air/Air Addressed Data|***x***|***v***|***v***|***x***|***?***|
-		|Air/Ground Broadcast Data|***x***|***v***|***v***|***x***|***?***|
-		|Air/Air Broadcast Data|***x***|***v***|***v***|***v***|***?***|
-		
-		* TMA = Terminal Maneuvering Area(Área de manobra)
-		* ORP = Oceanic Remote Polar
-		* AOA:
-			* ACARS Over AVLC (Mensagens pequenas a/g)
-			* ACARS(Aircraft Communications Addressing and Reporting System)
-			* VLC(Aviation VHF Link Control)
+			### O que caracteriza uma Cloud?
+
+			Segundo **Sean Ludwig**:
+
+<blockquote>
+Let's start at the beginning. "Cloud" is a metaphor for the Internet, and "cloud computing" is using the Internet to access applications, data or services that are stored or running on remote servers.
+
+When you break it down, any company offering an Internet-based approach to computing, storage and development can technically be called a cloud company. However, not all cloud companies are the same.
+
+Typically, these companies focus on offering one of three categories of cloud computing services. These different segments are called the "layers" of the cloud.
+</blockquote>
+
 		</script>
-	</section>
-
-
-	<section>
-		<h1>LDL</h1>
 	</section>
 
 	<section data-markdown>
 		<script type="text/template">
-		### LDL (L-band Data Link)
+			### Podemos ressaltar:
 
-		* **Método de enlace**: TDMA
-		* **Frequência da banda**: VDL3 shifted to L-Band
-		* **Modulação**: CPFSK e GMSK
-		* **Taxa de erros**: < 10^-2
+			* Voltado a serviços: **IaaS**, **PaaS**, **SaaS** ...
+			* Virtualização bem mais usada
+			* Mais usado da industria, bem menos definido
+			* Recursos infinitos e elasticos ?
+			* Pay-as-you-go (on demand) ?
+			* Sem padrões bem definidos
+		</script>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+		### Projetos
+
+		* Nimbus
+		* OpenStack
+		* OpenNebula
+		* Amazon
+				  
+		</script>
+	</section>
+
+
+	<section data-markdown>
+		<script type="text/template">
+		# Comparando
 		</script>
 	</section>
 		
 	<section data-markdown>
 		<script type="text/template">
-		## Function/Service
+		### Cloud
 
-		|Air/Ground Addressed Data|Air/Air Addressed Data|Air/Ground Broadcast Data|Air/Air Broadcast Data|
-		|:----------:|:-----------:|:----------:|:----------:|
-		|***v***|***x***|***v***|***x***|
+		* Usa muito como padrão o **Amazon**
+		* Mais integrada a virtualização
+		* Voltado a industria, a venda de serviço, de apenas uma organização
+		* Começou pensando em **IaaS**, pode suportar **PaaS** e **SaaS**
+		* Emgloba grid, por ser muito generico
+
+		### Grid
+
+		* Padrões bem mais definidos, por isso subconjunto de cloud
+		* Menos integrado a virtualização, mas presente
+		* Mais de origem academica, a gerenciar recursos compartilhados, multi-institucional
+		* Começou pensando em **PaaS** e **SaaS**, pode suportar **IaaS**
+
 		</script>
 	</section>
 
 	<section data-markdown>
 		<script type="text/template">
-		||Airport Suurface|Airport Zone|TMA, Enroute|ORP|AOA|
-		|:----------:|:-----------:|:----------:|:----------:|:----------:|:----------:|
-		|Air/Ground Addressed Data|***x***|***v***|***?***|***x***|***x***|
-		|Air/Air Addressed Data|***x***|***v***|***?***|***x***|***x***|
-		|Air/Ground Broadcast Data|***x***|***v***|***v***|***x***|***v***|
-		|Air/Air Broadcast Data|***x***|***v***|***v***|***x***|***v***|
-		
-		* TMA = Terminal Maneuvering Area(Área de manobra)
-		* ORP = Oceanic Remote Polar
-		* AOA:
-			* ACARS Over AVLC (Mensagens pequenas a/g)
-			* ACARS(Aircraft Communications Addressing and Reporting System)
-			* VLC(Aviation VHF Link Control)
+		### Grid vs CLoud: Questão de ponto de vista
+
+		![](figuras/grid-nodes.png)
 		</script>
 	</section>
 
-	<section>
-		<h2>Comparativo P-34 e LDL</h2>
-		<p><img src="figuras/comp_p34_ldl_1.png"></p>
-		<p><small><b>C/I</b> = potencia do canal em relação a interferência</small></p>
-		<p><small><b>Eb/No</b> = Eb: Energia de Bit/No: Densidade de Ruído Espectral</small></p>
+	<section data-markdown>
+		<script type="text/template">
+		## Fim!!
+
+		![](figuras/cloud_oops.jpg)
+		</script>
 	</section>
-
-	<section>
-		<h2>Comparativo P-34 e LDL</h2>
-		<p><img src="figuras/comp_p34_ldl_2.png"></p>
-		<p><small><b>C/I</b> = potencia do canal em relação a interferência</small></p>
-		<p><small><b>Eb/No</b> = Eb: Energia de Bit/No: Densidade de Ruído Espectral</small></p>
-	</section>
-
-
-
-
-
-
 
 	<section id="presentation_end">
 		<h1>THE END</h1>
 		<p>Por<br>
 		<a href="https://about.me/psycho_mantys">Psycho Mantys</a> / <a href="http://twitter.com/psycho_mantys">@psycho_mantys</a><br>
-		<a>Rhudney Simoes</a></br>
-		<a>Jonathas Alberto</a>
 		</p>
 		<p><a href="#/presentation_begin">Begin</a></p>
 	</section>
@@ -317,7 +274,7 @@ This will only display in the notes window.
 			{ src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
 			{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 			{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-			{ src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+			{ src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function(){ return !!document.body.classList; } },
 //			{ src: 'reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } },
 //			{ src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
 			{ src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
