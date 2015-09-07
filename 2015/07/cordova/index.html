@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>Cordova</title>
+
+	<meta name="description" content="Cordova">
+	<meta name="author" content="Psycho Mantys">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="reveal.js/css/reveal.min.css">
+	<link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
+
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+	<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+	<script type='text/javascript'>
+		document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		function set_revealjs_by_element( element, reveal_id_name ) {
+			var p={};
+			p[reveal_id_name]=element.value;
+			Reveal.configure( p );
+		}
+	</script>
+
+	<!--[if lt IE 9]>
+	<script src="reveal.js/lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+	<div class="reveal">
+	<!-- Any section element inside of this container is displayed as a slide -->
+	<div class="slides">
+
+	<section id="presentation_begin">
+		<h2>Cordova</h2>
+		<p><small>Criado por  </small></p>
+		<p>
+		<small><a href="https://about.me/psycho_mantys">Psycho Mantys</a> / <a href="http://twitter.com/psycho_mantys">@psycho_mantys</a></small>
+		</p>
+		<p>
+		<select onChange='set_revealjs_by_element(this, "theme")'>
+			<option value='sky'>Sky</option>
+			<option value='beige'>Beige</option>
+			<option value='simple'>Simple</option>
+			<option value='serif'>Serif</option>
+			<option value='night'>Night</option>
+			<option value='default'>Default</option>
+		</select>
+		<select onChange='set_revealjs_by_element(this, "transition")'>
+			<option value='cube'>Cube</option>
+			<option value='page'>Page</option>
+			<option value='concave'>Concave</option>
+			<option value='zoom'>Zoom</option>
+			<option value='linear'>Linear</option>
+			<option value='fade'>Fade</option>
+			<option value='none'>None</option>
+			<option value='default'>Default</option>
+		</select>
+		</p>
+	</section>
+
+
+
+
+
+
+
+
+
+	<section>
+		<h1>Problemáticas</h1>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+			### Desenvolver um ambiente web e outro para o dispositivo móvel
+
+			* Custo em dobro de manter varias soluções
+			* Teoricamente, você já tem que fazer isso na interface web
+		</script>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+		### Interface no navegador para o cliente
+
+		![](figuras/no_navegador.png)
+
+		</script>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+		### Interface no navegador para o cliente(no celular)
+
+		![](figuras/no_navegador_mobilescreen.png)
+
+		</script>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+		### Mais custos em programar para as varias SDK de dispositivos moveis
+
+		* Android
+		* iOS
+		* blackberry
+		* Ubuntu phone
+		* firefoxos
+		* Windows Phone
+		* Palm WebOS
+		* Bada
+		* Symbian
+		* WTFPhone... Ta certo, eu inventei esse...
+		</script>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+		# O que é o cordova?
+		![](figuras/cordova_logo.png)
+		</script>
+	</section>
+
+
+	<section data-markdown>
+		<script type="text/template">
+		* Framework para desenvolvimento de aplicativos em HTML para dispositivos moveis
+		* Suporte a HTML5
+		* Não precisa nescessariamente programar na linguagem nativa do dispositivos!
+		</script>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+		### O que isso quer dizer exatamente
+
+		* Desenvolvedores podem migrar suas aplicações imediatamente para dispositivos moveis se elas forem feitas em HTML
+		* Tão simples quanto parece
+
+		</script>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+		![](figuras/no_android2.png)
+		</script>
+	</section>
+
+
+	<section data-markdown>
+		<script type="text/template">
+		### Pontos curiosos
+		* Anteriormente conhecido como PhoneGap
+		* Licença de software livre apache
+		</script>
+	</section>
+
+	<section>
+		<h1>Exemplos</h1>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+		### Criando projeto para o android
+
+		```sh
+		$ npm install -g cordova
+		$ cordova create teste com.teste "Aplicativo teste"
+		$ cd teste
+		$ cat www/index.html
+		$ cordova platforms add android
+		$ cordova build android
+		```
+		</script>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+		### Executando o emulador do android
+
+		```sh
+		$ cordova emulate android
+		```
+
+		### Ou no browser
+		```sh
+		$ cordova serve
+		```
+
+		Pronto. basta ir em **http://localhost:8000**!
+
+		</script>
+	</section>
+
+	<section>
+		<h1>Problemas</h1>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+		* Perda de desempenho
+		* Acesso ao hardware do dispositivo
+		* Uso de plugins nativos
+		</script>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+		### Links
+
+
+		</script>
+	</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<section id="presentation_end">
+		<h1>THE END</h1>
+		<p>Por<br>
+		<a href="https://about.me/psycho_mantys">Psycho Mantys</a> / <a href="http://twitter.com/psycho_mantys">@psycho_mantys</a><br>
+		</p>
+		<p><a href="#/presentation_begin">Begin</a></p>
+	</section>
+
+	</div>
+	</div>
+
+	<script src="reveal.js/lib/js/head.min.js"></script>
+	<script src="reveal.js/js/reveal.min.js"></script>
+
+	<script>
+		// Full list of configuration options available here:
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+
+			theme: Reveal.getQueryHash().theme || 'night', // available themes are in /css/theme
+			transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+			// Optional libraries used to extend on reveal.js
+			dependencies: [
+			{ src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+			{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+			{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+			{ src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function(){ return !!document.body.classList; } },
+//			{ src: 'reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } },
+//			{ src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+			{ src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } }
+			]
+		});
+	</script>
+</body>
+</html>
+
+
+
+<!--
+
+Problematicas
+	* desenvolver um ambiente web para o cliente e outro para o dispositivo movel
+		* O custo dobrado de manter varias solucoes
+		* Teoricamente, você ja tem que fazer isso na interface web
+
+
+	* Pode ser mais custoso programar para as varias SDK de dispositivos moveis
+		* Android: Dalvik
+		* iOS: objectve-C
+		* blackberry:
+		* Ubuntu phone
+		* firefoxos ..... HTML5.
+		* Windows Phone
+		* Palm WebOS
+		* Bada
+		* Symbian
+		* WTFPhone... Ta certo, eu intentei essa.
+
+
+O que é o cordova
+
+	* Caracteristicas
+		* Framework para desenvolvimento de aplicativos em HTML para dispositivos moveis
+		* Suporte a HTML5
+		* Não precisa nescessariamente programar na linguagem nativa do dispositivos!
+
+	* Que isso quer dizer exatamente
+		* Desenvolvedores podem migrar suas aplicacoes imediatamente para dispositivos moveis se elas forem feitas em HTML
+		* Tão simples quanto parece
+		
+
+
+
+	* Pontos curiosos
+		* Anteriormente conhecido como PhoneGap
+		* Licenca de software livre apache
+
+Exemplos
+	* Criando projeto para o android
+
+Problematicas:
+	* Acesso ao hardware do dispositivo
+		* Uso de plugins nativos
+		* Plugins para varias plataformas desenvolvidos pelo cordova
+
+
+
+
+-->
