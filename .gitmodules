@@ -17,3 +17,6 @@
 [submodule "2015/07/cordova/reveal.js"]
 	path = 2015/07/cordova/reveal.js
 	url = https://github.com/psychomantys/reveal.js
+[submodule "2017/07/22/pygame/reveal.js"]
+	path = 2017/07/22/pygame/reveal.js
+	url = https://github.com/psychomantys/reveal.js
