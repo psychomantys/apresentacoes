@@ -95,6 +95,24 @@
 			![](figuras/gameloop_complex.gif)
 		</script>
 	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+			### Game Loop em python
+```python
+# python3 code/gameloop.py
+try:
+	game_init()
+	while not done:
+		event_handler()
+		game_logic()
+		step_physics()
+		render()
+finally:
+	game_end()
+```
+		</script>
+	</section>
 	</section>
 
 	<section>
@@ -143,13 +161,69 @@
 		</blockquote>
 	</section>
 
+	<section>
+		<h1>Instalação</h1>
+	</section>
 
+	<section>
+	<section data-markdown>
+		<script type="text/template">
+			* Você também pode intalar pelo seu [gerenciador de pacotes favorito](http://www.pygame.org/wiki/GettingStarted)
+			* Normalmente em todos os sistemas:
 
+```shell
+pip install pygame --user
+```
+
+		</script>
+	</section>
+	<section data-markdown>
+		<script type="text/template">
+		### Aliens!
+
+```
+python3 -m pygame.examples.aliens
+```
+		</script>
+	</section>
+	<section data-markdown>
+		<script type="text/template">
+#### Debian like:
+
+```
+sudo apt-get install python3-pygame
+```
+
+#### Fedora/Redhat:
+
+```
+sudo yum install python3-pygame
+```
+
+		</script>
+	</section>
+	</section>
 
 	<section data-markdown>
 		<script type="text/template">
-			### links
+			### Modulos
 
+			* Som
+			* Controle
+			* CDROM
+			* Dispositivos de entrada
+			* Camera
+			* E muito mais...
+		</script>
+	</section>
+
+
+	<section>
+		<h1>Links Úteis</h1>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
 			* [Site oficial do PyGame](http://www.pygame.org/)
 
 			* [Aprendendo a programar em python+PyGame](http://programarcadegames.com/index.php?lang=pt-br)
@@ -204,14 +278,5 @@
 
 
 <!--
-
-
-
-
-Em um jogo, temos basicamente
-	* Fisica
-	* Graficos
-
-O que é o pygame?
-		
 -->
+
