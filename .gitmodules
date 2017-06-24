@@ -16,4 +16,4 @@
 	url = https://github.com/psychomantys/reveal.js.git
 [submodule "2015/07/cordova/reveal.js"]
 	path = 2015/07/cordova/reveal.js
-	url = https://github.com/psychomantys/reveal.js
+        url = https://github.com/psychomantys/reveal.js
