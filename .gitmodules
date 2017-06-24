@@ -19,5 +19,4 @@
         url = https://github.com/psychomantys/reveal.js
 [submodule "2017/07/22/pygame/reveal.js"]
 	path = 2017/07/22/pygame/reveal.js
-	url = https://github.com/hakimel/reveal.js/origin/3.5.0
-	branch = 3.5.0
+	url = https://github.com/hakimel/reveal.js
