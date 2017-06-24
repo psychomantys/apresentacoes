@@ -13,8 +13,8 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<link rel="stylesheet" href="reveal.js/css/reveal.min.css">
-	<link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
+	<link rel="stylesheet" href="reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme">
 
 	<!-- For syntax highlighting -->
 	<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
@@ -177,26 +177,30 @@ pip install pygame --user
 
 		</script>
 	</section>
+
 	<section data-markdown>
 		<script type="text/template">
-		### Aliens!
+### Aliens!
 
-```
+![Teste2](figuras/aliens.png)
+
+```shell
 python3 -m pygame.examples.aliens
 ```
 		</script>
 	</section>
+
 	<section data-markdown>
 		<script type="text/template">
 #### Debian like:
 
-```
+```shell
 sudo apt-get install python3-pygame
 ```
 
 #### Fedora/Redhat:
 
-```
+```shell
 sudo yum install python3-pygame
 ```
 
@@ -285,8 +289,6 @@ sudo yum install python3-pygame
 			{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 			{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 			{ src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function(){ return !!document.body.classList; } },
-//			{ src: 'reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } },
-//			{ src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
 			{ src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 			{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } }
 			]
