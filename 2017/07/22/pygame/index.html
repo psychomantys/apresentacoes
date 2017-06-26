@@ -209,23 +209,23 @@ sudo yum install python3-pygame
 	</section>
 
 	<section>
-		<h3>Modulos</h3>
+		<h1>Modulos</h1>
+	</section>
 
+	<section>
 		<table>
-<!--
 			<thead>
 				<tr>
-					<th>Item</th>
-					<th>Value</th>
-					<th>Quantity</th>
+					<th></th>
+					<th></th>
+					<th></th>
 				</tr>
 			</thead>
--->
 			<tbody>
 				<tr>
 					<td>Som</td>
 					<td>Teclado</td>
-					<td>Controle</td>
+					<td>Joystick</td>
 				</tr>
 				<tr>
 					<td>CDROM</td>
@@ -233,14 +233,78 @@ sudo yum install python3-pygame
 					<td>Camera</td>
 				</tr>
 				<tr>
-					<td> </td>
-					<td> </td>
-					<td> </td>
+					<td>Color</td>
+					<td>Cursor</td>
+					<td>Display</td>
+				</tr>
+				<tr>
+					<td>Draw</td>
+					<td>Event</td>
+					<td>Font</td>
+				</tr>
+				<tr>
+					<td>Image</td>
+					<td>Mask</td>
+					<td>Mixer</td>
+				</tr>
+				<tr>
+					<td>Music</td>
+					<td>Rect</td>
+					<td>Surface</td>
+				</tr>
+				<tr>
+					<td>Sprite</td>
+					<td>Time</td>
+					<td>Transform</td>
+				</tr>
+				<tr>
+					<td>BufferProxy</td>
+					<td>FreeType</td>
+					<td>GFXDraw</td>
 				</tr>
 			</tbody>
 		</table>
+      <p>Muitos modulos a mais disponíveis, alguns desses ainda experimentais</p>
 	</section>
 
+	<section data-markdown>
+		<script type="text/template">
+         ## `pygame.display`
+
+         Modulo que ajuda na manipulação da tela. Pode criar a tela e configurar os paramentros dela.
+		</script>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+			#### Metodos uteis
+
+			|||
+			|:---|---:|
+			| `flip()` | Renderiza toda a tela  |
+			| `set_caption(caption)` | Muda o titulo da janela |
+			| `set_mode(mode)` | Configura o tamanho da tela |
+		</script>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+### On the Road
+
+
+```python
+# python3 code/gameloop.py
+def game_init():
+	pygame.init()
+	pygame.display.set_mode( (800,600) )
+	pygame.display.set_caption("Python Day")
+
+def render():
+	pygame.display.flip()
+```
+
+		</script>
+	</section>
 
 	<section>
 		<h1>Links Úteis</h1>
