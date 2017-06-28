@@ -269,6 +269,29 @@ sudo yum install python3-pygame
 
 	<section data-markdown>
 		<script type="text/template">
+		### Inicializando
+
+```python
+import pygame
+# Opcional
+from pygame.locals import *
+
+pygame.init()
+# ou "pygame.module.init()" Ex:
+pygame.display.init()
+```
+
+		### Terminando
+```python
+pygame.quit()
+# ou "pygame.module.quit()" Ex:
+pygame.font.quit()
+```
+		</script>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
          ## `pygame.display`
 
          Modulo que ajuda na manipulação da tela. Pode criar a tela, controlar e configurar os paramentros dela.
