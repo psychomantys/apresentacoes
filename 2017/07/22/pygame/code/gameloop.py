@@ -38,15 +38,19 @@ def event_handler():
 		# Trata evento QUIT
 		if event.type == pygame.QUIT:
 			done=True
+		elif event.type == pygame.KEYDOWN:
+			print(pygame.key.name(event.key))
+            
 
 
 def game_init():
 	pygame.init()
 	pygame.display.set_caption("Python Day")
-	pygame.display.set_mode(screen_mode)
+	screen=pygame.display.set_mode(screen_mode)
 
 	global clock
 	clock=pygame.time.Clock()
+	screen.fill([255, 255, 255])
 
 
 def game_end():

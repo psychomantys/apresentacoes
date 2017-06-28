@@ -292,9 +292,9 @@ pygame.font.quit()
 
 	<section data-markdown>
 		<script type="text/template">
-         ## `pygame.display`
+			## `pygame.display`
 
-         Modulo que ajuda na manipulação da tela. Pode criar a tela, controlar e configurar os paramentros dela.
+			Modulo que ajuda na manipulação da tela. Pode criar a tela, controlar e configurar os paramentros dela.
 		</script>
 	</section>
 
@@ -328,6 +328,98 @@ def render():
 
 		</script>
 	</section>
+
+
+	<section data-markdown>
+		<script type="text/template">
+			## `pygame.time`
+
+			Modulo para lidar com o tempo, limitar e obter os FPS.
+		</script>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+			#### Metodos uteis
+
+			|||
+			|:---|---:|
+			| `tick(fps)` | Atrasa o loop para o programa ter **fps** quadros |
+			| `get_fps()` | Retorna o numero de fps |
+		</script>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+### On the Road 2
+
+```python
+def game_init():
+	global clock
+
+	pygame.init()
+	pygame.display.set_caption("Python Day")
+	pygame.display.set_mode(screen_mode)
+	clock=pygame.time.Clock()
+
+def render():
+	pygame.display.flip()
+
+	# Limita as iterações pelo numero de FPS
+	clock.tick(fps)
+```
+
+		</script>
+	</section>
+
+
+
+
+
+	<section data-markdown>
+		<script type="text/template">
+			## `pygame.event`
+
+			Modulo para tratar eventos do PyGame. Você pode usar diretamente os submodulos de dispositivos especificos.
+		</script>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+			#### Metodos uteis
+
+			|||
+			|:---|:---:|
+			| `get(tipos_evento)` | Retira os eventos que ocorreram de um tipo |
+			| `poll()` | Retorna apenas um evento da fila |
+			| `wait()` | Espera ate ter um evento na fila e o retira para tratar |
+			| `clear(tipo)` | Remove todos os eventos de um tipo da fila |
+		</script>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+<h3>On the <sub style="font-size:10px">same</sub> Road 3</h3>
+
+
+```python
+# python3 code/gameloop.py
+def event_handler():
+	global done
+
+	for event in pygame.event.get():
+		# Trata evento QUIT
+		if event.type == pygame.QUIT:
+			done=True
+		elif event.type == pygame.KEYDOWN:
+			print(event.key)
+```
+
+		</script>
+	</section>
+
+
+
 
 	<section>
 		<h1>Links Úteis</h1>
