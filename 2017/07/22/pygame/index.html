@@ -565,6 +565,29 @@ class Ball(pygame.sprite.Sprite):
 			| `g.draw()` | Desenha as imagens de todos os sprites do grupo |
 		</script>
 	</section>
+	<section data-markdown>
+		<script type="text/template">
+```python
+# python3 code/gameloop.py
+def game_init():
+	# ....
+	layer_front=pygame.sprite.Group()
+	ball=Ball("figuras/ball.png", 100, 100)
+	layer_front.add(ball)
+	ball=Ball("figuras/ball.png", 200, 450)
+	layer_front.add(ball)
+def game_logic():
+	# ....
+	for item in layer_front:
+		item.move(item.speed_x, item.speed_y)
+def step_physics():
+	layer_front.update()
+
+```
+
+		</script>
+	</section>
+
 
 
 

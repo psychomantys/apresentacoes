@@ -125,6 +125,9 @@ def game_logic():
 	# ball.move(speed_x, speed_y)
 	for item in layer_front:
 		item.move(item.speed_x, item.speed_y)
+	template="{} - FPS: {:.2f}"
+	caption=template.format("Python Day", clock.get_fps())
+	pygame.display.set_caption(caption)
 
 
 def step_physics():
