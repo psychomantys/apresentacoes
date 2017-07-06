@@ -421,6 +421,156 @@ def event_handler():
 
 
 
+	<section data-markdown>
+		<script type="text/template">
+			## `pygame.Rect`
+
+			Modulo para armazenar e manipular retangulos.
+
+			Armazena coordenadas e faz operações com esse retangulo.
+
+			A maior parte dos metodos tem uma versão ***in place***.
+		</script>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+			#### Metodos uteis
+
+			|||
+			|:---|:---:|
+			| `r=pygame.Rect()` | Cria um retangulo, aceita pares de coordenadas ou as coordenadas diretamente |
+			| `r.x` | Coordenada *X* do retangulo |
+			| `r.y` | Coordenada *Y* do retangulo |
+			| `r.center` | Par de coordenadas do centro do retangulo |
+			| `r.size` | Tamanho do retangulo |
+		</script>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+			#### Metodos uteis parte 2
+
+			|||
+			|:---|:---:|
+			| `r.move(x,y)` | Retorna um retangulo movido pelo ponto ***(x,y)*** |
+			| `r.move_ip(x,y)` | Mesma coisa do ``move()``, mas **in place** |
+			| `r.clamp_ip(Rect)` | Move o retangulo para ficar dentro de ``Rect``  |
+			| `r.collidepoint(x,y)` | Verifica se ***(x,y)*** esta dentro do retangulo |
+			| `r.colliderect(Rect)` | Verifica se ``Rect`` esta dentro do retangulo |
+			| `r.contains(Rect)` | Verifica se ``Rect`` esta dentro do retangulo |
+		</script>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+<h3>On the Road 4: The mission</h3>
+
+
+```python
+# python3 code/gameloop.py
+if self.rect.left<0:
+	self.speed_x=-self.speed_x
+	self.turn()
+if self.rect.right>800:
+	self.speed_x=-self.speed_x
+	self.turn()
+if self.rect.top<0:
+	self.speed_y=-self.speed_y
+if self.rect.bottom>600:
+	self.speed_y=-self.speed_y
+
+rect1.right=10
+rect2.center=(20,30)
+rect.move_ip(x,y)
+```
+
+		</script>
+	</section>
+
+
+
+
+	<section data-markdown>
+		<script type="text/template">
+			## `pygame.sprite`
+
+			Modulo para representar e facilitar elementos basicos e visuais de um jogo.
+
+			Existem varias classes e utilitarios nesse modulo, mas vamos falar de dois basicamente.
+		</script>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+			#### `pygame.sprite.Sprite`
+
+			|||
+			|:---|---:|
+			| `pygame.sprite.Sprite` | Classe para representar objetos visiveis do jogo |
+			| `Sprite.rect` | Retangulo que representa onde a imagem vai se desenhada |
+			| `Sprite.image` | Superficie que vai ser desenhada |
+			| `Sprite.update()` | A ser sobrecarregado. Controla comportamento do sprite. |
+		</script>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+### On the Road 5: The Origins
+
+```python
+# python3 code/gameloop.py
+class Ball(pygame.sprite.Sprite):
+	image=None
+	rect=None
+
+	def __init__(self, image, x, y):
+		pygame.sprite.Sprite.__init__(self)
+		self.image=pygame.image.load(image).convert()
+		self.image.set_colorkey(color_transparent)
+		self.rect=self.image.get_rect()
+		self.rect.x=x
+		self.rect.y=y
+```
+
+		</script>
+	</section>
+	<section data-markdown>
+		<script type="text/template">
+```python
+# Continuando
+	def draw(self, screen):
+		screen.blit(self.image, self.rect)
+
+	def move(self, x, y):
+		self.rect.move_ip(x,y)
+
+	def update(self):
+		self.rect.x+=10
+		self.rect.y+=10
+```
+
+		</script>
+	</section>
+
+
+	<section data-markdown>
+		<script type="text/template">
+			#### `pygame.sprite.Group()`
+
+			|||
+			|:---|---:|
+			| `pygame.sprite.Group()` | Gerencia e contem varios sprites |
+			| `g.update()` | Chama o metodo `update()` de todos os sprites do grupo |
+			| `g.draw()` | Desenha as imagens de todos os sprites do grupo |
+		</script>
+	</section>
+
+
+
+
+
+
 	<section>
 		<h1>Links Úteis</h1>
 	</section>
