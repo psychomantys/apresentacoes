@@ -21,7 +21,12 @@
 
 	<!-- If the query includes 'print-pdf', use the PDF print sheet -->
 	<script type='text/javascript'>
-		document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+
 		function set_revealjs_by_element( element, reveal_id_name ) {
 			var p={};
 			p[reveal_id_name]=element.value;
@@ -75,44 +80,6 @@
 
 	<section>
 		<h1>O que é o PyGame?</h1>
-	</section>
-
-	<section>
-	<section data-markdown>
-		<script type="text/template">
-			### Game Loop
-
-
-			![](figuras/game_loop.png)
-
-		</script>
-	</section>
-
-	<section data-markdown>
-		<script type="text/template">
-			### Game Loop mais detalhado
-
-			![](figuras/gameloop_complex.gif)
-		</script>
-	</section>
-
-	<section data-markdown>
-		<script type="text/template">
-			### Game Loop em python
-```python
-# python3 code/gameloop.py
-try:
-	game_init()
-	while not done:
-		event_handler()
-		game_logic()
-		step_physics()
-		render()
-finally:
-	game_end()
-```
-		</script>
-	</section>
 	</section>
 
 	<section>
@@ -207,6 +174,57 @@ sudo yum install python3-pygame
 		</script>
 	</section>
 	</section>
+
+
+
+
+	<section data-markdown>
+		<script type="text/template">
+		# Game Loop
+		</script>
+	</section>
+
+	<section>
+	<section data-markdown>
+		<script type="text/template">
+			### Game Loop
+
+
+			![](figuras/game_loop.png)
+
+		</script>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+			### Game Loop mais detalhado
+
+			![](figuras/gameloop_complex.gif)
+		</script>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+			### Game Loop em python
+```python
+# python3 code/gameloop.py
+try:
+	game_init()
+	while not done:
+		event_handler()
+		game_logic()
+		step_physics()
+		render()
+finally:
+	game_end()
+```
+		</script>
+	</section>
+	</section>
+
+
+
+
 
 	<section>
 		<h1>Modulos</h1>
