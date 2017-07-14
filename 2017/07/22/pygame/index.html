@@ -175,7 +175,42 @@ sudo yum install python3-pygame
 	</section>
 	</section>
 
+	<section>
+	<section data-markdown>
+		<script type="text/template">
+		### On the Road
 
+		* Criar uma pasta para o nosso codigo
+		* Dentro da pasta, vamos criar o **virtualenv**
+		* Ativar o **virtualenv**
+		* Cria um arquivo **requirements.txt**
+		* Instalar as dependencias com o **pip**
+		* Baixar arquivos de media no repositorio:
+
+		https://github.com/psychomantys/pythonday-pygame-tutorial/tree/v1.0/
+
+		</script>
+	</section>
+	<section data-markdown>
+		<script type="text/template">
+
+```shell
+# 1
+mkdir frogs
+# 2
+cd frogs
+virtualenv -p python3 user/
+# 3
+. ./usr/bin/activate
+# 4
+echo "pygame" > requirements.txt
+# 5
+pip install -r requirements.txt
+```
+
+		</script>
+	</section>
+	</section>
 
 
 	<section data-markdown>
@@ -200,6 +235,8 @@ sudo yum install python3-pygame
 			![](figuras/gameloop_complex.gif)
 		</script>
 	</section>
+	</section>
+
 
 	<section data-markdown>
 		<script type="text/template">
@@ -218,8 +255,41 @@ finally:
 ```
 		</script>
 	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+			### Game Loop OO
+```python
+# python3 code/gameloop_obj.py
+class App(object):
+   def main_loop(self):
+      while not self.done:
+         self.event_handler()
+         self.game_logic()
+         self.step_physics()
+         self.render()
+
+if __name__ == "__main__":
+   App().main_loop()
+```
+		</script>
 	</section>
 
+	<section data-markdown>
+		<script type="text/template">
+		### On the Road 2
+
+		* Criar o `__init__.py`
+		* Dentro do arquivo, criar a classe `Frog` com os metodos sem nada:
+			* event_handler()
+			* game_logic()
+			* step_physics()
+			* render()
+		* Criar um metodo `main_loop()` e implementar
+		* Instanciar e rodar `Frog`
+
+		</script>
+	</section>
 
 
 
@@ -328,18 +398,27 @@ pygame.font.quit()
 
 	<section data-markdown>
 		<script type="text/template">
-### On the Road
+<h3>On the <sub style="font-size:10px">same</sub> Road 3</h3>
 
+No construtor:
 
 ```python
-# python3 code/gameloop.py
-def game_init():
-	pygame.init()
-	pygame.display.set_mode( (800,600) )
-	pygame.display.set_caption("Python Day")
+pygame.init()
+self.screen=pygame.display.set_mode((800,400))
+pygame.display.set_caption("Python Day")
+```
 
-def render():
-	pygame.display.flip()
+No destrutor:
+
+```python
+pygame.quit()
+```
+
+No render:
+
+```python
+self.screen.fill((0,0,0))
+pygame.display.flip()
 ```
 
 		</script>
@@ -367,24 +446,19 @@ def render():
 
 	<section data-markdown>
 		<script type="text/template">
-### On the Road 2
+### On the Road 4: The mission
+
+No render:
 
 ```python
-def game_init():
-	global clock
-
-	pygame.init()
-	pygame.display.set_caption("Python Day")
-	pygame.display.set_mode(screen_mode)
-	clock=pygame.time.Clock()
-
-def render():
-	pygame.display.flip()
-
-	# Limita as iterações pelo numero de FPS
-	clock.tick(fps)
+self.dt=clock.tick(self.fps)
 ```
 
+No construtor:
+
+```python
+self.clock=pygame.time.Clock()
+```
 		</script>
 	</section>
 
@@ -396,7 +470,9 @@ def render():
 		<script type="text/template">
 			## `pygame.event`
 
-			Modulo para tratar eventos do PyGame. Você pode usar diretamente os submodulos de dispositivos especificos.
+			Modulo para tratar eventos do `PyGame`.
+
+			Você pode usar diretamente os submodulos de dispositivos especificos.
 		</script>
 	</section>
 
@@ -415,25 +491,50 @@ def render():
 
 	<section data-markdown>
 		<script type="text/template">
-<h3>On the <sub style="font-size:10px">same</sub> Road 3</h3>
-
+		### Funcionamento basico
 
 ```python
 # python3 code/gameloop.py
 def event_handler():
-	global done
-
-	for event in pygame.event.get():
-		# Trata evento QUIT
-		if event.type == pygame.QUIT:
-			done=True
-		elif event.type == pygame.KEYDOWN:
-			print(event.key)
+   for event in pygame.event.get():
+      # Trata evento QUIT
+      if event.type == pygame.QUIT:
+         self.done=True
+      elif event.type == pygame.KEYDOWN:
+         if event.key==K_ESCAPE:
+            self.done=True
+         print(event.key)
 ```
 
 		</script>
 	</section>
 
+	<section data-markdown>
+		<script type="text/template">
+		### On the Road 5: The Origins
+
+		Em event_handler:
+
+
+```python
+for event in pygame.event.get():
+   # Trata evento QUIT
+   if event.type==pygame.QUIT:
+      self.done=True
+   elif event.type==pygame.KEYDOWN:
+      print(pygame.key.name(event.key))
+      print(event.key)
+      if event.key==pygame.K_ESCAPE:
+         self.done=True
+      if event.key==32 or event.key==pygame.K_RIGHT:
+         pass
+      if event.key==pygame.K_DOWN:
+         pass
+      if event.key==pygame.K_UP:
+         pass
+```
+		</script>
+	</section>
 
 
 
