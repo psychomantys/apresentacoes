@@ -391,11 +391,43 @@ pygame.font.quit()
 		</script>
 	</section>
 
+
+
+	<section data-markdown>
+		<script type="text/template">
+			## `pygame.surface`
+
+			Modulo que representa a superficies que você usa para desenhar.
+
+			É uma tela onde você pode desenhar, formando uma imagem que depois você pode colocar na tela se quiser.
+
+		</script>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+			#### Metodos uteis
+
+			|||
+			|:---|---:|
+			| `Surface(tamanho)`        | Cria uma superficie |
+			| `s.set_at(point,cor)`     | Muda a cor de um ponto |
+			| `s.fill(cor[, rect])`     | Preenche com uma cor um retangulo da superficie |
+			| `s.blit(surface,posicao)`    | Copia a **surface** para **s** em uma **posição**|
+			| `s=s.convert()`           | Converte a profundidade de cor |
+		</script>
+	</section>
+
+
+
+
 	<section data-markdown>
 		<script type="text/template">
 			## `pygame.display`
 
-			Modulo que ajuda na manipulação da tela. Pode criar a tela, controlar e configurar os paramentros dela.
+			Modulo que ajuda na manipulação da tela.
+
+			Pode criar a tela, controlar e configurar os paramentros dela.
 		</script>
 	</section>
 
@@ -444,7 +476,7 @@ pygame.display.flip()
 		<script type="text/template">
 			## `pygame.time`
 
-			Modulo para lidar com o tempo, limitar e obter os FPS.
+			Modulo para lidar com o tempo, limitar e obter os **FPS**.
 		</script>
 	</section>
 
@@ -463,17 +495,18 @@ pygame.display.flip()
 		<script type="text/template">
 ### On the Road 4: The mission
 
+No construtor:
+
+```python
+self.clock=pygame.time.Clock()
+```
+
 No render:
 
 ```python
 self.dt=clock.tick(self.fps)
 ```
 
-No construtor:
-
-```python
-self.clock=pygame.time.Clock()
-```
 		</script>
 	</section>
 
@@ -514,10 +547,10 @@ def event_handler():
    for event in pygame.event.get():
       # Trata evento QUIT
       if event.type == pygame.QUIT:
-         self.done=True
+         done=True
       elif event.type == pygame.KEYDOWN:
          if event.key==K_ESCAPE:
-            self.done=True
+            done=True
          print(event.key)
 ```
 
@@ -528,7 +561,7 @@ def event_handler():
 		<script type="text/template">
 		### On the Road 5: The Origins
 
-		Em event_handler:
+		Em `event_handler(self)`:
 
 
 ```python
@@ -596,7 +629,7 @@ for event in pygame.event.get():
 
 	<section data-markdown>
 		<script type="text/template">
-<h3>On the Road 4: The mission</h3>
+### Exemplo `Rect()`
 
 
 ```python
@@ -621,6 +654,49 @@ rect.move_ip(x,y)
 	</section>
 
 
+
+
+	<section data-markdown>
+		<script type="text/template">
+			## `pygame.image`
+
+			Modulo para carregar e salvar imagens.
+
+		</script>
+	</section>
+	<section data-markdown>
+		<script type="text/template">
+			#### `pygame.image`
+
+			|||
+			|:---|---:|
+			| `load(filename)` | Lê uma imagem de um arquivo |
+			| `save(surface,filename)` | Salva uma surface para um arquivo |
+
+		</script>
+	</section>
+	<section data-markdown>
+		<script type="text/template">
+		### On the Road 6: Last Chapter
+
+		Vamos criar uma função para carregar as imagens mais facil
+
+```python
+def load_image(filename, colorkey=None):
+   image=None
+   try:
+      image=pygame.image.load(filename)
+   except pygame.error as err:
+      raise SystemExit(str(err))
+   image = image.convert()
+   if colorkey is not None:
+      if colorkey is -1:
+         colorkey=image.get_at( (0,0) )
+      image.set_colorkey(colorkey)
+   return image
+```
+		</script>
+	</section>
 
 
 	<section data-markdown>
@@ -771,7 +847,6 @@ def step_physics():
 <a href="https://twitter.com/psycho_mantys" class="twitter-follow-button" data-size="large" data-show-screen-name="false" data-show-count="false">Follow @psycho_mantys</a> <iframe src="https://ghbtns.com/github-btn.html?user=psychomantys&type=follow&count=true&size=large" frameborder="0" scrolling="0" width="220px" height="30px"></iframe>
 
 
-
 		-------------------------------
 
 		<a href="#/presentation_begin" ><img height="60" width="60" src="figuras/begin.png" /></a> <a href="?print-pdf" ><img height="60" width="60" src="figuras/pdf.ico" /></a>
@@ -819,5 +894,14 @@ def step_physics():
 
 
 <!--
+Friday the 13th: The Final Chapter (1984)
+Friday the 13th: A New Beginning (1985)
+Friday the 13th Part VI: Jason Lives (1986)
+Friday the 13th Part VII: The New Blood (1988)
+Friday the 13th Part VIII: Jason Takes Manhattan (1989)
+Jason Goes to Hell: The Final Friday (1993)
+Jason X (2001)
+Freddy vs. Jason (2003)
+Friday the 13th (2009)
 -->
 
