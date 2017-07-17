@@ -219,6 +219,19 @@ pip install -r requirements.txt
 		</script>
 	</section>
 
+	<section data-markdown>
+		<script type="text/template">
+		### Game Loop
+
+		* Padrão de projeto usado na essência da construção de jogos
+
+		* Uma estrutura de repetição infinita
+
+		* Controla o **FPS**
+
+		</script>
+	</section>
+
 	<section>
 	<section data-markdown>
 		<script type="text/template">
@@ -281,10 +294,10 @@ if __name__ == "__main__":
 
 		* Criar o `__init__.py`
 		* Dentro do arquivo, criar a classe `Frog` com os metodos sem nada:
-			* event_handler()
-			* game_logic()
-			* step_physics()
-			* render()
+			* `event_handler()`
+			* `game_logic()`
+			* `step_physics()`
+			* `render()`
 		* Criar um metodo `main_loop()` e implementar
 		* Instanciar e rodar `Frog`
 
@@ -536,7 +549,7 @@ for event in pygame.event.get():
 		</script>
 	</section>
 
-
+	<!-- Parou aqui -->
 
 	<section data-markdown>
 		<script type="text/template">
@@ -768,10 +781,6 @@ def step_physics():
 	</div>
 	</div>
 
-	<!-- Xoxial midia --!>
-	<script type="text/javascript">(function(d){var f = d.getElementsByTagName('SCRIPT')[0], p = d.createElement('SCRIPT');p.type = 'text/javascript';p.async = true;p.src = '//widgets.wp.com/platform.js';f.parentNode.insertBefore(p,f);}(document));</script>
-	<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
 	<script src="reveal.js/lib/js/head.min.js"></script>
 	<script src="reveal.js/js/reveal.js"></script>
 
@@ -798,6 +807,10 @@ def step_physics():
 			]
 		});
 	</script>
+
+	<!-- Xoxial midia --!>
+	<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 </body>
 </html>
 
