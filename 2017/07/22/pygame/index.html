@@ -675,6 +675,7 @@ rect.move_ip(x,y)
 
 		</script>
 	</section>
+	<section>
 	<section data-markdown>
 		<script type="text/template">
 		### On the Road 6: Last Chapter
@@ -696,6 +697,25 @@ def load_image(filename, colorkey=None):
    return image
 ```
 		</script>
+	</section>
+	<section data-markdown>
+		<script type="text/template">
+		Para testar:
+
+		No `__init__()`:
+
+```python
+self.car=load_image("media/img/car_1.png",-1)
+```
+
+		No `render()`:
+
+```python
+self.screen.blit(self.car, self.car.get_rect())
+```
+
+		</script>
+	</section>
 	</section>
 
 
@@ -726,37 +746,39 @@ def load_image(filename, colorkey=None):
 		<script type="text/template">
 		### On the Road 5: The Origins
 
-
 ```python
-# python3 code/gameloop.py
-class Ball(pygame.sprite.Sprite):
-	image=None
-	rect=None
-
-	def __init__(self, image, x, y):
-		pygame.sprite.Sprite.__init__(self)
-		self.image=pygame.image.load(image).convert()
-		self.image.set_colorkey(color_transparent)
-		self.rect=self.image.get_rect()
-		self.rect.x=x
-		self.rect.y=y
+class Frog(pygame.spirte.Sprite)
+   def __init__(self, img, x=0, y=0, velocity=(0,0)):
+      pygame.sprite.Sprite.__init__(self)
+      self.image=load_image(filename,-1)
+      self.rect=self.image.get_rect()
+      self.rect.x=x
+      self.rect.y=y
+      self.velocity=velocity
+   def draw(self, screen):
+      return screen.blit(self.image, self.rect)
 ```
-
 		</script>
 	</section>
 	<section data-markdown>
 		<script type="text/template">
 ```python
 # Continuando
-	def draw(self, screen):
-		screen.blit(self.image, self.rect)
-
-	def move(self, x, y):
-		self.rect.move_ip(x,y)
-
-	def update(self):
-		self.rect.x+=10
-		self.rect.y+=10
+	def move(self, x=0, y=0):
+		self.rect.move_ip(x, y)
+	def dt_x_move(self, dt):
+		dx=dt*(self.velocity[0]/1000)
+		self.x+=dx
+		self.rect.x=self.x
+	def dt_y_move(self, dt):
+		dy=dt*(self.velocity[1]/1000)
+		self.y+=dy
+		self.rect.y=self.y
+	def dt_move(self, dt):
+		self.dt_x_move(dt)
+		self.dt_y_move(dt)
+	def update(self, dt):
+		self.dt_move(dt)
 ```
 
 		</script>
