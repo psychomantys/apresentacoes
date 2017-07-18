@@ -910,7 +910,26 @@ Em `step_physics(self)`:
 	</section>
 
 
+	<section data-markdown>
+		<script type="text/template">
+		# Intermission
+		</script>
+	</section>
 
+
+	<section data-markdown>
+		<script type="text/template">
+		### Vamos dar movimento ao sapo
+```python
+if event.key==32 or event.key==pygame.K_RIGHT:
+   self.player.move(self.tile_size/4)
+if event.key==pygame.K_DOWN:
+   self.player.move(0,self.tile_size/4)
+if event.key==pygame.K_UP:
+   self.player.move(0,-self.tile_size/4)
+```
+		</script>
+	</section>
 
 
 
