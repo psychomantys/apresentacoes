@@ -187,7 +187,7 @@ sudo yum install python3-pygame
 		* Instalar as dependencias com o **pip**
 		* Baixar arquivos de media no repositorio:
 
-		https://github.com/psychomantys/pythonday-pygame-tutorial/tree/v1.0/
+		https://github.com/psychomantys/python-day-pygame-tutorial/tree/v1.0/
 
 		</script>
 	</section>
@@ -675,13 +675,24 @@ rect.move_ip(x,y)
 
 		</script>
 	</section>
-	<section>
 	<section data-markdown>
 		<script type="text/template">
 		### On the Road 6: Last Chapter
 
 		Vamos criar uma função para carregar as imagens mais facil
 
+		* Aceitar dois parametros
+			* nome do arquivo da imagem
+			* Cor de transparencia
+		* Caso transparencia for `-1`
+			* Usa Primeiro pixel da imagem como transparencia
+		* Caso seja `None`, não usa transparencia
+
+		</script>
+	</section>
+	<section>
+	<section data-markdown>
+		<script type="text/template">
 ```python
 def load_image(filename, colorkey=None):
    image=None
@@ -705,7 +716,7 @@ def load_image(filename, colorkey=None):
 		No `__init__()`:
 
 ```python
-self.car=load_image("media/img/car_1.png",-1)
+self.car=load_image("media/img/car_01.png",-1)
 ```
 
 		No `render()`:
@@ -739,31 +750,85 @@ self.screen.blit(self.car, self.car.get_rect())
 			| `Sprite.rect` | Retangulo que representa onde a imagem vai se desenhada |
 			| `Sprite.image` | Superficie que vai ser desenhada |
 			| `Sprite.update()` | A ser sobrecarregado. Controla comportamento do sprite. |
+			| `Sprite.kill()` | Remove o sprite de todos os grupos |
 		</script>
 	</section>
 
+
+
+
 	<section data-markdown>
 		<script type="text/template">
-		### On the Road 5: The Origins
+		### On the Road 7
 
+		* Criar uma classe `tile`
+		* Herdar de `pygame.sprite.Sprite`
+		* Implementar o construtor
+		* Implementar um metodo para desenhar na tela
+
+		</script>
+	</section>
+	<section>
+	<section data-markdown>
+		<script type="text/template">
 ```python
-class Frog(pygame.spirte.Sprite)
+class Tile(pygame.spirte.Sprite)
    def __init__(self, img, x=0, y=0, velocity=(0,0)):
       pygame.sprite.Sprite.__init__(self)
       self.image=load_image(filename,-1)
       self.rect=self.image.get_rect()
       self.rect.x=x
       self.rect.y=y
+      self.x=x
+      self.y=y
       self.velocity=velocity
    def draw(self, screen):
       return screen.blit(self.image, self.rect)
+   def update(self,dt):
+      self.rect.x=self.x
+      self.rect.y=self.y
 ```
 		</script>
 	</section>
 	<section data-markdown>
 		<script type="text/template">
+		### Para testar
+
+No `__init__(self)`:
+
 ```python
-# Continuando
+self.player=Tile("media/img/frog.png", 200, 0, (10,0))
+```
+
+No `render(self)`:
+
+```python
+self.player.draw(self.screen)
+```
+
+No `step_physics(self)`:
+```python
+self.player.update(self.dt)
+```
+
+		</script>
+	</section>
+	</section>
+
+
+	<section data-markdown>
+		<script type="text/template">
+		### On the Road 8
+
+		* Vamos extender Tile para dar movimento
+		* Criar um metodo `tile.move(x,y)`
+		* Implementar o movimento no `update(self)`
+
+		</script>
+	</section>
+	<section data-markdown>
+		<script type="text/template">
+```python
 	def move(self, x=0, y=0):
 		self.rect.move_ip(x, y)
 	def dt_x_move(self, dt):
@@ -792,30 +857,53 @@ class Frog(pygame.spirte.Sprite)
 			|||
 			|:---|---:|
 			| `pygame.sprite.Group()` | Gerencia e contem varios sprites |
-			| `g.update()` | Chama o metodo `update()` de todos os sprites do grupo |
-			| `g.draw()` | Desenha as imagens de todos os sprites do grupo |
+			| `g.update(args)` | Chama o metodo `update()` de todos os sprites do grupo |
+			| `g.draw(surface)` | Desenha as imagens de todos os sprites do grupo |
 		</script>
 	</section>
 	<section data-markdown>
 		<script type="text/template">
-		### On the Road 6: Last Chapter
+		### On the Road 9
+
+		* Criar um grupo para representa a camada de cima
+		* Criar um grupo para representa a camada de baixo
+		* Na parte da fisica, os grupos devem executar update
+		* No render, desenhar o conteudo dos grupos
+		* No __init__, colocar o chão na camada de baixo
+
+		</script>
+	</section>
+	<section data-markdown>
+		<script type="text/template">
+
+Em `__init__(self)`:
 
 ```python
-# python3 code/gameloop.py
-def game_init():
-	# ....
-	layer_front=pygame.sprite.Group()
-	ball=Ball("figuras/ball.png", 100, 100)
-	layer_front.add(ball)
-	ball=Ball("figuras/ball.png", 200, 450)
-	layer_front.add(ball)
-def game_logic():
-	# ....
-	for item in layer_front:
-		item.move(item.speed_x, item.speed_y)
-def step_physics():
-	layer_front.update()
+	self.layer_front=pygame.sprite.Group()
+	self.layer_background=pygame.sprite.Group()
+	self.layer_front.add(self.player)
+	flip=True
+	for x in range(0, self.screen_mode[0], self.tile_size):
+		if flip:
+			t=Tile("media/img/grass_field.png", x)
+		else:
+			t=Tile("media/img/road_field.png", x)
+		flip=not flip
+		self.layer_background.add(t)
+```
 
+Em `render(self)`:
+
+```python
+	layer_background.draw(self.screen)
+	layer_front.draw(self.screen)
+```
+
+Em `step_physics(self)`:
+
+```python
+   layer_background.update(self.dt)
+   layer_front.update(self.dt)
 ```
 
 		</script>
