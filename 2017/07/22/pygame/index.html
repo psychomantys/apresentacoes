@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>introdução ao PyGame</title>
+	<title>Introdução ao PyGame</title>
 
 	<meta name="description" content="PyGame">
 	<meta name="author" content="Psycho Mantys">
@@ -104,9 +104,9 @@
 
 			![](figuras/SDL_logo.png)
 
-			* Como o desenvolvimento do ``PySDL`` parada, o pygame surgiu
-			* ``SDL`` é extremamente portável
-			* Não é uma copia exata da ``API``(ainda bem)
+			* Como o desenvolvimento do **PySDL** parada, o **PyGame** surgiu
+			* **SDL** é extremamente portável
+			* Não é uma copia exata da **API**(ainda bem)
 		</script>
 	</section>
 
@@ -115,7 +115,7 @@
 		<ul >
 			<li><b>Linux</b>, <b>Windows</b> e <b>MacOS</b></li>
 			<li class="fragment"><b>FreeBSD</b>, <b>NetBSD</b>, <b>OpenBSD</b> e <b>BSD/OS</b></li>
-			<li class="fragment">Não oficialmente suportado: <b>AmigaOS</b>, <b>Dreamcast</b>, <b>Atari</b>, <b>AIX</b>, <b>OSF/Tru64</b>, <b>RISC OS</b>, <b>SymbianOS</b> e O<b>S/2</b></li>
+			<li class="fragment">Não oficialmente suportado: <b>AmigaOS</b>, <b>Dreamcast</b>, <b>Atari</b>, <b>AIX</b>, <b>OSF/Tru64</b>, <b>RISC OS</b>, <b>SymbianOS</b> e <b>OS/2</b></li>
 			<li class="fragment">E ainda mais...</li>
 		</ul>
 	</section>
@@ -124,7 +124,7 @@
 	<section>
 		<h2>Filosofia</h2>
 		<blockquote>
-				  Fazer as coisas simples de maneira fácil e as coisas difíceis de maneira direta
+			Fazer as coisas simples de maneira fácil e as coisas difíceis de maneira direta
 		</blockquote>
 	</section>
 
@@ -206,6 +206,8 @@ virtualenv -p python3 user/
 echo "pygame" > requirements.txt
 # 5
 pip install -r requirements.txt
+# Teste
+python -m pygame.examples.aliens
 ```
 
 		</script>
@@ -224,11 +226,8 @@ pip install -r requirements.txt
 		### Game Loop
 
 		* Padrão de projeto usado na essência da construção de jogos
-
 		* Uma estrutura de repetição infinita
-
 		* Controla o **FPS**
-
 		* Incorpora loop de eventos
 
 		</script>
@@ -277,13 +276,17 @@ finally:
 ```python
 # python3 code/gameloop_obj.py
 class App(object):
+   done=False
+   def __init__(self):
+      pass
    def main_loop(self):
       while not self.done:
          self.event_handler()
          self.game_logic()
          self.step_physics()
          self.render()
-
+   def __del__(self):
+      pass
 if __name__ == "__main__":
    App().main_loop()
 ```
@@ -447,7 +450,7 @@ pygame.font.quit()
 		<script type="text/template">
 <h3>On the <sub style="font-size:10px">same</sub> Road 3</h3>
 
-No construtor:
+No `__init__(self)`:
 
 ```python
 pygame.init()
@@ -455,13 +458,13 @@ self.screen=pygame.display.set_mode((800,400))
 pygame.display.set_caption("Python Day")
 ```
 
-No destrutor:
+No `__del__(self)`:
 
 ```python
 pygame.quit()
 ```
 
-No render:
+No `render(self)`:
 
 ```python
 self.screen.fill((0,0,0))
@@ -495,13 +498,13 @@ pygame.display.flip()
 		<script type="text/template">
 ### On the Road 4: The mission
 
-No construtor:
+Em `__init__()`:
 
 ```python
 self.clock=pygame.time.Clock()
 ```
 
-No render:
+Em `render()`:
 
 ```python
 self.dt=clock.tick(self.fps)
@@ -759,7 +762,7 @@ self.screen.blit(self.car, self.car.get_rect())
 
 	<section data-markdown>
 		<script type="text/template">
-		### On the Road 7
+		### On the Road 7: The New Blood
 
 		* Criar uma classe `tile`
 		* Herdar de `pygame.sprite.Sprite`
@@ -863,13 +866,13 @@ self.player.update(self.dt)
 	</section>
 	<section data-markdown>
 		<script type="text/template">
-		### On the Road 9
+		### On the Road 9: The Last Final Chapter
 
 		* Criar um grupo para representa a camada de cima
 		* Criar um grupo para representa a camada de baixo
-		* Na parte da fisica, os grupos devem executar update
-		* No render, desenhar o conteudo dos grupos
-		* No __init__, colocar o chão na camada de baixo
+		* Na parte da **fisica**, os grupos devem executar update
+		* No **render**, desenhar o conteudo dos grupos
+		* No **construtor**, colocar o chão na camada de baixo
 
 		</script>
 	</section>
@@ -919,7 +922,7 @@ Em `step_physics(self)`:
 
 	<section data-markdown>
 		<script type="text/template">
-		### Vamos dar movimento ao sapo
+		### "Vamos dar movimento ao sapo"
 ```python
 if event.key==32 or event.key==pygame.K_RIGHT:
    self.player.move(self.tile_size/4)
@@ -931,6 +934,110 @@ if event.key==pygame.K_UP:
 		</script>
 	</section>
 
+
+	<section data-markdown>
+		<script type="text/template">
+			## Colisões
+
+			Não é bem um modulo, e sim uma parte de **sprite**.
+
+			Como é uma parte muito importante e usa muitas coisas do `PyGame`, fica por ultimo.
+		</script>
+	</section>
+	<section data-markdown>
+		<script type="text/template">
+			#### Colisões
+
+Detecta quem colidiu entre um **sprite** com um **grupo**
+
+```python
+pygame.sprite.spritecollide(sprite,grupo,mate)
+```
+
+Detecta quem colidiu entre um **grupo1** com um **grupo2**
+
+```python
+pygame.sprite.groupcollide(grupo1,grupo2,mate1,mate2)
+```
+
+Caso **mate** seja `True`, vai ser executado o metodo `kill()` dos sprites correnspondetes que colidiram.
+
+		</script>
+	</section>
+	<section data-markdown>
+		<script type="text/template">
+		### On the Road X
+
+		* Criar um contador de tempo para colocar carros
+		* Aleatoriamente, criar carros no topo da pista
+		* Detectar se já existe um carro onde estamos criando
+
+		</script>
+	</section>
+	<section data-markdown>
+		<script type="text/template">
+```python
+self.car_tick+=self.dt
+if self.car_spawn_time<self.car_tick:
+	self.car_tick=0
+	img="media/img/car_0"+str(randint(1,3))+".png"
+	x=(1+2*randint(0,(self.screen_mode[0]/self.tile_size)/2))*(self.tile_size)
+	car=tile.Tile(img, x, 0, self.car_base_velocity)
+	y=-car.image.get_rect().height
+	car.y=y
+	while pygame.sprite.spritecollide(car, self.layer_front, False):
+		x=(1+2*randint(0,(self.screen_mode[0]/self.tile_size)/2))*(self.tile_size)
+		car=tile.Tile(img, x, y, self.car_base_velocity)
+	self.layer_front.add(car)
+```
+		</script>
+	</section>
+
+
+
+
+	<section>
+		<h1>Toques Finais</h1>
+	</section>
+	<section data-markdown>
+		<script type="text/template">
+		### Colidir carro com sapo
+
+```python
+# Verifica se o jogador bateu em algo da layer_front
+collisions=pygame.sprite.spritecollide(self.player, self.layer_front, False)
+for collision in collisions:
+   # Se ele bateu em alquem que não é um sapo, acaba o jogo
+   if collision.name!='Frog':
+      self.done=True
+```
+		</script>
+	</section>
+	<section data-markdown>
+		<script type="text/template">
+		### Remover carros que sairam da tela
+
+```python
+# Se o carro saiu da tela, remove ele de todos os grupos
+for car in self.layer_front:
+   if self.screen_mode[1]<car.rect.y:
+      car.kill()
+```
+		</script>
+	</section>
+	<section data-markdown>
+		<script type="text/template">
+		### Verifica se o sapo passou dos limites
+
+```python
+		if self.screen_mode[0]<self.player.x:
+			self.done=True
+		if self.screen_mode[1]<self.player.y:
+			self.done=True
+```
+
+		</script>
+	</section>
 
 
 
@@ -1023,14 +1130,5 @@ if event.key==pygame.K_UP:
 
 
 <!--
-Friday the 13th: The Final Chapter (1984)
-Friday the 13th: A New Beginning (1985)
-Friday the 13th Part VI: Jason Lives (1986)
-Friday the 13th Part VII: The New Blood (1988)
-Friday the 13th Part VIII: Jason Takes Manhattan (1989)
-Jason Goes to Hell: The Final Friday (1993)
-Jason X (2001)
-Freddy vs. Jason (2003)
-Friday the 13th (2009)
 -->
 
